@@ -1,1 +1,3687 @@
-let vma=typeof globalThis!=='undefined'?globalThis:typeof window!=='undefined'?window:global,vmd_85b0dc=vma['vmd_85b0dc']||(vma['vmd_85b0dc']={});const vmF_46cdf2=(function(){var W=Object['defineProperty'],c=Object['create'],R=Object['getOwnPropertyDescriptor'],v=Object['getOwnPropertyNames'],F=Object['getOwnPropertySymbols'],d=Object['setPrototypeOf'],C=Object['getPrototypeOf'],q=Function['prototype']['call'],a=Function['prototype']['apply'],K=Reflect['apply'],y=WeakMap['prototype']['set'],o=WeakMap['prototype']['get'],b=WeakMap['prototype']['has'],H=WeakSet['prototype']['add'],j=WeakSet['prototype']['has'];let l=['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'],Y=['bm8asMsAAAwIFHVwZGF0ZVpvb20EAAgaY2hhbXBpb25JbWFnZQgKc3R5bGUIAjEIDm9wYWNpdHkWBACqAwQApAMGEQADAK4EBAEABABsAAYGAgADAK4EBAOMAQQEAAQFjgEABg==','bm4asMsCAAgICG5hbWUIFnRvTG93ZXJDYXNlBAAIEl8weDQ4ZmMwNh6qAwQApAMEABAEAIwBBAAIAIwBBAEABAJuBACuBAYAAAIACACMAQQBAAQCbgQAVABwAA==','bm4SsMsCFkwIEGNoYW1waW9uCA5jb3JyZWN0CAhsYW5lCCBzZWxlY3RlZENoYW1waW9uCAh0eXBlCAxnZW5kZXIIDHJlZ2lvbggeY3VycmVudExhbmd1YWdlCAR0cggMbGFuZUVuCAx0eXBlRW4IEGdlbmRlckVuCBByZWdpb25FbggQZG9jdW1lbnQIGmNyZWF0ZUVsZW1lbnQIBmRpdgQBCBRndWVzcy1pdGVtCBJjbGFzc05hbWUIIgogICAgICA8aW1nIHNyYz0iCAhpY29uCA4iIGFsdD0iCAhuYW1lCIgBIj4KICAgICAgPGRpdiBjbGFzcz0iZ3Vlc3MtaW5mbyI+CiAgICAgICAgPHN0cm9uZyBjbGFzcz0iZ3Vlc3MtbmFtZSAIGG5hbWUtY29ycmVjdAgUbmFtZS13cm9uZwgaIj4KICAgICAgICAgIAiSAQogICAgICAgIDwvc3Ryb25nPgogICAgICAgIDxkaXYgY2xhc3M9ImNsdWUtcm93Ij4KICAgICAgICAgIDxzcGFuIGNsYXNzPSIIGGNsdWUtY29ycmVjdAgUY2x1ZS13cm9uZwgeIj4KICAgICAgICAgICAgCBJfMHgzMTY4ZDQIBDogCFQKICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgIDxzcGFuIGNsYXNzPSIIZgogICAgICAgICAgPC9zcGFuPgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgIAgSaW5uZXJIVE1MCBJfMHg0N2IwNDgIFmFwcGVuZENoaWxkmgMEAAQABAAEAAQBBAAEAQQCBAEEAgYCAAQABAIABAMEAQQEBgIABAAEBAAEBAQBBAUGAgAEAAQFAAQFBAEEBgYCAAQABAYABAYGAAAEAAQIAAAEAQQCAAQBBAkEBwYAAAQABAgAAAQBBAQABAEECgQIBgAABAAECAAABAEEBQAEAQQLBAkGAAAEAAQIAAAEAQQGAAQBBAwECgQNAAQOBA8AAAQQBAEECwQLBBEEEgAECwQTBAEEFAAABBUABAEEFgAABBcABAIABBgABBkAAAQaAAQBBBYAAAQbAAQDAAQcAAQdAAAEHgAGAQACAAQCAAAEIAAEBwAABCEABAQABBwABB0AAAQeAAYBAAIABAQAAAQgAAQIAAAEIQAEBQAEHAAEHQAABB4ABgEAAgAEBQAABCAABAkAAAQhAAQGAAQcAAQdAAAEHgAGAQACAAQGAAAEIAAECgAABCIABCMABgAAAgAABCUECwAABBAEAQCqA6QDEIwBDhCMAQ4MjAGuBIwBVA4MjAGuBIwBVA4MjAGuBIwBVA4MjAGuBIwBVA6uBABUaAyMAWQMjAEOrgQAVGgMjAFkDIwBDq4EAFRoDIwBZAyMAQ6uBABUaAyMAWQMjAEOlgEIjAEANjYAbg4MAI4BBgwADIwBOhQAFAyMAToUABQMaABkADoUABQMjAE6FAAUDGgAZAA6FAAUrgSMAToUABQMOhQAFAxoAGQAOhQAFK4EjAE6FAAUDDoUABQMaABkADoUABSuBIwBOhQAFAw6FAAUDGgAZAA6FAAUrgSMAToUABQMOhQAFI4BBq4ECIwBDDY2AG4GJEZOTFJaYmBmbnZ0eoIBigGIAY4ByAHOAcwB0AHmAewB6gHuAY4ClAKSApYCtgK8AroCvgLeAuQC4gLmAg==','bm8asMsAAAYIEGxvY2F0aW9uCAxyZWxvYWQEAAwEAAAEAQQCBAAAlgEIjAEAbgY=','bmcasMsABhIUCAhEYXRlBAAIEHNldEhvdXJzBBgEBAgOZ2V0VGltZQQDCBRzZXRUaW1lb3V0BAIIEl8weDQyZmVhMlqWAQQAAAQB0AEEAA4EAJYBBAAABAHQAQQADgQBDAQBCACMAQQCAAQDNgA2AAAEATYANgAABAE2ADYAAAQBNgA2AAAEBG4EBAYADAQBCACMAQQFAAQBbgQADAQACACMAQQFAAQBbgQAFgAOBAIABAbIAQAMBAKWAQQHAAQIbAQCBgA=','bmcSsMsADjI0CAhEYXRlBAAIEHNldEhvdXJzBBgEBAgOZ2V0VGltZQgQbG9jYXRpb24IDHJlbG9hZAgITWF0aAgKZmxvb3IF6AMEPAQBCBB0b1N0cmluZwgQcGFkU3RhcnQEAggCMAgYdHJhbnNsYXRpb25zCB5jdXJyZW50TGFuZ3VhZ2UIEm5leHRDaGFtcAgSXzB4NDNlNmM0CAAIBDogCAI6CBZ0ZXh0Q29udGVudAgSXzB4MWRhZWIx1AIEAAQABAAEAQQABAAEAAQBBAAEAQQBAAQCBAMAAAQBAAAEAQAABAEAAAQEBAQABAEABAUEAQQABAAABAUEAQQAAAQCBAIEAQAABAYABAcEAQQAAAAABAgABAkEAgQKBAsABAsAAAAABAwEAQAEDQQBBAAABA4EDwAABBAAAAQPBAIEAwQIAAQJBAIECgQLAAQLAAAECgQLAAAAAAQMBAEABA0EAQQAAAQOBA8AAAQQAAAEDwQCBAQECAAECQQCBAoECwAABAoAAAAEDAQBAAQNBAEEAAAEDgQPAAAEEAAABA8EAgQFBg4ABQAGBAAFAAAEEwQGBgAAAgAEFQQGAAAEFgAEAwAABBcABAQAAAQXAAQFAAAEGACqA6QDlgEA0AEOlgEA0AEODAiMAQA2NgA2NgA2NgA2NgBuBgwIjAEAbgwIjAEAbhYODABaaJYBCIwBAG4GAnCWAQiMAQwAABgAGBo2NgBuCIwBAG4IjAEANjYANjYAbg6WAQiMAQwAABgAGBwAABgaNjYAbgiMAQBuCIwBADY2ADY2AG4OlgEIjAEMAAAYHAAaNjYAbgiMAQBuCIwBADY2ADY2AG4OrgSuBJABjAEOrgQADDoUABQMOhQAFAw6FAAUDDoUjgEGAlZo','bmcSkMsAAhQCFgQFCBJfMHg0M2U2YzQIEGRvY3VtZW50CBxnZXRFbGVtZW50QnlJZAgmZGFpbHlDb3VudGRvd25CYWRnZQQBBAAF6AMIFnNldEludGVydmFsBAIIEl8weDRmODc3NTyqA6QDAMgBDrYElgEIjAEANjYAbrQErgRAaAJwDABsBgwAlgEAbAYEAAQBBAAABAAGAAACAAQCAAQDBAQAAAQFBAEEAAQAAAAAAAQABAYEAAAEAAQHBAgECQQCAAIiKA==','bm8SsMsCBBoIBmtleQgKRW50ZXIIHHByZXZlbnREZWZhdWx0BAAIEGRvY3VtZW50CBpxdWVyeVNlbGVjdG9yCCAuc3VnZ2VzdGlvbi1pdGVtBAEICHNwYW4IFnRleHRDb250ZW50CBRndWVzc0lucHV0CAp2YWx1ZQgUY2hlY2tHdWVzc1SqAwQApAMEABAEAIwBBAAABAFUAGgAEAQACACMAQQCAAQDbgQABgCWAQQECACMAQQFAAQGNgA2AAAEB24EAQ4EAQwEAWgADAQBCACMAQQFAAQINgA2AAAEB24EAYwBBAkOBAKuBAYGAAMADAQCjgEECwYArgQGAwADAAAEA2wEAAYABAxULkw=','bm4asMsCAAQIFnRvTG93ZXJDYXNlBAAMBAAABAAEAQQAABAIjAEAbnA=','bm4SsMsCAA4ICG5hbWUIFnRvTG93ZXJDYXNlBAAIEGluY2x1ZGVzCBJfMHg0YjY3MDUEAQgSXzB4MmUwZGM2QgQABAAEAAQAAAQBBAIEAAAEAwYAAAIAAAAEBQQBAAAABgEAAgAABAMEAAQAAAQBBAIEAAAABAUEAQAAqgOkAxCMAQiMAQBuCIwBrgQ2NgBuCGgGrgQIjAEQjAEIjAEAbjY2AG5AcAIgQA==','bm8asMsAABAIFGd1ZXNzSW5wdXQIEl8weDNhYmY2NAgIbmFtZQgKdmFsdWUIFnN1Z2dlc3Rpb25zCApzdHlsZQgIbm9uZQgOZGlzcGxheRiqAwQApAMEAK4EBgYABwCuBAYAAAIAjAEEAo4BBAMGAK4EBg0ABwCMAQQFAAQGjgEEBwYA','bm4akMsCAgIoCBJfMHgzYWJmNjQIEGRvY3VtZW50CBpjcmVhdGVFbGVtZW50CAZkaXYEAQgec3VnZ2VzdGlvbi1pdGVtCBJjbGFzc05hbWUIFDxpbWcgc3JjPSIICGljb24IDiIgYWx0PSIICG5hbWUIECI+PHNwYW4+CA48L3NwYW4+CBJpbm5lckhUTUwIIGFkZEV2ZW50TGlzdGVuZXIICmNsaWNrBAoEAggWc3VnZ2VzdGlvbnMIFmFwcGVuZENoaWxkfKoDBACkAwQBEAQAsgQEAAYAlgEEAQgAjAEEAgAEAzYANgAABARuBAEOBAEMBAEABAWOAQQGBgAMBAEABAeuBAQAjAEECDoAFAAABAkUAK4EBACMAQQKOgAUAAAECxQArgQEAIwBBAo6ABQAAAQMFACOAQQNBgAMBAEIAIwBBA4ABA82ADYAAAQQyAEANgA2AAAEEW4EAgYArgQGDQAFAAgAjAEEEwwEATYANgAABARuBAEGAA==','bm8SkMsAAgQwCBJfMHg0YjY3MDUIEl8weDJlMGRjNggQZ2FtZU92ZXIIFGd1ZXNzSW5wdXQICnZhbHVlCBZ0b0xvd2VyQ2FzZQQACBZzdWdnZXN0aW9ucwgACBJpbm5lckhUTUwICnN0eWxlCAhub25lCA5kaXNwbGF5CCBndWVzc2VkQ2hhbXBpb25zCAZtYXAECAQBCBJjaGFtcGlvbnMIDGZpbHRlcgQJCAxsZW5ndGgICmJsb2NrCA5mb3JFYWNoBAukAQQABAIGAAABAAYBAAIABgUAAwAAAAAGBgADAAQEAAQFBAYEAAQABg0AAwAAAAAABg0AAwAECAQJAAQABAgAAAYNAAMABAoECwQMAAAABgcAAwAABA4EDwAAAAQQBAEEAQYCAAMAAAQSBBMAAAAEEAQBBAAEAAQUBAYAAAYNAAMABAoECwQMAAAABg0AAwAECgQVBAwABAAABBYEFwAAAAQQBAEAqgOkA7YEtgSuBGgCcK4EjAEIjAEAbrQErgRAaAJwrgQAjgEGrgQAVGiuBIwBAI4BBgJwrgQIjAEAyAE2NgButASuBAiMAQDIATY2AG4ODIwBAFRorgSMAQCOAQYCcK4EjAEAjgEGDAiMAQDIATY2AG4GCAoQIig2RnaGAQ=='],V={'0':0xd2,'1':0xa2,'2':0x17b,'3':0xe6,'4':0x194,'5':0x173,'6':0x1f3,'7':0x137,'8':0x150,'9':0x183,'10':0x117,'11':0x1,'12':0x1ef,'13':0x1e6,'14':0x16c,'15':0x14b,'16':0x1c9,'17':0xa9,'18':0x155,'19':0x1ac,'20':0xbc,'21':0x1e0,'22':0x7d,'23':0x1a2,'24':0x118,'25':0x1b,'26':0x1da,'27':0x190,'28':0x135,'29':0x1e3,'32':0x17e,'40':0x1cc,'41':0x8a,'42':0x191,'43':0x11f,'44':0x136,'45':0x13d,'46':0x125,'47':0x141,'50':0x1c0,'51':0x13e,'52':0x1c6,'53':0xa8,'54':0x57,'55':0x29,'56':0x142,'57':0x16e,'58':0x67,'59':0x1b7,'60':0xc2,'61':0x6b,'62':0xb1,'63':0x73,'64':0x10f,'65':0xed,'70':0x193,'71':0x1d2,'72':0xb2,'73':0x160,'74':0x8c,'75':0x88,'76':0x3e,'77':0x170,'78':0x162,'79':0x151,'80':0x0,'81':0x15f,'82':0x54,'83':0xd5,'84':0x15,'90':0x18,'91':0x12,'92':0xf2,'93':0x115,'94':0x5,'95':0x1dc,'100':0xff,'101':0x175,'102':0xe7,'103':0x3a,'104':0xa,'105':0xae,'106':0x9,'107':0x95,'110':0x132,'111':0xbf,'112':0xd9,'120':0x1b1,'121':0x19b,'122':0x5e,'123':0x19e,'124':0x177,'125':0x114,'126':0xf8,'127':0x1c2,'128':0x70,'129':0x2a,'130':0x1d1,'131':0xf4,'132':0x109,'140':0xc0,'141':0x14e,'142':0x123,'143':0xe9,'144':0x1de,'145':0x167,'146':0x15e,'147':0x4e,'148':0x19f,'149':0x1d0,'160':0x9d,'161':0x7c,'162':0x6c,'163':0x15d,'164':0x11e,'165':0x1cd,'166':0x139,'167':0xf,'168':0xcb,'169':0xfb,'180':0xda,'181':0xec,'182':0x133,'183':0xb4,'184':0x19a,'185':0xf1,'200':0xa6,'201':0x144,'202':0x129,'210':0xb8,'213':0xe8,'214':0x3,'220':0x51,'250':0xbb,'251':0x61,'252':0x164,'253':0x196,'254':0x1b5,'255':0x1b9,'256':0x41,'257':0x3d,'258':0x138,'259':0xb9,'260':0x5b,'261':0x1b4,'262':0xc9,'263':0xc,'264':0x5c,'265':0xcf,'266':0x1a3,'267':0x1c5,'268':0x1f,'270':0x1f5,'271':0x6d,'272':0x4c,'273':0x1cb,'274':0x143,'275':0x1a8,'276':0x52,'277':0x187,'278':0xc1,'279':0x1dd,'280':0x1f1,'281':0x5d,'282':0x47,'283':0x8b,'284':0xf7,'285':0x1ed,'286':0x1bf};const Q=0x1,h=0x2,L=0x3,z=0x4,r=0x78,m=0x79,T=0x7a,U=typeof 0x0n,G=[],O=function(){throw new TypeError('\x27caller\x27,\x20\x27callee\x27,\x20and\x20\x27arguments\x27\x20properties\x20may\x20not\x20be\x20accessed\x20on\x20strict\x20mode\x20functions\x20or\x20the\x20arguments\x20objects\x20for\x20calls\x20to\x20them');};Object['preventExtensions'](O);let w=new WeakSet(),N=new WeakSet();const J=Symbol();let t={'__proto__':null},X={'__proto__':null},i=0x1;function E(c8,c9){let cW=c8[J];cW===undefined&&(cW=i++,c8[J]=cW),t[cW]=c9,X[cW]=c8;}function g(c8){let c9=c8[J];if(c9===undefined)return undefined;return X[c9]===c8?t[c9]:undefined;}function I(c8){let c9=c8[J];return c9!==undefined&&X[c9]===c8;}let Z=new WeakMap(),S=[],n=Array['prototype'][Symbol['iterator']],k=Symbol['iterator'],P=null,A=null,p=null,M=null,x=null;try{let c8=function*(){};P=C(c8),A=P&&P['prototype'];}catch(c9){}try{let cW=async function*(){};p=C(cW),M=p&&p['prototype'];}catch(cc){}try{let cR=async function(){};x=C(cR);}catch(cv){}function u(cF,cd,cC){try{W(cF,cd,cC);}catch(cq){}}function f(cF,cd){let cC=new Array(cd),cq=![];for(let cK=cd-0x1;cK>=0x0;cK--){let cy=cF();cy&&typeof cy==='object'&&j['call'](w,cy)?(cq=!![],cC[cK]=cy):cC[cK]=cy;}if(!cq)return cC;let ca=[];for(let co=0x0;co<cd;co++){let cb=cC[co];if(cb&&typeof cb==='object'&&j['call'](w,cb)){let cH=cb['value'];if(Array['isArray'](cH)){for(let cj=0x0;cj<cH['length'];cj++)ca['push'](cH[cj]);}}else ca['push'](cb);}return ca;}function s(cF){return typeof cF==='object'||typeof cF==='function';}function D(cF){return{'value':cF,'writable':!![],'configurable':!![]};}function B(cF,cd){return cF&&s(cF)?cF:cd;}function W0(cF,cd){try{d(cF,cd);}catch(cC){}}function W1(cF,cd){let cC=cF===null||cF===undefined?undefined:cF[cd];if(cC===null||cC===undefined)return undefined;if(typeof cC!=='function')throw new TypeError('Method\x20is\x20not\x20callable');return cC;}function W2(cF){if(cF===null||typeof cF!=='object'&&typeof cF!=='function')throw new TypeError('Iterator\x20result\x20'+cF+'\x20is\x20not\x20an\x20object');}function W3(cF){let cd=cF['done'];return{'done':cd,'value':cd?cF['value']:undefined};}function W4(cF){let cd=W1(cF,Symbol['asyncIterator']),cC,cq;if(cd!==undefined)cC=K(cd,cF,[]),cq=![];else{let cK=W1(cF,Symbol['iterator']);if(cK===undefined)throw new TypeError(typeof cF+'\x20is\x20not\x20iterable');cC=K(cK,cF,[]),cq=!![];}if(cC===null||typeof cC!=='object')throw new TypeError('Iterator\x20method\x20returned\x20a\x20non-object\x20value');let ca=cC['next'];if(typeof ca!=='function')throw new TypeError('Iterator\x20next\x20is\x20not\x20a\x20function');return{'iter':cC,'nextMethod':ca,'isSync':cq};}function W5(cF){let cd=[];for(let cC in cF){cd['push'](cC);}return cd;}function W6(cF){return Array['prototype']['slice']['call'](cF);}function W7(cF){return typeof cF==='function'&&cF['prototype']?cF['prototype']:cF;}function W8(cF){if(typeof cF==='function')return C(cF);let cd=C(cF),cC=cd&&R(cd,'constructor'),cq=cC&&cC['value'],ca=cq&&typeof cq==='function'&&(cq['prototype']===cd||C(cq['prototype'])===C(cd));if(ca)return C(cd);return cd;}function W9(cF,cd){let cC=cF;while(cC!==null){let cq=R(cC,cd);if(cq)return{'desc':cq,'proto':cC};cC=C(cC);}return{'desc':null,'proto':cF};}function WW(cF,cd){let cC=cF;while(cC){let cq=cC['_$ekoAWr'];if(cq>=0x0){let ca=cC['_$1SLmMc'];if(ca){let cK=cd(ca,cq);if(cK!==undefined)return cK;}}cC=cC['_$H14eBN'];}}function Wc(cF,cd){WW(cF,function(cC,cq){cC[cq]===cC&&(cC[cq]=cd);});}function WR(cF){return WW(cF,function(cd,cC){let cq=cd[cC];if(cq!==cd&&cq!==undefined)return cq;});}function Wv(cF,cd){var cC=cF[cd],cq=function(){vmd_85b0dc['_$2TsDAM']=!![];var ca=vmd_85b0dc['_$CQ1XLk'];vmd_85b0dc['_$CQ1XLk']=cF;try{return Reflect['apply'](cC,this,arguments);}finally{vmd_85b0dc['_$CQ1XLk']=ca;}};Object['defineProperties'](cq,{'length':{'value':cC['length'],'configurable':!![]},'name':{'value':cC['name'],'configurable':!![]}}),cF[cd]=cq,(vmd_85b0dc['_$9U8rIO']||(vmd_85b0dc['_$9U8rIO']=new WeakMap()))['set'](cq,cF);}vmd_85b0dc['_$EuYBlh']=Wv;function WF(cF,cd){if(cF[0x9]===undefined||!cd)return;let cC=cF[0x13][cF[0x9]];u(cd,'name',{'value':cC,'writable':![],'enumerable':![],'configurable':!![]});}function Wd(cF,cd,cC){if(!cF||cd[0x16]||cd[0xb]||cd[0xc])return;!I(cF)&&E(cF,{'b':cd,'e':cC,'c':cd});}function WC(cF,cd,cC,cq,ca,cK){let cy;if(cK){cq?cy={'kNeiZC'(){'use strict';let co=new.target!==undefined?new.target:vmd_85b0dc['_$XcVYuf'];return cF(cd,arguments,cC,cy,co,this);}}['kNeiZC']:cy={'kNeiZC'(){let co=new.target!==undefined?new.target:vmd_85b0dc['_$XcVYuf'];return cF(cd,arguments,cC,cy,co,this);}}['kNeiZC'];try{delete cy['prototype'];}catch(co){}}else cq?cy=function cb(){'use strict';let cH=new.target!==undefined?new.target:vmd_85b0dc['_$XcVYuf'];return cF(cd,arguments,cC,cy,cH,this);}:cy=function cH(){let cj=new.target!==undefined?new.target:vmd_85b0dc['_$XcVYuf'];return cF(cd,arguments,cC,cy,cj,this);};return E(cy,{'b':cd,'e':cC}),cy;}function Wq(cF,cd,cC,cq,ca){let cK;cq?cK={'kNeiZC'(){'use strict';let cy=new.target!==undefined?new.target:vmd_85b0dc['_$XcVYuf'];return cF(cd,arguments,cC,cK,cy,undefined,this);}}['kNeiZC']:cK={'kNeiZC'(){let cy=new.target!==undefined?new.target:vmd_85b0dc['_$XcVYuf'];return cF(cd,arguments,cC,cK,cy,undefined,this);}}['kNeiZC'];if(x)W0(cK,x);return cK;}function Wa(cF,cd,cC,cq,ca,cK,cy){let co;ca?co={'kNeiZC'(){'use strict';return cF(cd,arguments,cC,co,vmd_85b0dc['_$CQ1XLk'],this);}}['kNeiZC']:co={'kNeiZC'(){return cF(cd,arguments,cC,co,vmd_85b0dc['_$CQ1XLk'],this);}}['kNeiZC'];H['call'](cq,co);let cb=cy?p:P,cH=cy?M:A;if(cb)W0(co,cb);try{W(co,'prototype',{'value':cH?c(cH):c({}),'writable':!![],'enumerable':![],'configurable':![]});}catch(cj){}return co;}function WK(cF,cd,cC,cq){let ca=vmd_85b0dc['_$CQ1XLk'],cK;return cK={'kNeiZC':(...cy)=>{return ca!==undefined&&(vmd_85b0dc['_$2TsDAM']=!![],vmd_85b0dc['_$CQ1XLk']=ca),cF(cd,cy,cC,cK,undefined,cq);}}['kNeiZC'],cK;}function Wy(cF,cd,cC,cq){let ca;ca={'kNeiZC':(...cK)=>{return cF(cd,cK,cC,ca,undefined,undefined,cq);}}['kNeiZC'];if(x)W0(ca,x);return ca;}function Wo(cF,cd,cC,cq,ca,cK){let cy=[void 0x0,void 0x0,void 0x0,void 0x0,void 0x0,void 0x0,void 0x0,void 0x0],co=0x0,cb=new Array((cF[0x10]||0x0)+(cF[0x8]||0x0)),cH=0x0,cj=cF[0x13],ce=cF[0x17],cl=cF[0xa]||G,cY=cF[0x5]||G,cV=ce['length']>>0x1,cQ=(cF[0x10]*0x1f^cF[0x8]*0x11^cV*0xd^cj['length']*0x7)>>>0x0&0x3,ch,cL,cz;switch(cQ){case 0x1:ch=0x1,cL=0x0,cz=0x1;break;case 0x2:ch=0x0,cL=cV,cz=0x0;break;case 0x3:ch=cV,cL=0x0,cz=0x0;break;default:ch=0x0,cL=0x1,cz=0x1;break;}let cr=null,cm=null,cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined,cX=-0x1,ci=-0x1,cE=!!cF[0x7],cg=!!cF[0xd],cI=!!cF[0xf],cZ=!!cF[0x14],cS=cK,cn=!!cF[0xc];!cE&&!cn&&(cK===undefined||cK===null)&&(cK=vma);let ck=R3=>{cy[co++]=R3;},cP=()=>cy[--co],cA={['_$1SLmMc']:new Array(cF[0x0]||0x0),['_$b6EHlo']:null,['_$ekoAWr']:-0x1,['_$H14eBN']:cC};if(cd){let R3=cF[0x10]||0x0;for(let R4=0x0,R5=cd['length']<R3?cd['length']:R3;R4<R5;R4++){cb[R4]=cd[R4];}}let cp=(cE||!cg)&&cd?W6(cd):null,cM=null,cx=![],cu=cb['length'],cf=null,cs=0x0;WF(cF,cq),Wd(cq,cF,cC);while(cH<cV){try{while(cH<cV){let R6=cH<<cz,R7=ce[ch+R6],R8=ce[cL+R6];var cD,cB,R0,R1;!cB&&(cB=function(R9,RW){switch(R9){case 0x49:{let Rc=cy[--co],RR=cy[--co],Rv=cy[--co];if(Rv===null||Rv===undefined)throw new TypeError('Cannot\x20set\x20properties\x20of\x20'+Rv+'\x20(setting\x20'+(typeof RR==='symbol'?'\x27'+RR['toString']()+'\x27':typeof RR==='string'?'\x27'+RR+'\x27':typeof RR==='object'||typeof RR==='function'?'\x27<computed\x20key>\x27':'\x27'+String(RR)+'\x27')+')');if(cE){let RF=typeof Rv==='object'||typeof Rv==='function'?Rv:Object(Rv);if(!Reflect['set'](RF,RR,Rc,Rv))throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(RR)+'\x27\x20of\x20object');}else Rv[RR]=Rc;cy[co++]=Rc,cH++;break;}case 0x34:{!cy[--co]?cH=cl[cH]:cH++;break;}case 0x3a:{let Rd=cY[cH];if(!cr)cr=[];cr['push']({['_$ZrKuGu']:Rd[0x0]>=0x0?Rd[0x0]:undefined,['_$LX7nZk']:Rd[0x1]>=0x0?Rd[0x1]:undefined,['_$l8GTmO']:Rd[0x2]>=0x0?Rd[0x2]:undefined,['_$E71ybc']:co,'_ts':cH,'_es':cA}),cH++;break;}case 0x2d:{let RC=cy[--co],Rq=cy[--co];cy[co++]=Rq<=RC,cH++;break;}case 0x35:{let Ra=cy[--co];Ra!==null&&Ra!==undefined?cH=cl[cH]:cH++;break;}case 0x1:{cy[co++]=undefined,cH++;break;}case 0x4c:{let RK=cy[--co],Ry=cj[RW];if(vmd_85b0dc['_$LtKzq1']&&Ry in vmd_85b0dc['_$LtKzq1'])throw new ReferenceError('Cannot\x20access\x20\x27'+Ry+'\x27\x20before\x20initialization');let Ro=!(Ry in vmd_85b0dc)&&!(Ry in vma);vmd_85b0dc[Ry]=RK;Ry in vma&&(vma[Ry]=RK);Ro&&(vma[Ry]=RK);cy[co++]=RK,cH++;break;}case 0x32:{cH=cl[cH];break;}case 0x4a:{let Rb,RH;RW>=0x0?(RH=cy[--co],Rb=cj[RW]):(Rb=cy[--co],RH=cy[--co]);let Rj=delete RH[Rb];if(cE&&!Rj)throw new TypeError('Cannot\x20delete\x20property\x20\x27'+String(Rb)+'\x27\x20of\x20object');cy[co++]=Rj,cH++;break;}case 0x4d:{cy[co++]={},cH++;break;}case 0xc:{let Re=cy[--co],Rl=cy[--co];cy[co++]=Rl*Re,cH++;break;}case 0x3c:{if(RW===-0x2){}else RW===-0x1?cy[--co]:cA['_$1SLmMc'][RW]=cy[--co];cH++;break;}case 0x33:{cy[--co]?cH=cl[cH]:cH++;break;}case 0x5:{let RY=cy[co-0x1];cy[co-0x1]=cy[co-0x2],cy[co-0x2]=RY,cH++;break;}case 0xa:{let RV=cy[--co],RQ=cy[--co];cy[co++]=RQ+RV,cH++;break;}case 0x48:{let Rh=cy[--co],RL=cy[--co];if(RL===null||RL===undefined){if(Rh===Symbol['iterator'])throw new TypeError((RL===null?'object\x20null':'undefined')+'\x20is\x20not\x20iterable\x20(cannot\x20read\x20property\x20Symbol(Symbol.iterator))');throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+RL+'\x20(reading\x20'+(typeof Rh==='symbol'?'\x27'+Rh['toString']()+'\x27':typeof Rh==='string'?'\x27'+Rh+'\x27':typeof Rh==='object'||typeof Rh==='function'?'\x27<computed\x20key>\x27':'\x27'+String(Rh)+'\x27')+')');}cy[co++]=RL[Rh],cH++;break;}case 0x2c:{let Rz=cy[--co],Rr=cy[--co];cy[co++]=Rr<Rz,cH++;break;}case 0x4f:{let Rm=cy[--co],RT=cy[--co];cy[co++]=RT in Rm,cH++;break;}case 0xb:{let RU=cy[--co],RG=cy[--co];cy[co++]=RG-RU,cH++;break;}case 0x53:{let RO=cy[--co],Rw=cy[--co],RN=cj[RW];W(Rw,RN,{'value':RO,'writable':!![],'enumerable':!![],'configurable':!![]});typeof RO==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],RO,Rw));cH++;break;}case 0x7:{cb[RW]=cy[--co],cH++;break;}case 0xd:{let RJ=cy[--co],Rt=cy[--co];cy[co++]=Rt/RJ,cH++;break;}case 0x1d:{if(typeof cy[co-0x1]==='symbol')throw new TypeError('Cannot\x20convert\x20a\x20Symbol\x20value\x20to\x20a\x20string');cy[co-0x1]=String(cy[co-0x1]),cH++;break;}case 0x16:{let RX=cy[--co],Ri=cy[--co];cy[co++]=Ri^RX,cH++;break;}case 0x17:{cy[co-0x1]=~cy[co-0x1],cH++;break;}case 0x3:{cy[--co],cH++;break;}case 0x4:{let RE=cy[co-0x1];cy[co++]=RE,cH++;break;}case 0x18:{let Rg=cy[--co],RI=cy[--co];cy[co++]=RI<<Rg,cH++;break;}case 0x1a:{let RZ=cy[--co],RS=cy[--co];cy[co++]=RS>>>RZ,cH++;break;}case 0x8:{cy[co++]=cd[RW],cH++;break;}case 0x46:{let Rn=cy[--co],Rk=cj[RW];if(Rn===null||Rn===undefined)throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+Rn+'\x20(reading\x20'+'\x27'+String(Rk)+'\x27'+')');cy[co++]=Rn[Rk],cH++;break;}case 0x10:{let RP=cy[--co];cy[co++]=typeof RP===U?RP+0x1n:+RP+0x1,cH++;break;}case 0xe:{let RA=cy[--co],Rp=cy[--co];cy[co++]=Rp%RA,cH++;break;}case 0x19:{let RM=cy[--co],Rx=cy[--co];cy[co++]=Rx>>RM,cH++;break;}case 0x6:{cy[co++]=cb[RW],cH++;break;}case 0x4b:{let Ru=cj[RW],Rf;if(vmd_85b0dc['_$LtKzq1']&&Ru in vmd_85b0dc['_$LtKzq1'])throw new ReferenceError('Cannot\x20access\x20\x27'+Ru+'\x27\x20before\x20initialization');if(Ru in vmd_85b0dc)Rf=vmd_85b0dc[Ru];else{if(Ru in vma)Rf=vma[Ru];else throw new ReferenceError(Ru+'\x20is\x20not\x20defined');}cy[co++]=Rf,cH++;break;}case 0x2b:{let Rs=cy[--co],RD=cy[--co];cy[co++]=RD!==Rs,cH++;break;}case 0x51:{let RB=cy[--co],v0=cy[co-0x1];RB!==null&&RB!==undefined&&Object['assign'](v0,RB);cH++;break;}case 0x54:{let v1=cy[--co],v2=cy[--co],v3=cy[--co];W(v3,v2,{'value':v1,'writable':!![],'enumerable':!![],'configurable':!![]});typeof v1==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],v1,v3));cH++;break;}case 0xf:{cy[co-0x1]=-cy[co-0x1],cH++;break;}case 0x2e:{let v4=cy[--co],v5=cy[--co];cy[co++]=v5>v4,cH++;break;}case 0x40:{Fc:{let v6=cl[cH];if(cr&&cr['length']>0x0){let v7=cr[cr['length']-0x1];if(v7['_$LX7nZk']!==undefined&&(v6>=v7['_$l8GTmO']||v6<=v7['_ts'])){cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=!![],cJ=v6,ct=cA,cX=v7['_ts'],ci=v7['_$l8GTmO'],cH=v7['_$LX7nZk'];break Fc;}}(cT||cG||cN)&&(v6>=ci||v6<=cX)&&(cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined),cH=v6;}break;}case 0x4e:{let v8=cy[--co],v9=cj[RW];v8===null||v8===undefined?cy[co++]=undefined:cy[co++]=v8[v9];cH++;break;}case 0x2a:{let vW=cy[--co],vc=cy[--co];cy[co++]=vc===vW,cH++;break;}case 0x1b:{let vR=cy[co-0x3],vv=cy[co-0x2],vF=cy[co-0x1];cy[co-0x3]=vv,cy[co-0x2]=vF,cy[co-0x1]=vR,cH++;break;}case 0x2:{cy[co++]=null,cH++;break;}case 0x3b:{cr['pop'](),cH++;break;}case 0x11:{let vd=cy[--co];cy[co++]=typeof vd===U?vd-0x1n:+vd-0x1,cH++;break;}case 0x37:{let vC=cy[--co],vq=cy[--co],va=cy[--co];if(typeof vq!=='function')throw new TypeError(vq+'\x20is\x20not\x20a\x20function');let vK=vmd_85b0dc['_$9U8rIO'],vy=vK&&o['call'](vK,vq);!vy&&vK&&(vq===q||vq===a)&&(vy=o['call'](vK,va));let vo=vmd_85b0dc['_$CQ1XLk'];vy&&(vmd_85b0dc['_$2TsDAM']=!![],vmd_85b0dc['_$CQ1XLk']=vy);let vb;try{if(vC===0x0)vb=K(vq,va,G);else{if(vC===0x1){let vH=cy[--co];vb=vH&&typeof vH==='object'&&j['call'](w,vH)?K(vq,va,vH['value']):K(vq,va,[vH]);}else vb=K(vq,va,f(cP,vC));}cy[co++]=vb;}finally{vy&&(vmd_85b0dc['_$2TsDAM']=![],vmd_85b0dc['_$CQ1XLk']=vo);}cH++;break;}case 0x47:{let vj=cy[--co],ve=cy[--co],vl=cj[RW];if(ve===null||ve===undefined)throw new TypeError('Cannot\x20set\x20properties\x20of\x20'+ve+'\x20(setting\x20'+'\x27'+String(vl)+'\x27'+')');if(cE){let vY=typeof ve==='object'||typeof ve==='function'?ve:Object(ve);if(!Reflect['set'](vY,vl,vj,ve))throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(vl)+'\x27\x20of\x20object');}else ve[vl]=vj;cy[co++]=vj,cH++;break;}case 0x3d:{if(cr&&cr['length']>0x0){let vV=cr[cr['length']-0x1];vV['_$LX7nZk']===cH&&(vV['_$EEipSc']!==undefined&&(cm=vV['_$EEipSc']),vV['_es']!==undefined&&(cA=vV['_es']),cr['pop']());}cH++;break;}case 0x52:{let vQ=cy[--co],vh=cy[--co];vh===null||vh===undefined?cy[co++]=undefined:cy[co++]=vh[vQ];cH++;break;}case 0x0:{cy[co++]=cj[RW],cH++;break;}case 0x3e:{FR:{if(cm!==null){cT=![],cG=![],cN=![];let vL=cm;cm=null;throw vL;}if(cT){if(cr&&cr['length']>0x0){let vr=cr[cr['length']-0x1];if(vr['_$LX7nZk']!==undefined){cX=vr['_ts'],ci=vr['_$l8GTmO'],cH=vr['_$LX7nZk'];break FR;}}let vz=cU;return cT=![],cU=undefined,cD=vz,0x1;}if(cG){if(cr&&cr['length']>0x0){let vT=cr[cr['length']-0x1];if(vT['_$LX7nZk']!==undefined&&(cO>=vT['_$l8GTmO']||cO<=vT['_ts'])){cX=vT['_ts'],ci=vT['_$l8GTmO'],cH=vT['_$LX7nZk'];break FR;}}let vm=cO;cG=![],cO=0x0;cw!==undefined&&(cA=cw,cw=undefined);cH=vm;break FR;}if(cN){if(cr&&cr['length']>0x0){let vG=cr[cr['length']-0x1];if(vG['_$LX7nZk']!==undefined&&(cJ>=vG['_$l8GTmO']||cJ<=vG['_ts'])){cX=vG['_ts'],ci=vG['_$l8GTmO'],cH=vG['_$LX7nZk'];break FR;}}let vU=cJ;cN=![],cJ=0x0;ct!==undefined&&(cA=ct,ct=undefined);cH=vU;break FR;}cH++;}break;}case 0x12:{let vO=cy[--co],vw=cy[--co];cy[co++]=vw**vO,cH++;break;}case 0x14:{let vN=cy[--co],vJ=cy[--co];cy[co++]=vJ&vN,cH++;break;}case 0x36:{Fv:{let vt=cy[--co],vX=cy[--co];if(typeof vX!=='function')throw new TypeError(vX+'\x20is\x20not\x20a\x20function');let vi=vmd_85b0dc['_$9U8rIO'],vE=!vmd_85b0dc['_$CQ1XLk']&&!vmd_85b0dc['_$XcVYuf']&&!(vi&&o['call'](vi,vX))&&g(vX);if(vE){let vn=vE['c']||(vE['c']=typeof vE['b']==='object'?vE['b']:c3(vE['b']));if(vn){let vk;if(vt===0x0)vk=[];else{if(vt===0x1){let vA=cy[--co];vk=vA&&typeof vA==='object'&&j['call'](w,vA)?vA['value']:[vA];}else vk=f(cP,vt);}let vP=vn[0xe];if(vP&&vn===cF&&!vn[0x5]&&vE['e']===cC){!cf&&(cf=[]);cf[cs++]=cH,cf[cs++]=co,cf[cs++]=cd,cf[cs++]=cM,cf[cs++]=cp,cf[cs++]=cA;for(let vp=0x0;vp<cu;vp++){cf[cs++]=cb[vp];}cd=vk,cM=null;if(vn[0xd]){cp=null;let vM=vn[0x10]||0x0;for(let vx=0x0;vx<vM&&vx<vk['length'];vx++){cb[vx]=vk[vx];}for(let vu=vk['length']<vM?vk['length']:vM;vu<cu;vu++){cb[vu]=undefined;}cH=vP;}else{cp=W6(vk);for(let vf=0x0;vf<cu;vf++){cb[vf]=undefined;}cH=0x0;}break Fv;}vmd_85b0dc['_$2TsDAM']?vmd_85b0dc['_$2TsDAM']=![]:vmd_85b0dc['_$CQ1XLk']=undefined;cy[co++]=Wo(vn,vk,vE['e'],vX,undefined,undefined),cH++;break Fv;}}let vg=vmd_85b0dc['_$CQ1XLk'],vI=vmd_85b0dc['_$9U8rIO'],vZ=vI&&o['call'](vI,vX);vZ?(vmd_85b0dc['_$2TsDAM']=!![],vmd_85b0dc['_$CQ1XLk']=vZ):vmd_85b0dc['_$CQ1XLk']=undefined;let vS;try{if(vt===0x0)vS=vX();else{if(vt===0x1){let vs=cy[--co];vS=vs&&typeof vs==='object'&&j['call'](w,vs)?K(vX,undefined,vs['value']):vX(vs);}else vS=K(vX,undefined,f(cP,vt));}cy[co++]=vS;}finally{vZ&&(vmd_85b0dc['_$2TsDAM']=![]),vmd_85b0dc['_$CQ1XLk']=vg;}cH++;}break;}case 0x13:{cy[co-0x1]=+cy[co-0x1],cH++;break;}case 0x3f:{FF:{let vD=cl[cH];if(cr&&cr['length']>0x0){let vB=cr[cr['length']-0x1];if(vB['_$LX7nZk']!==undefined&&(vD>=vB['_$l8GTmO']||vD<=vB['_ts'])){cT=![],cU=undefined,cN=![],cJ=0x0,ct=undefined,cG=!![],cO=vD,cw=cA,cX=vB['_ts'],ci=vB['_$l8GTmO'],cH=vB['_$LX7nZk'];break FF;}}(cT||cG||cN)&&(vD>=ci||vD<=cX)&&(cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined),cH=vD;}break;}case 0x9:{cd[RW]=cy[--co],cH++;break;}case 0x20:{cy[co-0x1]=!cy[co-0x1],cH++;break;}case 0x39:{throw cy[--co];break;}case 0x2f:{let F0=cy[--co],F1=cy[--co];cy[co++]=F1>=F0,cH++;break;}case 0x28:{let F2=cy[--co],F3=cy[--co];cy[co++]=F3==F2,cH++;break;}case 0x1c:{let F4=cy[--co];cy[co++]=typeof F4===U?F4:+F4,cH++;break;}case 0x29:{let F5=cy[--co],F6=cy[--co];cy[co++]=F6!=F5,cH++;break;}case 0x15:{let F7=cy[--co],F8=cy[--co];cy[co++]=F8|F7,cH++;break;}case 0x38:{Fd:{if(cr&&cr['length']>0x0){let FW=cr[cr['length']-0x1];if(FW['_$LX7nZk']!==undefined){cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined,cT=!![],cU=cy[--co],cX=FW['_ts'],ci=FW['_$l8GTmO'],cH=FW['_$LX7nZk'];break Fd;}}(cT||cG||cN)&&(cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined);let F9=cy[--co];if(cI&&F9===undefined&&!cx)throw new ReferenceError('Must\x20call\x20super\x20constructor\x20in\x20derived\x20class\x20before\x20accessing\x20\x27this\x27\x20or\x20returning\x20from\x20derived\x20constructor');return cD=F9,0x1;}break;}}},R0=function(R9,RW){switch(R9){case 0x6e:{cy[co-0x1]=typeof cy[co-0x1],cH++;break;}case 0x7b:{let RR=cy[--co],Rv=RR&&RR['_$4EA7Hd'];if(Rv!==undefined){let RF=RR['_$y8hLUq'],Rd;RF>=Rv['length']?Rd={'value':undefined,'done':!![]}:(RR['_$y8hLUq']=RF+0x1,Rd={'value':Rv[RF],'done':![]}),cy[co++]=Rd,cH++;}else{let RC=RR&&RR['i']?RR['i']:RR,Rq=RR&&RR['n']?RR['n']:RC&&RC['next'];if(typeof Rq!=='function')throw new TypeError('iterator.next\x20is\x20not\x20a\x20function');let Ra=K(Rq,RC,[]);W2(Ra),cy[co++]=Ra,cH++;}break;}case 0x5f:{let RK=cy[co-0x1];RK['length']++,cH++;break;}case 0x91:{let Ry=cy[--co],Ro=cy[co-0x1],Rb=cj[RW],RH=W7(Ro);W(RH,Rb,{'get':Ry,'enumerable':RH===Ro,'configurable':!![]}),cH++;break;}case 0x81:{let Rj=cy[--co];if(Rj==null)throw new TypeError(Rj+'\x20is\x20not\x20iterable');let Re=Rj[Symbol['asyncIterator']];if(typeof Re==='function')cy[co++]=Re['call'](Rj);else{let Rl=Rj[Symbol['iterator']];if(typeof Rl!=='function')throw new TypeError(Rj+'\x20is\x20not\x20iterable');let RY=Rl['call'](Rj);if(RY===null||typeof RY!=='object')throw new TypeError('Iterator\x20method\x20returned\x20a\x20non-object\x20value');let RV=async function(Rh){if(Rh===null||typeof Rh!=='object')throw new TypeError('Iterator\x20result\x20is\x20not\x20an\x20object');let RL=await Rh['value'];return{'value':RL,'done':!!Rh['done']};},RQ={'next':function(Rh){let RL;try{RL=RY['next'](Rh);}catch(Rz){return Promise['reject'](Rz);}return RV(RL);},'return':function(Rh){if(typeof RY['return']!=='function')return Promise['resolve']({'value':Rh,'done':!![]});let RL;try{RL=RY['return'](Rh);}catch(Rz){return Promise['reject'](Rz);}return RV(RL);},'throw':function(Rh){if(typeof RY['throw']!=='function')return Promise['reject'](Rh);let RL;try{RL=RY['throw'](Rh);}catch(Rz){return Promise['reject'](Rz);}return RV(RL);},[Symbol['asyncIterator']]:function(){return this;}};cy[co++]=RQ;}cH++;break;}case 0x8d:{d6:{let Rh=cy[--co],RL=cy[co-0x1];if(Rh===null){d(RL['prototype'],null),d(RL,Function['prototype']),RL['_$zAtnC1']=null,cH++;break d6;}if(typeof Rh!=='function')throw new TypeError('Class\x20extends\x20value\x20'+String(Rh)+'\x20is\x20not\x20a\x20constructor\x20or\x20null');let Rz=![],Rr=I(Rh);if(!Rr)try{let Rm=c(Rh['prototype']),RT=Rh['apply'](Rm,[]);RT!==undefined&&RT!==Rm&&(Rz=!![]);}catch(RU){let RG=RU&&typeof RU['message']==='string'?RU['message']:'';(RG['includes']('\x27new\x27')||RG['includes']('constructor')||RG['includes']('Illegal\x20constructor'))&&(Rz=!![]);}if(Rz){let RO=RL,Rw=vmd_85b0dc,RN='_$XcVYuf',RJ='_$9Gd9Gy',Rt='_$orzYHG';function Rc(...RX){let Ri=c(Rh['prototype']);Rw[Rt]={'parent':Rh,'newTarget':new.target||Rc,'outer':Rc},Rw[RJ]=new.target||Rc;let RE=RN in Rw;!RE&&(Rw[RN]=new.target);try{let Rg=RO['apply'](Ri,RX);Rg!==undefined&&Rg!==null&&s(Rg)&&(Ri=Rg);}finally{delete Rw[Rt],delete Rw[RJ],!RE&&delete Rw[RN];}return Ri;}Rc['prototype']=c(Rh['prototype']),Rc['prototype']['constructor']=Rc,d(Rc,Rh),v(RO)['forEach'](function(RX){RX!=='prototype'&&RX!=='length'&&RX!=='name'&&u(Rc,RX,R(RO,RX));});RO['prototype']&&(v(RO['prototype'])['forEach'](function(RX){RX!=='constructor'&&u(Rc['prototype'],RX,R(RO['prototype'],RX));}),F(RO['prototype'])['forEach'](function(RX){u(Rc['prototype'],RX,R(RO['prototype'],RX));}));cy[--co],cy[co++]=Rc,Rc['_$zAtnC1']=Rh,cH++;break d6;}d(RL['prototype'],Rh['prototype']),d(RL,Rh),RL['_$zAtnC1']=Rh,cH++;}break;}case 0xa1:{if(cM===null){if(cE||!cg){let RX=cp||cd,Ri=RX?RX['length']:0x0;cM=c(Object['prototype']);for(let RE=0x0;RE<Ri;RE++){cM[RE]=RX[RE];}W(cM,'length',{'value':Ri,'writable':!![],'enumerable':![],'configurable':!![]}),W(cM,Symbol['iterator'],{'value':Array['prototype'][Symbol['iterator']],'writable':!![],'enumerable':![],'configurable':!![]}),cM=new Proxy(cM,{'has':function(Rg,RI){if(RI===Symbol['toStringTag'])return![];return RI in Rg;},'get':function(Rg,RI,RZ){if(RI===Symbol['toStringTag'])return'Arguments';return Reflect['get'](Rg,RI,RZ);}}),cE?W(cM,'callee',{'get':O,'set':O,'enumerable':![],'configurable':![]}):W(cM,'callee',{'value':cq,'writable':!![],'enumerable':![],'configurable':!![]});}else{let Rg=cd?cd['length']:0x0,RI={},RZ={},RS=cq,Rn=![],Rk=!![],RP={},RA=function(Rf){if(typeof Rf!=='string')return NaN;let Rs=+Rf;return Rs>=0x0&&Rs%0x1===0x0&&String(Rs)===Rf?Rs:NaN;},Rp=function(Rf){return!isNaN(Rf)&&Rf>=0x0;},RM=function(Rf){if(Rf in RZ)return undefined;if(Rf in RI)return RI[Rf];return Rf<cd['length']?cd[Rf]:undefined;},Rx=function(Rf){if(Rf in RZ)return![];if(Rf in RI)return!![];return Rf<cd['length']?Rf in cd:![];},Ru={};W(Ru,'length',{'value':Rg,'writable':!![],'enumerable':![],'configurable':!![]}),W(Ru,'callee',{'value':cq,'writable':!![],'enumerable':![],'configurable':!![]}),W(Ru,Symbol['iterator'],{'value':Array['prototype'][Symbol['iterator']],'writable':!![],'enumerable':![],'configurable':!![]}),cM=new Proxy(Ru,{'get':function(Rf,Rs,RD){if(Rs==='length')return Rg;if(Rs==='callee')return Rn?undefined:RS;if(Rs===Symbol['toStringTag'])return'Arguments';let RB=RA(Rs);if(Rp(RB)){if(RB in RP)return Reflect['get'](Rf,Rs,RD);return RM(RB);}return Reflect['get'](Rf,Rs,RD);},'set':function(Rf,Rs,RD){if(Rs==='length'){if(!Rk)return![];return Rg=RD,Rf['length']=RD,!![];}if(Rs==='callee')return RS=RD,Rn=![],Rf['callee']=RD,!![];let RB=RA(Rs);if(Rp(RB)){if(RB in RP)return Reflect['set'](Rf,Rs,RD);let v0=R(Rf,String(RB));if(v0&&!v0['writable'])return![];if(RB in RZ)delete RZ[RB],RI[RB]=RD;else RB<cd['length']?cd[RB]=RD:RI[RB]=RD;return!![];}return Rf[Rs]=RD,!![];},'has':function(Rf,Rs){if(Rs==='length')return!![];if(Rs==='callee')return!Rn;if(Rs===Symbol['toStringTag'])return![];let RD=RA(Rs);if(Rp(RD)){if(String(RD)in Rf)return!![];return Rx(RD);}return Rs in Rf;},'defineProperty':function(Rf,Rs,RD){if(Rs==='length')return'value'in RD&&(Rg=RD['value']),'writable'in RD&&(Rk=RD['writable']),W(Rf,Rs,RD),!![];if(Rs==='callee')return'value'in RD&&(RS=RD['value']),Rn=![],W(Rf,Rs,RD),!![];let RB=RA(Rs);if(Rp(RB)){let v0='get'in RD||'set'in RD,v1=R(Rf,String(RB)),v2=RB in RP?v1?v1['value']:undefined:RM(RB),v3=v1?v1['writable']!==![]:!![],v4=v1?v1['enumerable']!==![]:!![],v5=v1?v1['configurable']!==![]:!![],v6;if(v0)v6=RD,RP[RB]=0x1,RB in RI&&delete RI[RB],RB in RZ&&delete RZ[RB];else{let v7='value'in RD?RD['value']:v2,v8='writable'in RD?RD['writable']:v3,v9='enumerable'in RD?RD['enumerable']:v4,vW='configurable'in RD?RD['configurable']:v5;v6={'value':v7,'writable':v8,'enumerable':v9,'configurable':vW},'value'in RD&&(!(RB in RP)&&(RB<cd['length']&&!(RB in RZ)?cd[RB]=RD['value']:(RI[RB]=RD['value'],RB in RZ&&delete RZ[RB]))),'writable'in RD&&RD['writable']===![]&&(RP[RB]=0x1,RB in RI&&delete RI[RB],RB in RZ&&delete RZ[RB]);}return W(Rf,String(RB),v6),!![];}return W(Rf,Rs,RD),!![];},'deleteProperty':function(Rf,Rs){if(Rs==='callee')return Rn=!![],delete Rf['callee'],!![];let RD=RA(Rs);if(Rp(RD)){let v0=R(Rf,String(RD));if(v0&&v0['configurable']===![])return![];return RD in RP&&delete RP[RD],RD<cd['length']?RZ[RD]=0x1:delete RI[RD],delete Rf[Rs],!![];}let RB=R(Rf,Rs);if(RB&&RB['configurable']===![])return![];return delete Rf[Rs],!![];},'preventExtensions':function(Rf){let Rs=cd?cd['length']:0x0;for(let RD=0x0;RD<Rs;RD++){!(RD in RZ)&&!R(Rf,String(RD))&&W(Rf,String(RD),{'value':RM(RD),'writable':!![],'enumerable':!![],'configurable':!![]});}for(let RB in RI){!R(Rf,RB)&&W(Rf,RB,{'value':RI[RB],'writable':!![],'enumerable':!![],'configurable':!![]});}return Object['preventExtensions'](Rf),!![];},'getOwnPropertyDescriptor':function(Rf,Rs){if(Rs==='callee'){if(Rn)return undefined;return R(Rf,'callee');}if(Rs==='length')return R(Rf,'length');let RD=RA(Rs);if(Rp(RD)){if(RD in RP)return R(Rf,Rs);if(Rx(RD)){let v0=R(Rf,String(RD));return{'value':RM(RD),'writable':v0?v0['writable']:!![],'enumerable':v0?v0['enumerable']:!![],'configurable':v0?v0['configurable']:!![]};}return R(Rf,Rs);}let RB=R(Rf,Rs);if(RB)return RB;return undefined;},'ownKeys':function(Rf){let Rs=[],RD=cd?cd['length']:0x0;for(let v0=0x0;v0<RD;v0++){!(v0 in RZ)&&Rs['push'](String(v0));}for(let v1 in RI){Rs['indexOf'](v1)===-0x1&&Rs['push'](v1);}Rs['push']('length');!Rn&&Rs['push']('callee');let RB=Reflect['ownKeys'](Rf);for(let v2=0x0;v2<RB['length'];v2++){Rs['indexOf'](RB[v2])===-0x1&&Rs['push'](RB[v2]);}return Rs;}});}}cy[co++]=cM,cH++;break;}case 0x68:{let Rf=cy[--co],Rs=f(cP,Rf),RD=cy[--co];if(typeof RD!=='function')throw new TypeError(RD+'\x20is\x20not\x20a\x20constructor');if(j['call'](N,RD))throw new TypeError(RD['name']+'\x20is\x20not\x20a\x20constructor');let RB=vmd_85b0dc['_$CQ1XLk'];vmd_85b0dc['_$CQ1XLk']=undefined;let v0;try{v0=Reflect['construct'](RD,Rs);}finally{vmd_85b0dc['_$CQ1XLk']=RB;}cy[co++]=v0,cH++;break;}case 0x6f:{let v1=cy[--co],v2=cy[--co];cy[co++]=v2 instanceof v1,cH++;break;}case 0x5b:{let v3=cy[--co],v4=cy[co-0x1];v4['push'](v3),cH++;break;}case 0xb6:{let v5=cy[--co],v6=cy[--co],v7=cy[co-0x1],v8=W7(v7);W(v8,v6,{'get':v5,'enumerable':v8===v7,'configurable':!![]}),cH++;break;}case 0xa6:{cy[co++]=vmy[RW],cH++;break;}case 0x84:{let v9=cy[--co];cy[co++]=W5(v9),cH++;break;}case 0x93:{let vW=cy[--co],vc=cy[co-0x1],vR=cj[RW];W(vc,vR,{'value':vW,'writable':!![],'enumerable':![],'configurable':!![]});typeof vW==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],vW,vc));cH++;break;}case 0xb4:{let vv=cy[--co],vF=cy[--co],vd=cy[co-0x1];W(vd['prototype'],vF,{'value':vv,'writable':!![],'enumerable':![],'configurable':!![]});typeof vv==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],vv,vd['prototype']));cH++;break;}case 0xa9:{let vC=cy[--co];cy[co++]=Symbol['keyFor'](vC),cH++;break;}case 0x80:{let vq=cy[--co];cy[co++]=!!vq['done'],cH++;break;}case 0x95:{let va=cy[--co],vK=cy[co-0x1],vy=cj[RW];W(vK,vy,{'set':va,'enumerable':![],'configurable':!![]}),cH++;break;}case 0xb8:{let vo=cy[--co],vb=cy[--co],vH=cy[co-0x1];W(vH,vb,{'get':vo,'enumerable':![],'configurable':!![]}),cH++;break;}case 0xb9:{let vj=cy[--co],ve=cy[--co],vl=cy[co-0x1];W(vl,ve,{'set':vj,'enumerable':![],'configurable':!![]}),cH++;break;}case 0x94:{let vY=cy[--co],vV=cy[co-0x1],vQ=cj[RW];W(vV,vQ,{'get':vY,'enumerable':![],'configurable':!![]}),cH++;break;}case 0xa7:{if(RW===-0x1)cy[co++]=Symbol();else{let vh=cy[--co];cy[co++]=Symbol(vh);}cH++;break;}case 0x8f:{let vL=cy[--co],vz=cy[--co],vr=cy[--co],vm=vmd_85b0dc['_$CQ1XLk'],vT=vm?C(vm):W8(vr);if(vT===null||vT===undefined)throw new TypeError('Cannot\x20convert\x20'+vT+'\x20to\x20object');let vU=W9(vT,vz),vG=![];if(vU['desc']){let vO=vU['desc'];if(vO['set']){let vw=vmd_85b0dc['_$CQ1XLk'];vmd_85b0dc['_$CQ1XLk']=vU['proto']||vT,vmd_85b0dc['_$2TsDAM']=!![];try{vO['set']['call'](vr,vL);}finally{vmd_85b0dc['_$2TsDAM']=![],vmd_85b0dc['_$CQ1XLk']=vw;}}else{if(vO['get']||!('value'in vO)){if(cE)throw new TypeError('Cannot\x20set\x20property\x20\x27'+String(vz)+'\x27\x20of\x20object\x20which\x20has\x20only\x20a\x20getter');}else{if(vO['writable']===![]){if(cE)throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(vz)+'\x27\x20of\x20object');}else vG=!![];}}}else vG=!![];if(vG){let vN=Object['getOwnPropertyDescriptor'](vr,vz);if(vN){if('value'in vN){if(vN['writable'])vr[vz]=vL;else{if(cE)throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(vz)+'\x27\x20of\x20object');}}else{if(cE)throw new TypeError('Cannot\x20redefine\x20property:\x20'+String(vz));}}else{let vJ=Reflect['defineProperty'](vr,vz,{'value':vL,'writable':!![],'enumerable':!![],'configurable':!![]});if(!vJ&&cE)throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(vz)+'\x27\x20of\x20object');}}cy[co++]=vL,cH++;break;}case 0x92:{let vt=cy[--co],vX=cy[co-0x1],vi=cj[RW],vE=W7(vX);W(vE,vi,{'set':vt,'enumerable':vE===vX,'configurable':!![]}),cH++;break;}case 0xb5:{let vg=cy[--co],vI=cy[--co],vZ=cy[co-0x1];W(vZ,vI,{'value':vg,'writable':!![],'enumerable':![],'configurable':!![]});typeof vg==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],vg,vZ));cH++;break;}case 0x7c:{let vS=cy[--co],vn=vS&&vS['i']?vS['i']:vS;if(vn!=null){if(cm!==null)try{let vk=vn['return'];typeof vk==='function'&&vk['call'](vn);}catch(vP){}else{let vA=vn['return'];if(vA!=null){if(typeof vA!=='function')throw new TypeError('iterator\x20\x27return\x27\x20is\x20not\x20callable');let vp=vA['call'](vn);W2(vp);}}}cH++;break;}case 0x7f:{let vM=cy[--co];if(vM==null)throw new TypeError(vM+'\x20is\x20not\x20iterable');let vx=vM[k];if(Array['isArray'](vM)&&vx===n)cy[co++]={['_$4EA7Hd']:vM,['_$y8hLUq']:0x0},cH++;else{if(typeof vx!=='function')throw new TypeError(vM+'\x20is\x20not\x20iterable');let vu=K(vx,vM,[]);W2(vu);let vf=vu['next'];cy[co++]={'i':vu,'n':vf},cH++;}break;}case 0x82:{let vs=cy[--co];cy[co++]=vs['next'](),cH++;break;}case 0x6a:{let vD=cy[--co];cy[co++]=import(vD),cH++;break;}case 0x69:{d7:{let vB=cy[--co],F0=f(cP,vB),F1=cy[--co];if(RW===0x1){cy[co++]=F0,cH++;break d7;}if(vmd_85b0dc['_$zcBJqv']){cH++;break d7;}let F2=vmd_85b0dc['_$orzYHG'];if(F2){let F5=F2['outer'],F6=F5?C(F5):F2['parent'];if(typeof F6!=='function')throw new TypeError('Super\x20constructor\x20'+String(F6)+'\x20of\x20'+(F5&&F5['name']||'anonymous')+'\x20is\x20not\x20a\x20constructor');let F7=F2['newTarget'],F8=Reflect['construct'](F6,F0,F7);cK&&cK!==F8&&v(cK)['forEach'](function(F9){!(F9 in F8)&&(F8[F9]=cK[F9]);});cK=F8,cx=!![],Wc(cA,cK),cH++;break d7;}if(typeof F1!=='function')throw new TypeError('Super\x20expression\x20must\x20be\x20a\x20constructor');let F3;Z['has'](cq)?F3=WR(cA):F3=cx?cK:undefined;vmd_85b0dc['_$XcVYuf']=ca;let F4;try{let F9=F1['apply'](cK,F0);F9!==undefined&&F9!==cK&&s(F9)&&(cK&&Object['assign'](F9,cK),cK=F9,ca&&ca['prototype']&&C(cK)!==ca['prototype']&&d(cK,ca['prototype'])),cx=!![],Wc(cA,cK);}catch(FW){let Fc=FW&&typeof FW['message']==='string'?FW['message']:'';if(Fc['includes']('\x27new\x27')||Fc['includes']('Illegal\x20constructor')){let FR=Reflect['construct'](F1,F0,ca);FR!==cK&&cK&&Object['assign'](FR,cK),cK=FR,cx=!![],Wc(cA,cK);}else F4=FW;}finally{delete vmd_85b0dc['_$XcVYuf'];}if(F4!==undefined)throw F4;if(F3!==undefined)throw new ReferenceError('Super\x20constructor\x20may\x20only\x20be\x20called\x20once');cH++;}break;}case 0x90:{let Fv=cy[--co],FF=cy[co-0x1],Fd=cj[RW];W(FF['prototype'],Fd,{'value':Fv,'writable':!![],'enumerable':![],'configurable':!![]});typeof Fv==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],Fv,FF['prototype']));cH++;break;}case 0x70:{let FC=cj[RW];FC in vmd_85b0dc?cy[co++]=typeof vmd_85b0dc[FC]:cy[co++]=typeof vma[FC];cH++;break;}case 0x8e:{d8:{let Fq=cy[--co],Fa=cy[--co],FK=vmd_85b0dc['_$CQ1XLk'],Fy=FK?C(FK):W8(Fa),Fo=W9(Fy,Fq);if(Fo['desc']&&Fo['desc']['get']){let FH=vmd_85b0dc['_$CQ1XLk'];vmd_85b0dc['_$CQ1XLk']=Fo['proto']||Fy,vmd_85b0dc['_$2TsDAM']=!![];let Fj;try{Fj=Fo['desc']['get']['call'](Fa);}finally{vmd_85b0dc['_$2TsDAM']=![],vmd_85b0dc['_$CQ1XLk']=FH;}cy[co++]=Fj,cH++;break d8;}if(Fo['desc']&&Fo['desc']['set']&&!('value'in Fo['desc'])){cy[co++]=undefined,cH++;break d8;}let Fb=Fo['proto']?Fo['proto'][Fq]:Fy[Fq];if(typeof Fb==='function'){let Fe=Fo['proto']||Fy,Fl=Fb['constructor']&&Fb['constructor']['name'],FY=Fl==='GeneratorFunction'||Fl==='AsyncFunction'||Fl==='AsyncGeneratorFunction';!FY&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],Fb,Fe));}cy[co++]=Fb,cH++;}break;}case 0xa3:{cy[--co],cy[co++]=undefined,cH++;break;}case 0x5a:{cy[co++]=[],cH++;break;}case 0xb7:{let FV=cy[--co],FQ=cy[--co],Fh=cy[co-0x1],FL=W7(Fh);W(FL,FQ,{'set':FV,'enumerable':FL===Fh,'configurable':!![]}),cH++;break;}case 0xa4:{cy[co++]=ca,cH++;break;}case 0x5d:{let Fz=cy[--co],Fr;if(Array['isArray'](Fz))Fr=Fz;else{if(Fz===null||Fz===undefined)throw new TypeError(Fz+'\x20is\x20not\x20iterable');let FT=Fz[Symbol['iterator']];if(FT===null||FT===undefined||typeof FT!=='function')throw new TypeError(Fz+'\x20is\x20not\x20iterable');let FU=K(FT,Fz,[]);if(FU===null||typeof FU!=='object')throw new TypeError('Iterator\x20method\x20returned\x20a\x20non-object\x20value');Fr=[];while(!![]){let FG=FU['next']();W2(FG);if(FG['done'])break;Fr['push'](FG['value']);}}let Fm={'value':Fr};H['call'](w,Fm),cy[co++]=Fm,cH++;break;}case 0xa5:{cy[co++]=vmK[RW],cH++;break;}case 0x5e:{let FO=cy[--co],Fw=cy[co-0x1];if(Array['isArray'](FO))Array['prototype']['push']['apply'](Fw,FO);else for(let FN of FO){Fw['push'](FN);}cH++;break;}case 0xa8:{let FJ=cj[RW];cy[co++]=Symbol['for'](FJ),cH++;break;}case 0x8c:{let Ft=cy[--co],FX=cy[--co],Fi=RW,FE=function(Fg,FI){let FZ=function(){if(Fg){FI&&(vmd_85b0dc['_$9Gd9Gy']=FZ);let FS='_$XcVYuf'in vmd_85b0dc;!FS&&(vmd_85b0dc['_$XcVYuf']=new.target);try{let Fn=Fg['apply'](this,W6(arguments));if(FI&&Fn!==undefined&&(Fn===null||typeof Fn!=='object'&&typeof Fn!=='function'))throw new TypeError('Derived\x20constructors\x20may\x20only\x20return\x20object\x20or\x20undefined');return Fn;}finally{FI&&delete vmd_85b0dc['_$9Gd9Gy'],!FS&&delete vmd_85b0dc['_$XcVYuf'];}}};return FZ;}(FX,Fi);Ft&&W(FE,'name',{'value':Ft,'configurable':!![]});if(FX&&!I(FE)){let Fg=g(FX);Fg&&E(FE,Fg);}cy[co++]=FE,cH++;break;}case 0x64:{let FI=cy[--co],FZ=typeof FI==='object'?FI:c4(FI);FI=FZ;let FS=FZ&&FZ[0xc],Fn=FZ&&FZ[0x16],Fk=FZ&&FZ[0xb],FP=FZ&&FZ[0x15],FA=FZ&&FZ[0x10]||0x0,Fp=FZ&&FZ[0x7],FM=FS?cS:undefined,Fx=cA,Fu;if(Fk)Fu=Wa(c6,FI,Fx,N,Fp,vma,Fn);else{if(Fn)FS?Fu=Wy(c5,FI,Fx,FM):Fu=Wq(c5,FI,Fx,Fp,vma);else{if(FS){Fu=WK(Wj,FI,Fx,FM);let Ff=vmd_85b0dc['_$9Gd9Gy'];Ff===undefined&&cq&&Z['has'](cq)&&(Ff=Z['get'](cq)),Ff!==undefined&&Z['set'](Fu,Ff);}else Fu=WC(Wj,FI,Fx,Fp,vma,FP);}}u(Fu,'length',{'value':FA,'writable':![],'enumerable':![],'configurable':!![]}),cy[co++]=Fu,cH++;break;}case 0x83:{let Fs=cy[--co],FD=Fs&&Fs['i']?Fs['i']:Fs;if(cm!==null)try{FD&&typeof FD['return']==='function'?cy[co++]=Promise['resolve'](FD['return']())['catch'](function(){return undefined;}):cy[co++]=Promise['resolve']();}catch(FB){cy[co++]=Promise['resolve']();}else{let d0=FD!=null?FD['return']:undefined;if(d0==null)cy[co++]=Promise['resolve']();else typeof d0!=='function'?cy[co++]=Promise['reject'](new TypeError('iterator\x20\x27return\x27\x20is\x20not\x20callable')):cy[co++]=Promise['resolve'](d0['call'](FD));}cH++;break;}case 0xa0:{if(cI&&!cx){let d1=WR(cA);if(d1!==undefined)cK=d1,cx=!![];else throw new ReferenceError('Must\x20call\x20super\x20constructor\x20in\x20derived\x20class\x20before\x20accessing\x20\x27this\x27\x20or\x20returning\x20from\x20derived\x20constructor');}cy[co++]=cK,cH++;break;}case 0xa2:{let d2=RW&0xffff,d3=RW>>0x10,d4=cj[d2],d5=cj[d3];cy[co++]=new RegExp(d4,d5),cH++;break;}}},R1=function(R9,RW){switch(R9){case 0xd6:{cA=cA['_$H14eBN'],cH++;break;}case 0x111:{let RR=vmd_85b0dc['_$9Gd9Gy'];RR===undefined&&cq&&Z['has'](cq)&&(RR=Z['get'](cq));if(RR===undefined)throw new ReferenceError('\x27super\x27\x20keyword\x20is\x20only\x20valid\x20inside\x20a\x20derived\x20constructor');cy[co++]=RR,cH++;break;}case 0x11b:{let Rv=RW&0xffff,RF=cA['_$1SLmMc'];RF[Rv]=RF;let Rd=RW>>>0x10;Rd&&((cA['_$Yp6Ysf']||(cA['_$Yp6Ysf']={}))[Rv]=cj[Rd-0x1]);cH++;break;}case 0x10a:{!cy[--co]?cH=cl[cH]:(cy[--co],cH++);break;}case 0xc8:{debugger;cH++;break;}case 0x115:{let RC=cy[--co],Rq=cy[--co];cy[co++]=RC==null||typeof RC!=='object'&&typeof RC!=='function'?!![]:Rq in RC,cH++;break;}case 0x117:{vE:{let Ra=RW&0xffff,RK=RW>>>0x10,Ry=cA;for(let RH=0x0;RH<RK;RH++){Ry=Ry['_$H14eBN'];}let Ro=Ry['_$1SLmMc'],Rb=Ro[Ra];if(Rb===Ro){let Rj=Ry['_$Yp6Ysf'];throw new ReferenceError('Cannot\x20access\x20\x27'+(Rj&&Rj[Ra]||'variable')+'\x27\x20before\x20initialization');}cy[co++]=Rb,cH++;break vE;}break;}case 0x116:{let Re=cb[RW],Rl=Re&&Re['_$4EA7Hd'];if(Rl!==undefined){let RY=Re['_$y8hLUq'];RY>=Rl['length']?cH=cl[cH]:(Re['_$y8hLUq']=RY+0x1,cy[co++]=Rl[RY],cH++);}else{let RV=Re['i'],RQ=K(Re['n'],RV,[]);W2(RQ),RQ['done']?cH=cl[cH]:(cy[co++]=RQ['value'],cH++);}break;}case 0x119:{let Rh=RW,RL=cy[--co];cA['_$1SLmMc'][Rh]=RL,cH++;break;}case 0xd5:{cy[co++]=cA,cH++;break;}case 0x114:{let Rz=cj[RW],Rr=!![];Rz in vma&&(Rr=delete vma[Rz]);Rr&&Rz in vmd_85b0dc&&(Rr=delete vmd_85b0dc[Rz]);cy[co++]=Rr,cH++;break;}case 0x105:{let Rm=cb[RW]-0x1;cb[RW]=Rm,cy[co++]=Rm,cH++;break;}case 0x107:{let RT=cj[RW],RU=cy[--co],RG=cy[--co];if(typeof RU!=='function')throw new TypeError(RU+'\x20is\x20not\x20a\x20function');let RO=vmd_85b0dc['_$9U8rIO'],Rw=RO&&o['call'](RO,RU);!Rw&&RO&&(RU===q||RU===a)&&(Rw=o['call'](RO,RG));let RN=vmd_85b0dc['_$CQ1XLk'];Rw&&(vmd_85b0dc['_$2TsDAM']=!![],vmd_85b0dc['_$CQ1XLk']=Rw);let RJ;try{if(RT===0x0)RJ=K(RU,RG,G);else{if(RT===0x1){let Rt=cy[--co];RJ=Rt&&typeof Rt==='object'&&j['call'](w,Rt)?K(RU,RG,Rt['value']):K(RU,RG,[Rt]);}else RJ=K(RU,RG,f(cP,RT));}cy[co++]=RJ;}finally{Rw&&(vmd_85b0dc['_$2TsDAM']=![],vmd_85b0dc['_$CQ1XLk']=RN);}cH++;break;}case 0x10e:{debugger;cH++;break;}case 0xff:{let RX=RW&0xffff,Ri=RW>>>0x10,RE=cb[RX],Rg=cj[Ri];cy[co++]=RE[Rg],cH++;break;}case 0xc9:{cH++;break;}case 0x102:{let RI=RW&0xffff,RZ=RW>>>0x10,RS=cy[--co],Rn=f(cP,RS),Rk=cb[RI],RP=cj[RZ],RA=Rk[RP];cy[co++]=RA['apply'](Rk,Rn),cH++;break;}case 0xd2:{let Rp=cy[--co],RM={['_$1SLmMc']:new Array(RW),['_$b6EHlo']:null,['_$ekoAWr']:-0x1,['_$H14eBN']:Rp};cA=RM,cH++;break;}case 0x108:{let Rx=cy[co-0x1],Ru=cj[RW];if(Rx===null||Rx===undefined)throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+Rx+'\x20(reading\x20'+'\x27'+String(Ru)+'\x27'+')');cy[co++]=Rx[Ru],cH++;break;}case 0x112:{let Rf=cy[--co],Rs=Rf&&Rf['i']?Rf['i']:Rf;try{if(Rs!=null){let RD=Rs['return'];typeof RD==='function'&&RD['call'](Rs);}}catch(RB){}cH++;break;}case 0x100:{let v0=RW&0xffff,v1=RW>>>0x10;cy[co++]=cb[v0]<cj[v1],cH++;break;}case 0x113:{let v2=cy[--co],v3=cy[co-0x1];(v2===null||s(v2))&&d(v3,v2);cH++;break;}case 0x10b:{!cy[co-0x1]?cH=cl[cH]:(cy[--co],cH++);break;}case 0x10c:{cy[co-0x1]?cH=cl[cH]:(cy[--co],cH++);break;}case 0x11d:{cy[co++]=cS,cH++;break;}case 0x106:{let v4=cy[co-0x3],v5=cy[co-0x2],v6=cy[co-0x1];cy[co-0x3]=v6,cy[co-0x2]=v4,cy[co-0x1]=v5,cH++;break;}case 0xfd:{let v7=RW&0xffff,v8=RW>>>0x10;cy[co++]=cb[v7]-cj[v8],cH++;break;}case 0x109:{if(cI&&!cx){let vc=WR(cA);if(vc!==undefined)cK=vc,cx=!![];else throw new ReferenceError('Must\x20call\x20super\x20constructor\x20in\x20derived\x20class\x20before\x20accessing\x20\x27this\x27\x20or\x20returning\x20from\x20derived\x20constructor');}let v9=cK,vW=cj[RW];if(v9===null||v9===undefined)throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+v9+'\x20(reading\x20'+'\x27'+String(vW)+'\x27'+')');cy[co++]=v9[vW],cH++;break;}case 0x11a:{let vR=RW,vv=cy[--co];cA['_$1SLmMc'][vR]=vv;let vF=cA['_$b6EHlo'];!vF&&(vF=c(null),cA['_$b6EHlo']=vF);vF[vR]=0x1,cH++;break;}case 0x110:{let vd=S[RW],vC=cy[--co];if(vd){for(let vq=0x0;vq<vC;vq++)cy[--co];for(let va=0x0;va<vC;va++)cy[--co];cy[co++]=vd;}else{let vK=new Array(vC);for(let vo=vC-0x1;vo>=0x0;vo--)vK[vo]=cy[--co];let vy=new Array(vC);for(let vb=vC-0x1;vb>=0x0;vb--)vy[vb]=cy[--co];W(vy,'raw',{'value':Object['freeze'](vK)}),Object['freeze'](vy),S[RW]=vy,cy[co++]=vy;}cH++;break;}case 0x104:{let vH=cb[RW]+0x1;cb[RW]=vH,cy[co++]=vH,cH++;break;}case 0x11c:{let vj=RW;cA['_$1SLmMc'][vj]=cq;let ve=cA['_$b6EHlo'];!ve&&(ve=c(null),cA['_$b6EHlo']=ve);ve[vj]=0x2,cH++;break;}case 0xca:{cD=co>0x0?cy[--co]:undefined;return 0x1;break;}case 0xfc:{let vl=RW&0xffff,vY=RW>>>0x10;cy[co++]=cb[vl]+cj[vY],cH++;break;}case 0xfe:{let vV=RW&0xffff,vQ=RW>>>0x10;cy[co++]=cb[vV]*cj[vQ],cH++;break;}case 0xfb:{cb[RW]=cb[RW]-0x1,cH++;break;}case 0x103:{cb[RW]=cy[--co],cH++;break;}case 0x10f:{if(typeof process!=='undefined'&&process['hrtime']&&process['hrtime']['bigint']){var Rc=process['hrtime']['bigint']();debugger;if(Number(process['hrtime']['bigint']()-Rc)/0xf4240>0.1)try{_setDeceptionDetected();}catch(vh){}}cH++;break;}case 0xfa:{cb[RW]=cb[RW]+0x1,cH++;break;}case 0x101:{let vL=RW&0xffff,vz=RW>>>0x10;cb[vL]<cj[vz]?cH=cl[cH]:cH++;break;}case 0xdc:{let vr=cy[--co],vm=cj[RW];if(cE&&!(vm in vma)&&!(vm in vmd_85b0dc))throw new ReferenceError(vm+'\x20is\x20not\x20defined');vmd_85b0dc[vm]=vr,vma[vm]=vr,cy[co++]=vr,cH++;break;}case 0x118:{vg:{let vT=RW&0xffff,vU=RW>>>0x10,vG=cy[--co],vO=cA;for(let vt=0x0;vt<vU;vt++){vO=vO['_$H14eBN'];}let vw=vO['_$1SLmMc'];if(vw[vT]===vw){let vX=vO['_$Yp6Ysf'];throw new ReferenceError('Cannot\x20access\x20\x27'+(vX&&vX[vT]||'variable')+'\x27\x20before\x20initialization');}let vN=vO['_$b6EHlo'],vJ=vN&&vN[vT];if(vJ){if(vJ===0x2&&!cE){cH++;break vg;}throw new TypeError('Assignment\x20to\x20constant\x20variable.');}vw[vT]=vG,cH++;break vg;}break;}case 0x11e:{let vi=cA['_$1SLmMc'];vi[RW]=vi,cA['_$ekoAWr']=RW,cH++;break;}}});switch(R7){case 0x7:{cb[R8]=cy[--co],cH++;continue;}case 0x4:{let R9=cy[co-0x1];cy[co++]=R9,cH++;continue;}case 0x1c:{let RW=cy[--co];cy[co++]=typeof RW===U?RW:+RW,cH++;continue;}case 0x34:{!cy[--co]?cH=cl[cH]:cH++;continue;}case 0x48:{let Rc=cy[--co],RR=cy[--co];if(RR===null||RR===undefined){if(Rc===Symbol['iterator'])throw new TypeError((RR===null?'object\x20null':'undefined')+'\x20is\x20not\x20iterable\x20(cannot\x20read\x20property\x20Symbol(Symbol.iterator))');throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+RR+'\x20(reading\x20'+(typeof Rc==='symbol'?'\x27'+Rc['toString']()+'\x27':typeof Rc==='string'?'\x27'+Rc+'\x27':typeof Rc==='object'||typeof Rc==='function'?'\x27<computed\x20key>\x27':'\x27'+String(Rc)+'\x27')+')');}cy[co++]=RR[Rc],cH++;continue;}case 0xa:{let Rv=cy[--co],RF=cy[--co];cy[co++]=RF+Rv,cH++;continue;}case 0x0:{cy[co++]=cj[R8],cH++;continue;}case 0x32:{cH=cl[cH];continue;}case 0x3:{cy[--co],cH++;continue;}case 0x2e:{let Rd=cy[--co],RC=cy[--co];cy[co++]=RC>Rd,cH++;continue;}case 0x8:{cy[co++]=cd[R8],cH++;continue;}case 0x49:{let Rq=cy[--co],Ra=cy[--co],RK=cy[--co];if(RK===null||RK===undefined)throw new TypeError('Cannot\x20set\x20properties\x20of\x20'+RK+'\x20(setting\x20'+(typeof Ra==='symbol'?'\x27'+Ra['toString']()+'\x27':typeof Ra==='string'?'\x27'+Ra+'\x27':typeof Ra==='object'||typeof Ra==='function'?'\x27<computed\x20key>\x27':'\x27'+String(Ra)+'\x27')+')');if(cE){let Ry=typeof RK==='object'||typeof RK==='function'?RK:Object(RK);if(!Reflect['set'](Ry,Ra,Rq,RK))throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(Ra)+'\x27\x20of\x20object');}else RK[Ra]=Rq;cy[co++]=Rq,cH++;continue;}case 0x6:{cy[co++]=cb[R8],cH++;continue;}case 0x46:{let Ro=cy[--co],Rb=cj[R8];if(Ro===null||Ro===undefined)throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+Ro+'\x20(reading\x20'+'\x27'+String(Rb)+'\x27'+')');cy[co++]=Ro[Rb],cH++;continue;}case 0x1:{cy[co++]=undefined,cH++;continue;}case 0xb:{let RH=cy[--co],Rj=cy[--co];cy[co++]=Rj-RH,cH++;continue;}case 0x2c:{let Re=cy[--co],Rl=cy[--co];cy[co++]=Rl<Re,cH++;continue;}case 0x10:{let RY=cy[--co];cy[co++]=typeof RY===U?RY+0x1n:+RY+0x1,cH++;continue;}}if(R7<0x5a){if(cB(R7,R8)){if(cs>0x0){for(let RV=cu-0x1;RV>=0x0;RV--){cb[RV]=cf[--cs];}cA=cf[--cs],cp=cf[--cs],cM=cf[--cs],cd=cf[--cs],co=cf[--cs],cH=cf[--cs],cy[co++]=cD,cH++;continue;}return cD;}}else{if(R7<0xc8){if(R0(R7,R8)){if(cs>0x0){for(let RQ=cu-0x1;RQ>=0x0;RQ--){cb[RQ]=cf[--cs];}cA=cf[--cs],cp=cf[--cs],cM=cf[--cs],cd=cf[--cs],co=cf[--cs],cH=cf[--cs],cy[co++]=cD,cH++;continue;}return cD;}}else{if(R1(R7,R8)){if(cs>0x0){for(let Rh=cu-0x1;Rh>=0x0;Rh--){cb[Rh]=cf[--cs];}cA=cf[--cs],cp=cf[--cs],cM=cf[--cs],cd=cf[--cs],co=cf[--cs],cH=cf[--cs],cy[co++]=cD,cH++;continue;}return cD;}}}}break;}catch(RL){if(cr&&cr['length']>0x0){let Rz=cr[cr['length']-0x1];co=Rz['_$E71ybc'];Rz['_es']!==undefined&&(cA=Rz['_es']);if(Rz['_$ZrKuGu']!==undefined)cm=null,ck(RL),cH=Rz['_$ZrKuGu'],Rz['_$ZrKuGu']=undefined,Rz['_$LX7nZk']===undefined&&cr['pop']();else Rz['_$LX7nZk']!==undefined?(cH=Rz['_$LX7nZk'],Rz['_$EEipSc']=RL):(cH=Rz['_$l8GTmO'],cr['pop']());continue;}throw RL;}}if(cI&&!cx){let Rr=WR(cA);Rr!==undefined&&(cK=Rr,cx=!![]);}let R2=co>0x0?cy[--co]:cx?cK:undefined;if(cI&&!cx&&(R2===undefined||R2===null||typeof R2!=='object'&&typeof R2!=='function'))throw new ReferenceError('Must\x20call\x20super\x20constructor\x20in\x20derived\x20class\x20before\x20accessing\x20\x27this\x27\x20or\x20returning\x20from\x20derived\x20constructor');return R2;}function Wb(cF,cd,cC,cq,ca,cK){let cy=[void 0x0,void 0x0,void 0x0,void 0x0,void 0x0,void 0x0,void 0x0,void 0x0],co=0x0,cb=new Array((cF[0x10]||0x0)+(cF[0x8]||0x0)),cH=0x0,cj=cF[0x13],ce=cF[0x17],cl=cF[0xa]||G,cY=cF[0x5]||G,cV=ce['length']>>0x1,cQ=(cF[0x10]*0x1f^cF[0x8]*0x11^cV*0xd^cj['length']*0x7)>>>0x0&0x3,ch,cL,cz;switch(cQ){case 0x1:ch=0x1,cL=0x0,cz=0x1;break;case 0x2:ch=0x0,cL=cV,cz=0x0;break;case 0x3:ch=cV,cL=0x0,cz=0x0;break;default:ch=0x0,cL=0x1,cz=0x1;break;}let cr=null,cm=null,cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined,cX=-0x1,ci=-0x1,cE=!!cF[0x7],cg=!!cF[0xd],cI=!!cF[0xf],cZ=!!cF[0x14],cS=cK,cn=!!cF[0xc];!cE&&!cn&&(cK===undefined||cK===null)&&(cK=vma);let ck=cF[0x2],cP,cA,cp,cM,cx,cu;if(ck!==undefined){let R4=R5=>typeof R5==='number'&&(R5|0x0)===R5&&!Object['is'](R5,-0x0)?R5^ck|0x0:R5;cP=R5=>{cy[co++]=R4(R5);},cA=()=>R4(cy[--co]),cp=()=>R4(cy[co-0x1]),cM=R5=>{cy[co-0x1]=R4(R5);},cx=R5=>R4(cy[co-R5]),cu=(R5,R6)=>{cy[co-R5]=R4(R6);};}else cP=R5=>{cy[co++]=R5;},cA=()=>cy[--co],cp=()=>cy[co-0x1],cM=R5=>{cy[co-0x1]=R5;},cx=R5=>cy[co-R5],cu=(R5,R6)=>{cy[co-R5]=R6;};let cf={['_$1SLmMc']:new Array(cF[0x0]||0x0),['_$b6EHlo']:null,['_$ekoAWr']:-0x1,['_$H14eBN']:cC};if(cd){let R5=cF[0x10]||0x0;for(let R6=0x0,R7=cd['length']<R5?cd['length']:R5;R6<R7;R6++){cb[R6]=cd[R6];}}let cs=(cE||!cg)&&cd?W6(cd):null,cD=null,cB=![],R0=cb['length'],R1=null,R2=0x0;WF(cF,cq),Wd(cq,cF,cC);function R3(R8,R9){if(R8===0x1)cP(R9);else{if(R8===0x2){if(cr&&cr['length']>0x0){let Rd=cr[cr['length']-0x1];co=Rd['_$E71ybc'];Rd['_es']!==undefined&&(cf=Rd['_es']);if(Rd['_$ZrKuGu']!==undefined)cP(R9),cH=Rd['_$ZrKuGu'],Rd['_$ZrKuGu']=undefined,Rd['_$LX7nZk']===undefined&&cr['pop']();else Rd['_$LX7nZk']!==undefined?(cH=Rd['_$LX7nZk'],Rd['_$EEipSc']=R9):(cH=Rd['_$l8GTmO'],cr['pop']());}else throw R9;}else{if(R8===0x3){let RC=R9;if(cr&&cr['length']>0x0){let Rq=cr[cr['length']-0x1];if(Rq['_$LX7nZk']!==undefined)cT=!![],cU=RC,cH=Rq['_$LX7nZk'];else return RC;}else return RC;}}}while(cH<cV){try{while(cH<cV){let Ra=cH<<cz,RK=ce[ch+Ra],Ry=ce[cL+Ra];if(RK===T){let Ro=cA();return cH++,{['_$ivW2U5']:Q,['_$8PVFEx']:Ro,'_d':R3};}if(RK===r){let Rb=cA();return cH++,{['_$ivW2U5']:h,['_$8PVFEx']:Rb,'_d':R3};}if(RK===m){let RH=cA();return cH++,{['_$ivW2U5']:L,['_$8PVFEx']:RH,'_d':R3};}var RW,Rc,RR,Rv;!Rc&&(Rc=function(Rj,Re){switch(Rj){case 0x49:{let Rl=cy[--co],RY=cy[--co],RV=cy[--co];if(RV===null||RV===undefined)throw new TypeError('Cannot\x20set\x20properties\x20of\x20'+RV+'\x20(setting\x20'+(typeof RY==='symbol'?'\x27'+RY['toString']()+'\x27':typeof RY==='string'?'\x27'+RY+'\x27':typeof RY==='object'||typeof RY==='function'?'\x27<computed\x20key>\x27':'\x27'+String(RY)+'\x27')+')');if(cE){let RQ=typeof RV==='object'||typeof RV==='function'?RV:Object(RV);if(!Reflect['set'](RQ,RY,Rl,RV))throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(RY)+'\x27\x20of\x20object');}else RV[RY]=Rl;cy[co++]=Rl,cH++;break;}case 0x34:{!cy[--co]?cH=cl[cH]:cH++;break;}case 0x3a:{let Rh=cY[cH];if(!cr)cr=[];cr['push']({['_$ZrKuGu']:Rh[0x0]>=0x0?Rh[0x0]:undefined,['_$LX7nZk']:Rh[0x1]>=0x0?Rh[0x1]:undefined,['_$l8GTmO']:Rh[0x2]>=0x0?Rh[0x2]:undefined,['_$E71ybc']:co,'_ts':cH,'_es':cf}),cH++;break;}case 0x2d:{let RL=cy[--co],Rz=cy[--co];cy[co++]=Rz<=RL,cH++;break;}case 0x35:{let Rr=cy[--co];Rr!==null&&Rr!==undefined?cH=cl[cH]:cH++;break;}case 0x1:{cy[co++]=undefined,cH++;break;}case 0x4c:{let Rm=cy[--co],RT=cj[Re];if(vmd_85b0dc['_$LtKzq1']&&RT in vmd_85b0dc['_$LtKzq1'])throw new ReferenceError('Cannot\x20access\x20\x27'+RT+'\x27\x20before\x20initialization');let RU=!(RT in vmd_85b0dc)&&!(RT in vma);vmd_85b0dc[RT]=Rm;RT in vma&&(vma[RT]=Rm);RU&&(vma[RT]=Rm);cy[co++]=Rm,cH++;break;}case 0x32:{cH=cl[cH];break;}case 0x4a:{let RG,RO;Re>=0x0?(RO=cy[--co],RG=cj[Re]):(RG=cy[--co],RO=cy[--co]);let Rw=delete RO[RG];if(cE&&!Rw)throw new TypeError('Cannot\x20delete\x20property\x20\x27'+String(RG)+'\x27\x20of\x20object');cy[co++]=Rw,cH++;break;}case 0x4d:{cy[co++]={},cH++;break;}case 0xc:{let RN=cy[--co],RJ=cy[--co];cy[co++]=RJ*RN,cH++;break;}case 0x3c:{if(Re===-0x2){}else Re===-0x1?cy[--co]:cf['_$1SLmMc'][Re]=cy[--co];cH++;break;}case 0x33:{cy[--co]?cH=cl[cH]:cH++;break;}case 0x5:{let Rt=cy[co-0x1];cy[co-0x1]=cy[co-0x2],cy[co-0x2]=Rt,cH++;break;}case 0xa:{let RX=cy[--co],Ri=cy[--co];cy[co++]=Ri+RX,cH++;break;}case 0x48:{let RE=cy[--co],Rg=cy[--co];if(Rg===null||Rg===undefined){if(RE===Symbol['iterator'])throw new TypeError((Rg===null?'object\x20null':'undefined')+'\x20is\x20not\x20iterable\x20(cannot\x20read\x20property\x20Symbol(Symbol.iterator))');throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+Rg+'\x20(reading\x20'+(typeof RE==='symbol'?'\x27'+RE['toString']()+'\x27':typeof RE==='string'?'\x27'+RE+'\x27':typeof RE==='object'||typeof RE==='function'?'\x27<computed\x20key>\x27':'\x27'+String(RE)+'\x27')+')');}cy[co++]=Rg[RE],cH++;break;}case 0x2c:{let RI=cy[--co],RZ=cy[--co];cy[co++]=RZ<RI,cH++;break;}case 0x4f:{let RS=cy[--co],Rn=cy[--co];cy[co++]=Rn in RS,cH++;break;}case 0xb:{let Rk=cy[--co],RP=cy[--co];cy[co++]=RP-Rk,cH++;break;}case 0x53:{let RA=cy[--co],Rp=cy[--co],RM=cj[Re];W(Rp,RM,{'value':RA,'writable':!![],'enumerable':!![],'configurable':!![]});typeof RA==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],RA,Rp));cH++;break;}case 0x7:{cb[Re]=cy[--co],cH++;break;}case 0xd:{let Rx=cy[--co],Ru=cy[--co];cy[co++]=Ru/Rx,cH++;break;}case 0x1d:{if(typeof cy[co-0x1]==='symbol')throw new TypeError('Cannot\x20convert\x20a\x20Symbol\x20value\x20to\x20a\x20string');cy[co-0x1]=String(cy[co-0x1]),cH++;break;}case 0x16:{let Rf=cy[--co],Rs=cy[--co];cy[co++]=Rs^Rf,cH++;break;}case 0x17:{cy[co-0x1]=~cy[co-0x1],cH++;break;}case 0x3:{cy[--co],cH++;break;}case 0x4:{let RD=cy[co-0x1];cy[co++]=RD,cH++;break;}case 0x18:{let RB=cy[--co],v0=cy[--co];cy[co++]=v0<<RB,cH++;break;}case 0x1a:{let v1=cy[--co],v2=cy[--co];cy[co++]=v2>>>v1,cH++;break;}case 0x8:{cy[co++]=cd[Re],cH++;break;}case 0x46:{let v3=cy[--co],v4=cj[Re];if(v3===null||v3===undefined)throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+v3+'\x20(reading\x20'+'\x27'+String(v4)+'\x27'+')');cy[co++]=v3[v4],cH++;break;}case 0x10:{let v5=cy[--co];cy[co++]=typeof v5===U?v5+0x1n:+v5+0x1,cH++;break;}case 0xe:{let v6=cy[--co],v7=cy[--co];cy[co++]=v7%v6,cH++;break;}case 0x19:{let v8=cy[--co],v9=cy[--co];cy[co++]=v9>>v8,cH++;break;}case 0x6:{cy[co++]=cb[Re],cH++;break;}case 0x4b:{let vW=cj[Re],vc;if(vmd_85b0dc['_$LtKzq1']&&vW in vmd_85b0dc['_$LtKzq1'])throw new ReferenceError('Cannot\x20access\x20\x27'+vW+'\x27\x20before\x20initialization');if(vW in vmd_85b0dc)vc=vmd_85b0dc[vW];else{if(vW in vma)vc=vma[vW];else throw new ReferenceError(vW+'\x20is\x20not\x20defined');}cy[co++]=vc,cH++;break;}case 0x2b:{let vR=cy[--co],vv=cy[--co];cy[co++]=vv!==vR,cH++;break;}case 0x51:{let vF=cy[--co],vd=cy[co-0x1];vF!==null&&vF!==undefined&&Object['assign'](vd,vF);cH++;break;}case 0x54:{let vC=cy[--co],vq=cy[--co],va=cy[--co];W(va,vq,{'value':vC,'writable':!![],'enumerable':!![],'configurable':!![]});typeof vC==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],vC,va));cH++;break;}case 0xf:{cy[co-0x1]=-cy[co-0x1],cH++;break;}case 0x2e:{let vK=cy[--co],vy=cy[--co];cy[co++]=vy>vK,cH++;break;}case 0x40:{Fl:{let vo=cl[cH];if(cr&&cr['length']>0x0){let vb=cr[cr['length']-0x1];if(vb['_$LX7nZk']!==undefined&&(vo>=vb['_$l8GTmO']||vo<=vb['_ts'])){cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=!![],cJ=vo,ct=cf,cX=vb['_ts'],ci=vb['_$l8GTmO'],cH=vb['_$LX7nZk'];break Fl;}}(cT||cG||cN)&&(vo>=ci||vo<=cX)&&(cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined),cH=vo;}break;}case 0x4e:{let vH=cy[--co],vj=cj[Re];vH===null||vH===undefined?cy[co++]=undefined:cy[co++]=vH[vj];cH++;break;}case 0x2a:{let ve=cy[--co],vl=cy[--co];cy[co++]=vl===ve,cH++;break;}case 0x1b:{let vY=cy[co-0x3],vV=cy[co-0x2],vQ=cy[co-0x1];cy[co-0x3]=vV,cy[co-0x2]=vQ,cy[co-0x1]=vY,cH++;break;}case 0x2:{cy[co++]=null,cH++;break;}case 0x3b:{cr['pop'](),cH++;break;}case 0x11:{let vh=cy[--co];cy[co++]=typeof vh===U?vh-0x1n:+vh-0x1,cH++;break;}case 0x37:{let vL=cy[--co],vz=cy[--co],vr=cy[--co];if(typeof vz!=='function')throw new TypeError(vz+'\x20is\x20not\x20a\x20function');let vm=vmd_85b0dc['_$9U8rIO'],vT=vm&&o['call'](vm,vz);!vT&&vm&&(vz===q||vz===a)&&(vT=o['call'](vm,vr));let vU=vmd_85b0dc['_$CQ1XLk'];vT&&(vmd_85b0dc['_$2TsDAM']=!![],vmd_85b0dc['_$CQ1XLk']=vT);let vG;try{if(vL===0x0)vG=K(vz,vr,G);else{if(vL===0x1){let vO=cy[--co];vG=vO&&typeof vO==='object'&&j['call'](w,vO)?K(vz,vr,vO['value']):K(vz,vr,[vO]);}else vG=K(vz,vr,f(cA,vL));}cy[co++]=vG;}finally{vT&&(vmd_85b0dc['_$2TsDAM']=![],vmd_85b0dc['_$CQ1XLk']=vU);}cH++;break;}case 0x47:{let vw=cy[--co],vN=cy[--co],vJ=cj[Re];if(vN===null||vN===undefined)throw new TypeError('Cannot\x20set\x20properties\x20of\x20'+vN+'\x20(setting\x20'+'\x27'+String(vJ)+'\x27'+')');if(cE){let vt=typeof vN==='object'||typeof vN==='function'?vN:Object(vN);if(!Reflect['set'](vt,vJ,vw,vN))throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(vJ)+'\x27\x20of\x20object');}else vN[vJ]=vw;cy[co++]=vw,cH++;break;}case 0x3d:{if(cr&&cr['length']>0x0){let vX=cr[cr['length']-0x1];vX['_$LX7nZk']===cH&&(vX['_$EEipSc']!==undefined&&(cm=vX['_$EEipSc']),vX['_es']!==undefined&&(cf=vX['_es']),cr['pop']());}cH++;break;}case 0x52:{let vi=cy[--co],vE=cy[--co];vE===null||vE===undefined?cy[co++]=undefined:cy[co++]=vE[vi];cH++;break;}case 0x0:{cy[co++]=cj[Re],cH++;break;}case 0x3e:{FY:{if(cm!==null){cT=![],cG=![],cN=![];let vg=cm;cm=null;throw vg;}if(cT){if(cr&&cr['length']>0x0){let vZ=cr[cr['length']-0x1];if(vZ['_$LX7nZk']!==undefined){cX=vZ['_ts'],ci=vZ['_$l8GTmO'],cH=vZ['_$LX7nZk'];break FY;}}let vI=cU;return cT=![],cU=undefined,RW=vI,0x1;}if(cG){if(cr&&cr['length']>0x0){let vn=cr[cr['length']-0x1];if(vn['_$LX7nZk']!==undefined&&(cO>=vn['_$l8GTmO']||cO<=vn['_ts'])){cX=vn['_ts'],ci=vn['_$l8GTmO'],cH=vn['_$LX7nZk'];break FY;}}let vS=cO;cG=![],cO=0x0;cw!==undefined&&(cf=cw,cw=undefined);cH=vS;break FY;}if(cN){if(cr&&cr['length']>0x0){let vP=cr[cr['length']-0x1];if(vP['_$LX7nZk']!==undefined&&(cJ>=vP['_$l8GTmO']||cJ<=vP['_ts'])){cX=vP['_ts'],ci=vP['_$l8GTmO'],cH=vP['_$LX7nZk'];break FY;}}let vk=cJ;cN=![],cJ=0x0;ct!==undefined&&(cf=ct,ct=undefined);cH=vk;break FY;}cH++;}break;}case 0x12:{let vA=cy[--co],vp=cy[--co];cy[co++]=vp**vA,cH++;break;}case 0x14:{let vM=cy[--co],vx=cy[--co];cy[co++]=vx&vM,cH++;break;}case 0x36:{FV:{let vu=cy[--co],vf=cy[--co];if(typeof vf!=='function')throw new TypeError(vf+'\x20is\x20not\x20a\x20function');let vs=vmd_85b0dc['_$9U8rIO'],vD=!vmd_85b0dc['_$CQ1XLk']&&!vmd_85b0dc['_$XcVYuf']&&!(vs&&o['call'](vs,vf))&&g(vf);if(vD){let F3=vD['c']||(vD['c']=typeof vD['b']==='object'?vD['b']:c3(vD['b']));if(F3){let F4;if(vu===0x0)F4=[];else{if(vu===0x1){let F6=cy[--co];F4=F6&&typeof F6==='object'&&j['call'](w,F6)?F6['value']:[F6];}else F4=f(cA,vu);}let F5=F3[0xe];if(F5&&F3===cF&&!F3[0x5]&&vD['e']===cC){!R1&&(R1=[]);R1[R2++]=cH,R1[R2++]=co,R1[R2++]=cd,R1[R2++]=cD,R1[R2++]=cs,R1[R2++]=cf;for(let F7=0x0;F7<R0;F7++){R1[R2++]=cb[F7];}cd=F4,cD=null;if(F3[0xd]){cs=null;let F8=F3[0x10]||0x0;for(let F9=0x0;F9<F8&&F9<F4['length'];F9++){cb[F9]=F4[F9];}for(let FW=F4['length']<F8?F4['length']:F8;FW<R0;FW++){cb[FW]=undefined;}cH=F5;}else{cs=W6(F4);for(let Fc=0x0;Fc<R0;Fc++){cb[Fc]=undefined;}cH=0x0;}break FV;}vmd_85b0dc['_$2TsDAM']?vmd_85b0dc['_$2TsDAM']=![]:vmd_85b0dc['_$CQ1XLk']=undefined;cy[co++]=Wo(F3,F4,vD['e'],vf,undefined,undefined),cH++;break FV;}}let vB=vmd_85b0dc['_$CQ1XLk'],F0=vmd_85b0dc['_$9U8rIO'],F1=F0&&o['call'](F0,vf);F1?(vmd_85b0dc['_$2TsDAM']=!![],vmd_85b0dc['_$CQ1XLk']=F1):vmd_85b0dc['_$CQ1XLk']=undefined;let F2;try{if(vu===0x0)F2=vf();else{if(vu===0x1){let FR=cy[--co];F2=FR&&typeof FR==='object'&&j['call'](w,FR)?K(vf,undefined,FR['value']):vf(FR);}else F2=K(vf,undefined,f(cA,vu));}cy[co++]=F2;}finally{F1&&(vmd_85b0dc['_$2TsDAM']=![]),vmd_85b0dc['_$CQ1XLk']=vB;}cH++;}break;}case 0x13:{cy[co-0x1]=+cy[co-0x1],cH++;break;}case 0x3f:{FQ:{let Fv=cl[cH];if(cr&&cr['length']>0x0){let FF=cr[cr['length']-0x1];if(FF['_$LX7nZk']!==undefined&&(Fv>=FF['_$l8GTmO']||Fv<=FF['_ts'])){cT=![],cU=undefined,cN=![],cJ=0x0,ct=undefined,cG=!![],cO=Fv,cw=cf,cX=FF['_ts'],ci=FF['_$l8GTmO'],cH=FF['_$LX7nZk'];break FQ;}}(cT||cG||cN)&&(Fv>=ci||Fv<=cX)&&(cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined),cH=Fv;}break;}case 0x9:{cd[Re]=cy[--co],cH++;break;}case 0x20:{cy[co-0x1]=!cy[co-0x1],cH++;break;}case 0x39:{throw cy[--co];break;}case 0x2f:{let Fd=cy[--co],FC=cy[--co];cy[co++]=FC>=Fd,cH++;break;}case 0x28:{let Fq=cy[--co],Fa=cy[--co];cy[co++]=Fa==Fq,cH++;break;}case 0x1c:{let FK=cy[--co];cy[co++]=typeof FK===U?FK:+FK,cH++;break;}case 0x29:{let Fy=cy[--co],Fo=cy[--co];cy[co++]=Fo!=Fy,cH++;break;}case 0x15:{let Fb=cy[--co],FH=cy[--co];cy[co++]=FH|Fb,cH++;break;}case 0x38:{Fh:{if(cr&&cr['length']>0x0){let Fe=cr[cr['length']-0x1];if(Fe['_$LX7nZk']!==undefined){cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined,cT=!![],cU=cy[--co],cX=Fe['_ts'],ci=Fe['_$l8GTmO'],cH=Fe['_$LX7nZk'];break Fh;}}(cT||cG||cN)&&(cT=![],cU=undefined,cG=![],cO=0x0,cw=undefined,cN=![],cJ=0x0,ct=undefined);let Fj=cy[--co];if(cI&&Fj===undefined&&!cB)throw new ReferenceError('Must\x20call\x20super\x20constructor\x20in\x20derived\x20class\x20before\x20accessing\x20\x27this\x27\x20or\x20returning\x20from\x20derived\x20constructor');return RW=Fj,0x1;}break;}}},RR=function(Rj,Re){switch(Rj){case 0x6e:{cy[co-0x1]=typeof cy[co-0x1],cH++;break;}case 0x7b:{let RY=cy[--co],RV=RY&&RY['_$4EA7Hd'];if(RV!==undefined){let RQ=RY['_$y8hLUq'],Rh;RQ>=RV['length']?Rh={'value':undefined,'done':!![]}:(RY['_$y8hLUq']=RQ+0x1,Rh={'value':RV[RQ],'done':![]}),cy[co++]=Rh,cH++;}else{let RL=RY&&RY['i']?RY['i']:RY,Rz=RY&&RY['n']?RY['n']:RL&&RL['next'];if(typeof Rz!=='function')throw new TypeError('iterator.next\x20is\x20not\x20a\x20function');let Rr=K(Rz,RL,[]);W2(Rr),cy[co++]=Rr,cH++;}break;}case 0x5f:{let Rm=cy[co-0x1];Rm['length']++,cH++;break;}case 0x91:{let RT=cy[--co],RU=cy[co-0x1],RG=cj[Re],RO=W7(RU);W(RO,RG,{'get':RT,'enumerable':RO===RU,'configurable':!![]}),cH++;break;}case 0x81:{let Rw=cy[--co];if(Rw==null)throw new TypeError(Rw+'\x20is\x20not\x20iterable');let RN=Rw[Symbol['asyncIterator']];if(typeof RN==='function')cy[co++]=RN['call'](Rw);else{let RJ=Rw[Symbol['iterator']];if(typeof RJ!=='function')throw new TypeError(Rw+'\x20is\x20not\x20iterable');let Rt=RJ['call'](Rw);if(Rt===null||typeof Rt!=='object')throw new TypeError('Iterator\x20method\x20returned\x20a\x20non-object\x20value');let RX=async function(RE){if(RE===null||typeof RE!=='object')throw new TypeError('Iterator\x20result\x20is\x20not\x20an\x20object');let Rg=await RE['value'];return{'value':Rg,'done':!!RE['done']};},Ri={'next':function(RE){let Rg;try{Rg=Rt['next'](RE);}catch(RI){return Promise['reject'](RI);}return RX(Rg);},'return':function(RE){if(typeof Rt['return']!=='function')return Promise['resolve']({'value':RE,'done':!![]});let Rg;try{Rg=Rt['return'](RE);}catch(RI){return Promise['reject'](RI);}return RX(Rg);},'throw':function(RE){if(typeof Rt['throw']!=='function')return Promise['reject'](RE);let Rg;try{Rg=Rt['throw'](RE);}catch(RI){return Promise['reject'](RI);}return RX(Rg);},[Symbol['asyncIterator']]:function(){return this;}};cy[co++]=Ri;}cH++;break;}case 0x8d:{db:{let RE=cy[--co],Rg=cy[co-0x1];if(RE===null){d(Rg['prototype'],null),d(Rg,Function['prototype']),Rg['_$zAtnC1']=null,cH++;break db;}if(typeof RE!=='function')throw new TypeError('Class\x20extends\x20value\x20'+String(RE)+'\x20is\x20not\x20a\x20constructor\x20or\x20null');let RI=![],RZ=I(RE);if(!RZ)try{let RS=c(RE['prototype']),Rn=RE['apply'](RS,[]);Rn!==undefined&&Rn!==RS&&(RI=!![]);}catch(Rk){let RP=Rk&&typeof Rk['message']==='string'?Rk['message']:'';(RP['includes']('\x27new\x27')||RP['includes']('constructor')||RP['includes']('Illegal\x20constructor'))&&(RI=!![]);}if(RI){let RA=Rg,Rp=vmd_85b0dc,RM='_$XcVYuf',Rx='_$9Gd9Gy',Ru='_$orzYHG';function Rl(...Rf){let Rs=c(RE['prototype']);Rp[Ru]={'parent':RE,'newTarget':new.target||Rl,'outer':Rl},Rp[Rx]=new.target||Rl;let RD=RM in Rp;!RD&&(Rp[RM]=new.target);try{let RB=RA['apply'](Rs,Rf);RB!==undefined&&RB!==null&&s(RB)&&(Rs=RB);}finally{delete Rp[Ru],delete Rp[Rx],!RD&&delete Rp[RM];}return Rs;}Rl['prototype']=c(RE['prototype']),Rl['prototype']['constructor']=Rl,d(Rl,RE),v(RA)['forEach'](function(Rf){Rf!=='prototype'&&Rf!=='length'&&Rf!=='name'&&u(Rl,Rf,R(RA,Rf));});RA['prototype']&&(v(RA['prototype'])['forEach'](function(Rf){Rf!=='constructor'&&u(Rl['prototype'],Rf,R(RA['prototype'],Rf));}),F(RA['prototype'])['forEach'](function(Rf){u(Rl['prototype'],Rf,R(RA['prototype'],Rf));}));cy[--co],cy[co++]=Rl,Rl['_$zAtnC1']=RE,cH++;break db;}d(Rg['prototype'],RE['prototype']),d(Rg,RE),Rg['_$zAtnC1']=RE,cH++;}break;}case 0xa1:{if(cD===null){if(cE||!cg){let Rf=cs||cd,Rs=Rf?Rf['length']:0x0;cD=c(Object['prototype']);for(let RD=0x0;RD<Rs;RD++){cD[RD]=Rf[RD];}W(cD,'length',{'value':Rs,'writable':!![],'enumerable':![],'configurable':!![]}),W(cD,Symbol['iterator'],{'value':Array['prototype'][Symbol['iterator']],'writable':!![],'enumerable':![],'configurable':!![]}),cD=new Proxy(cD,{'has':function(RB,v0){if(v0===Symbol['toStringTag'])return![];return v0 in RB;},'get':function(RB,v0,v1){if(v0===Symbol['toStringTag'])return'Arguments';return Reflect['get'](RB,v0,v1);}}),cE?W(cD,'callee',{'get':O,'set':O,'enumerable':![],'configurable':![]}):W(cD,'callee',{'value':cq,'writable':!![],'enumerable':![],'configurable':!![]});}else{let RB=cd?cd['length']:0x0,v0={},v1={},v2=cq,v3=![],v4=!![],v5={},v6=function(vc){if(typeof vc!=='string')return NaN;let vR=+vc;return vR>=0x0&&vR%0x1===0x0&&String(vR)===vc?vR:NaN;},v7=function(vc){return!isNaN(vc)&&vc>=0x0;},v8=function(vc){if(vc in v1)return undefined;if(vc in v0)return v0[vc];return vc<cd['length']?cd[vc]:undefined;},v9=function(vc){if(vc in v1)return![];if(vc in v0)return!![];return vc<cd['length']?vc in cd:![];},vW={};W(vW,'length',{'value':RB,'writable':!![],'enumerable':![],'configurable':!![]}),W(vW,'callee',{'value':cq,'writable':!![],'enumerable':![],'configurable':!![]}),W(vW,Symbol['iterator'],{'value':Array['prototype'][Symbol['iterator']],'writable':!![],'enumerable':![],'configurable':!![]}),cD=new Proxy(vW,{'get':function(vc,vR,vv){if(vR==='length')return RB;if(vR==='callee')return v3?undefined:v2;if(vR===Symbol['toStringTag'])return'Arguments';let vF=v6(vR);if(v7(vF)){if(vF in v5)return Reflect['get'](vc,vR,vv);return v8(vF);}return Reflect['get'](vc,vR,vv);},'set':function(vc,vR,vv){if(vR==='length'){if(!v4)return![];return RB=vv,vc['length']=vv,!![];}if(vR==='callee')return v2=vv,v3=![],vc['callee']=vv,!![];let vF=v6(vR);if(v7(vF)){if(vF in v5)return Reflect['set'](vc,vR,vv);let vd=R(vc,String(vF));if(vd&&!vd['writable'])return![];if(vF in v1)delete v1[vF],v0[vF]=vv;else vF<cd['length']?cd[vF]=vv:v0[vF]=vv;return!![];}return vc[vR]=vv,!![];},'has':function(vc,vR){if(vR==='length')return!![];if(vR==='callee')return!v3;if(vR===Symbol['toStringTag'])return![];let vv=v6(vR);if(v7(vv)){if(String(vv)in vc)return!![];return v9(vv);}return vR in vc;},'defineProperty':function(vc,vR,vv){if(vR==='length')return'value'in vv&&(RB=vv['value']),'writable'in vv&&(v4=vv['writable']),W(vc,vR,vv),!![];if(vR==='callee')return'value'in vv&&(v2=vv['value']),v3=![],W(vc,vR,vv),!![];let vF=v6(vR);if(v7(vF)){let vd='get'in vv||'set'in vv,vC=R(vc,String(vF)),vq=vF in v5?vC?vC['value']:undefined:v8(vF),va=vC?vC['writable']!==![]:!![],vK=vC?vC['enumerable']!==![]:!![],vy=vC?vC['configurable']!==![]:!![],vo;if(vd)vo=vv,v5[vF]=0x1,vF in v0&&delete v0[vF],vF in v1&&delete v1[vF];else{let vb='value'in vv?vv['value']:vq,vH='writable'in vv?vv['writable']:va,vj='enumerable'in vv?vv['enumerable']:vK,ve='configurable'in vv?vv['configurable']:vy;vo={'value':vb,'writable':vH,'enumerable':vj,'configurable':ve},'value'in vv&&(!(vF in v5)&&(vF<cd['length']&&!(vF in v1)?cd[vF]=vv['value']:(v0[vF]=vv['value'],vF in v1&&delete v1[vF]))),'writable'in vv&&vv['writable']===![]&&(v5[vF]=0x1,vF in v0&&delete v0[vF],vF in v1&&delete v1[vF]);}return W(vc,String(vF),vo),!![];}return W(vc,vR,vv),!![];},'deleteProperty':function(vc,vR){if(vR==='callee')return v3=!![],delete vc['callee'],!![];let vv=v6(vR);if(v7(vv)){let vd=R(vc,String(vv));if(vd&&vd['configurable']===![])return![];return vv in v5&&delete v5[vv],vv<cd['length']?v1[vv]=0x1:delete v0[vv],delete vc[vR],!![];}let vF=R(vc,vR);if(vF&&vF['configurable']===![])return![];return delete vc[vR],!![];},'preventExtensions':function(vc){let vR=cd?cd['length']:0x0;for(let vv=0x0;vv<vR;vv++){!(vv in v1)&&!R(vc,String(vv))&&W(vc,String(vv),{'value':v8(vv),'writable':!![],'enumerable':!![],'configurable':!![]});}for(let vF in v0){!R(vc,vF)&&W(vc,vF,{'value':v0[vF],'writable':!![],'enumerable':!![],'configurable':!![]});}return Object['preventExtensions'](vc),!![];},'getOwnPropertyDescriptor':function(vc,vR){if(vR==='callee'){if(v3)return undefined;return R(vc,'callee');}if(vR==='length')return R(vc,'length');let vv=v6(vR);if(v7(vv)){if(vv in v5)return R(vc,vR);if(v9(vv)){let vd=R(vc,String(vv));return{'value':v8(vv),'writable':vd?vd['writable']:!![],'enumerable':vd?vd['enumerable']:!![],'configurable':vd?vd['configurable']:!![]};}return R(vc,vR);}let vF=R(vc,vR);if(vF)return vF;return undefined;},'ownKeys':function(vc){let vR=[],vv=cd?cd['length']:0x0;for(let vd=0x0;vd<vv;vd++){!(vd in v1)&&vR['push'](String(vd));}for(let vC in v0){vR['indexOf'](vC)===-0x1&&vR['push'](vC);}vR['push']('length');!v3&&vR['push']('callee');let vF=Reflect['ownKeys'](vc);for(let vq=0x0;vq<vF['length'];vq++){vR['indexOf'](vF[vq])===-0x1&&vR['push'](vF[vq]);}return vR;}});}}cy[co++]=cD,cH++;break;}case 0x68:{let vc=cy[--co],vR=f(cA,vc),vv=cy[--co];if(typeof vv!=='function')throw new TypeError(vv+'\x20is\x20not\x20a\x20constructor');if(j['call'](N,vv))throw new TypeError(vv['name']+'\x20is\x20not\x20a\x20constructor');let vF=vmd_85b0dc['_$CQ1XLk'];vmd_85b0dc['_$CQ1XLk']=undefined;let vd;try{vd=Reflect['construct'](vv,vR);}finally{vmd_85b0dc['_$CQ1XLk']=vF;}cy[co++]=vd,cH++;break;}case 0x6f:{let vC=cy[--co],vq=cy[--co];cy[co++]=vq instanceof vC,cH++;break;}case 0x5b:{let va=cy[--co],vK=cy[co-0x1];vK['push'](va),cH++;break;}case 0xb6:{let vy=cy[--co],vo=cy[--co],vb=cy[co-0x1],vH=W7(vb);W(vH,vo,{'get':vy,'enumerable':vH===vb,'configurable':!![]}),cH++;break;}case 0xa6:{cy[co++]=vmy[Re],cH++;break;}case 0x84:{let vj=cy[--co];cy[co++]=W5(vj),cH++;break;}case 0x93:{let ve=cy[--co],vl=cy[co-0x1],vY=cj[Re];W(vl,vY,{'value':ve,'writable':!![],'enumerable':![],'configurable':!![]});typeof ve==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],ve,vl));cH++;break;}case 0xb4:{let vV=cy[--co],vQ=cy[--co],vh=cy[co-0x1];W(vh['prototype'],vQ,{'value':vV,'writable':!![],'enumerable':![],'configurable':!![]});typeof vV==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],vV,vh['prototype']));cH++;break;}case 0xa9:{let vL=cy[--co];cy[co++]=Symbol['keyFor'](vL),cH++;break;}case 0x80:{let vz=cy[--co];cy[co++]=!!vz['done'],cH++;break;}case 0x95:{let vr=cy[--co],vm=cy[co-0x1],vT=cj[Re];W(vm,vT,{'set':vr,'enumerable':![],'configurable':!![]}),cH++;break;}case 0xb8:{let vU=cy[--co],vG=cy[--co],vO=cy[co-0x1];W(vO,vG,{'get':vU,'enumerable':![],'configurable':!![]}),cH++;break;}case 0xb9:{let vw=cy[--co],vN=cy[--co],vJ=cy[co-0x1];W(vJ,vN,{'set':vw,'enumerable':![],'configurable':!![]}),cH++;break;}case 0x94:{let vt=cy[--co],vX=cy[co-0x1],vi=cj[Re];W(vX,vi,{'get':vt,'enumerable':![],'configurable':!![]}),cH++;break;}case 0xa7:{if(Re===-0x1)cy[co++]=Symbol();else{let vE=cy[--co];cy[co++]=Symbol(vE);}cH++;break;}case 0x8f:{let vg=cy[--co],vI=cy[--co],vZ=cy[--co],vS=vmd_85b0dc['_$CQ1XLk'],vn=vS?C(vS):W8(vZ);if(vn===null||vn===undefined)throw new TypeError('Cannot\x20convert\x20'+vn+'\x20to\x20object');let vk=W9(vn,vI),vP=![];if(vk['desc']){let vA=vk['desc'];if(vA['set']){let vp=vmd_85b0dc['_$CQ1XLk'];vmd_85b0dc['_$CQ1XLk']=vk['proto']||vn,vmd_85b0dc['_$2TsDAM']=!![];try{vA['set']['call'](vZ,vg);}finally{vmd_85b0dc['_$2TsDAM']=![],vmd_85b0dc['_$CQ1XLk']=vp;}}else{if(vA['get']||!('value'in vA)){if(cE)throw new TypeError('Cannot\x20set\x20property\x20\x27'+String(vI)+'\x27\x20of\x20object\x20which\x20has\x20only\x20a\x20getter');}else{if(vA['writable']===![]){if(cE)throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(vI)+'\x27\x20of\x20object');}else vP=!![];}}}else vP=!![];if(vP){let vM=Object['getOwnPropertyDescriptor'](vZ,vI);if(vM){if('value'in vM){if(vM['writable'])vZ[vI]=vg;else{if(cE)throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(vI)+'\x27\x20of\x20object');}}else{if(cE)throw new TypeError('Cannot\x20redefine\x20property:\x20'+String(vI));}}else{let vx=Reflect['defineProperty'](vZ,vI,{'value':vg,'writable':!![],'enumerable':!![],'configurable':!![]});if(!vx&&cE)throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(vI)+'\x27\x20of\x20object');}}cy[co++]=vg,cH++;break;}case 0x92:{let vu=cy[--co],vf=cy[co-0x1],vs=cj[Re],vD=W7(vf);W(vD,vs,{'set':vu,'enumerable':vD===vf,'configurable':!![]}),cH++;break;}case 0xb5:{let vB=cy[--co],F0=cy[--co],F1=cy[co-0x1];W(F1,F0,{'value':vB,'writable':!![],'enumerable':![],'configurable':!![]});typeof vB==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],vB,F1));cH++;break;}case 0x7c:{let F2=cy[--co],F3=F2&&F2['i']?F2['i']:F2;if(F3!=null){if(cm!==null)try{let F4=F3['return'];typeof F4==='function'&&F4['call'](F3);}catch(F5){}else{let F6=F3['return'];if(F6!=null){if(typeof F6!=='function')throw new TypeError('iterator\x20\x27return\x27\x20is\x20not\x20callable');let F7=F6['call'](F3);W2(F7);}}}cH++;break;}case 0x7f:{let F8=cy[--co];if(F8==null)throw new TypeError(F8+'\x20is\x20not\x20iterable');let F9=F8[k];if(Array['isArray'](F8)&&F9===n)cy[co++]={['_$4EA7Hd']:F8,['_$y8hLUq']:0x0},cH++;else{if(typeof F9!=='function')throw new TypeError(F8+'\x20is\x20not\x20iterable');let FW=K(F9,F8,[]);W2(FW);let Fc=FW['next'];cy[co++]={'i':FW,'n':Fc},cH++;}break;}case 0x82:{let FR=cy[--co];cy[co++]=FR['next'](),cH++;break;}case 0x6a:{let Fv=cy[--co];cy[co++]=import(Fv),cH++;break;}case 0x69:{dH:{let FF=cy[--co],Fd=f(cA,FF),FC=cy[--co];if(Re===0x1){cy[co++]=Fd,cH++;break dH;}if(vmd_85b0dc['_$zcBJqv']){cH++;break dH;}let Fq=vmd_85b0dc['_$orzYHG'];if(Fq){let Fy=Fq['outer'],Fo=Fy?C(Fy):Fq['parent'];if(typeof Fo!=='function')throw new TypeError('Super\x20constructor\x20'+String(Fo)+'\x20of\x20'+(Fy&&Fy['name']||'anonymous')+'\x20is\x20not\x20a\x20constructor');let Fb=Fq['newTarget'],FH=Reflect['construct'](Fo,Fd,Fb);cK&&cK!==FH&&v(cK)['forEach'](function(Fj){!(Fj in FH)&&(FH[Fj]=cK[Fj]);});cK=FH,cB=!![],Wc(cf,cK),cH++;break dH;}if(typeof FC!=='function')throw new TypeError('Super\x20expression\x20must\x20be\x20a\x20constructor');let Fa;Z['has'](cq)?Fa=WR(cf):Fa=cB?cK:undefined;vmd_85b0dc['_$XcVYuf']=ca;let FK;try{let Fj=FC['apply'](cK,Fd);Fj!==undefined&&Fj!==cK&&s(Fj)&&(cK&&Object['assign'](Fj,cK),cK=Fj,ca&&ca['prototype']&&C(cK)!==ca['prototype']&&d(cK,ca['prototype'])),cB=!![],Wc(cf,cK);}catch(Fe){let Fl=Fe&&typeof Fe['message']==='string'?Fe['message']:'';if(Fl['includes']('\x27new\x27')||Fl['includes']('Illegal\x20constructor')){let FY=Reflect['construct'](FC,Fd,ca);FY!==cK&&cK&&Object['assign'](FY,cK),cK=FY,cB=!![],Wc(cf,cK);}else FK=Fe;}finally{delete vmd_85b0dc['_$XcVYuf'];}if(FK!==undefined)throw FK;if(Fa!==undefined)throw new ReferenceError('Super\x20constructor\x20may\x20only\x20be\x20called\x20once');cH++;}break;}case 0x90:{let FV=cy[--co],FQ=cy[co-0x1],Fh=cj[Re];W(FQ['prototype'],Fh,{'value':FV,'writable':!![],'enumerable':![],'configurable':!![]});typeof FV==='function'&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],FV,FQ['prototype']));cH++;break;}case 0x70:{let FL=cj[Re];FL in vmd_85b0dc?cy[co++]=typeof vmd_85b0dc[FL]:cy[co++]=typeof vma[FL];cH++;break;}case 0x8e:{dj:{let Fz=cy[--co],Fr=cy[--co],Fm=vmd_85b0dc['_$CQ1XLk'],FT=Fm?C(Fm):W8(Fr),FU=W9(FT,Fz);if(FU['desc']&&FU['desc']['get']){let FO=vmd_85b0dc['_$CQ1XLk'];vmd_85b0dc['_$CQ1XLk']=FU['proto']||FT,vmd_85b0dc['_$2TsDAM']=!![];let Fw;try{Fw=FU['desc']['get']['call'](Fr);}finally{vmd_85b0dc['_$2TsDAM']=![],vmd_85b0dc['_$CQ1XLk']=FO;}cy[co++]=Fw,cH++;break dj;}if(FU['desc']&&FU['desc']['set']&&!('value'in FU['desc'])){cy[co++]=undefined,cH++;break dj;}let FG=FU['proto']?FU['proto'][Fz]:FT[Fz];if(typeof FG==='function'){let FN=FU['proto']||FT,FJ=FG['constructor']&&FG['constructor']['name'],Ft=FJ==='GeneratorFunction'||FJ==='AsyncFunction'||FJ==='AsyncGeneratorFunction';!Ft&&(!vmd_85b0dc['_$9U8rIO']&&(vmd_85b0dc['_$9U8rIO']=new WeakMap()),y['call'](vmd_85b0dc['_$9U8rIO'],FG,FN));}cy[co++]=FG,cH++;}break;}case 0xa3:{cy[--co],cy[co++]=undefined,cH++;break;}case 0x5a:{cy[co++]=[],cH++;break;}case 0xb7:{let FX=cy[--co],Fi=cy[--co],FE=cy[co-0x1],Fg=W7(FE);W(Fg,Fi,{'set':FX,'enumerable':Fg===FE,'configurable':!![]}),cH++;break;}case 0xa4:{cy[co++]=ca,cH++;break;}case 0x5d:{let FI=cy[--co],FZ;if(Array['isArray'](FI))FZ=FI;else{if(FI===null||FI===undefined)throw new TypeError(FI+'\x20is\x20not\x20iterable');let Fn=FI[Symbol['iterator']];if(Fn===null||Fn===undefined||typeof Fn!=='function')throw new TypeError(FI+'\x20is\x20not\x20iterable');let Fk=K(Fn,FI,[]);if(Fk===null||typeof Fk!=='object')throw new TypeError('Iterator\x20method\x20returned\x20a\x20non-object\x20value');FZ=[];while(!![]){let FP=Fk['next']();W2(FP);if(FP['done'])break;FZ['push'](FP['value']);}}let FS={'value':FZ};H['call'](w,FS),cy[co++]=FS,cH++;break;}case 0xa5:{cy[co++]=vmK[Re],cH++;break;}case 0x5e:{let FA=cy[--co],Fp=cy[co-0x1];if(Array['isArray'](FA))Array['prototype']['push']['apply'](Fp,FA);else for(let FM of FA){Fp['push'](FM);}cH++;break;}case 0xa8:{let Fx=cj[Re];cy[co++]=Symbol['for'](Fx),cH++;break;}case 0x8c:{let Fu=cy[--co],Ff=cy[--co],Fs=Re,FD=function(FB,d0){let d1=function(){if(FB){d0&&(vmd_85b0dc['_$9Gd9Gy']=d1);let d2='_$XcVYuf'in vmd_85b0dc;!d2&&(vmd_85b0dc['_$XcVYuf']=new.target);try{let d3=FB['apply'](this,W6(arguments));if(d0&&d3!==undefined&&(d3===null||typeof d3!=='object'&&typeof d3!=='function'))throw new TypeError('Derived\x20constructors\x20may\x20only\x20return\x20object\x20or\x20undefined');return d3;}finally{d0&&delete vmd_85b0dc['_$9Gd9Gy'],!d2&&delete vmd_85b0dc['_$XcVYuf'];}}};return d1;}(Ff,Fs);Fu&&W(FD,'name',{'value':Fu,'configurable':!![]});if(Ff&&!I(FD)){let FB=g(Ff);FB&&E(FD,FB);}cy[co++]=FD,cH++;break;}case 0x64:{let d0=cy[--co],d1=typeof d0==='object'?d0:c4(d0);d0=d1;let d2=d1&&d1[0xc],d3=d1&&d1[0x16],d4=d1&&d1[0xb],d5=d1&&d1[0x15],d6=d1&&d1[0x10]||0x0,d7=d1&&d1[0x7],d8=d2?cS:undefined,d9=cf,dW;if(d4)dW=Wa(c6,d0,d9,N,d7,vma,d3);else{if(d3)d2?dW=Wy(c5,d0,d9,d8):dW=Wq(c5,d0,d9,d7,vma);else{if(d2){dW=WK(Wj,d0,d9,d8);let dc=vmd_85b0dc['_$9Gd9Gy'];dc===undefined&&cq&&Z['has'](cq)&&(dc=Z['get'](cq)),dc!==undefined&&Z['set'](dW,dc);}else dW=WC(Wj,d0,d9,d7,vma,d5);}}u(dW,'length',{'value':d6,'writable':![],'enumerable':![],'configurable':!![]}),cy[co++]=dW,cH++;break;}case 0x83:{let dR=cy[--co],dv=dR&&dR['i']?dR['i']:dR;if(cm!==null)try{dv&&typeof dv['return']==='function'?cy[co++]=Promise['resolve'](dv['return']())['catch'](function(){return undefined;}):cy[co++]=Promise['resolve']();}catch(dF){cy[co++]=Promise['resolve']();}else{let dd=dv!=null?dv['return']:undefined;if(dd==null)cy[co++]=Promise['resolve']();else typeof dd!=='function'?cy[co++]=Promise['reject'](new TypeError('iterator\x20\x27return\x27\x20is\x20not\x20callable')):cy[co++]=Promise['resolve'](dd['call'](dv));}cH++;break;}case 0xa0:{if(cI&&!cB){let dC=WR(cf);if(dC!==undefined)cK=dC,cB=!![];else throw new ReferenceError('Must\x20call\x20super\x20constructor\x20in\x20derived\x20class\x20before\x20accessing\x20\x27this\x27\x20or\x20returning\x20from\x20derived\x20constructor');}cy[co++]=cK,cH++;break;}case 0xa2:{let dq=Re&0xffff,da=Re>>0x10,dK=cj[dq],dy=cj[da];cy[co++]=new RegExp(dK,dy),cH++;break;}}},Rv=function(Rj,Re){switch(Rj){case 0xd6:{cf=cf['_$H14eBN'],cH++;break;}case 0x111:{let RY=vmd_85b0dc['_$9Gd9Gy'];RY===undefined&&cq&&Z['has'](cq)&&(RY=Z['get'](cq));if(RY===undefined)throw new ReferenceError('\x27super\x27\x20keyword\x20is\x20only\x20valid\x20inside\x20a\x20derived\x20constructor');cy[co++]=RY,cH++;break;}case 0x11b:{let RV=Re&0xffff,RQ=cf['_$1SLmMc'];RQ[RV]=RQ;let Rh=Re>>>0x10;Rh&&((cf['_$Yp6Ysf']||(cf['_$Yp6Ysf']={}))[RV]=cj[Rh-0x1]);cH++;break;}case 0x10a:{!cy[--co]?cH=cl[cH]:(cy[--co],cH++);break;}case 0xc8:{debugger;cH++;break;}case 0x115:{let RL=cy[--co],Rz=cy[--co];cy[co++]=RL==null||typeof RL!=='object'&&typeof RL!=='function'?!![]:Rz in RL,cH++;break;}case 0x117:{vD:{let Rr=Re&0xffff,Rm=Re>>>0x10,RT=cf;for(let RO=0x0;RO<Rm;RO++){RT=RT['_$H14eBN'];}let RU=RT['_$1SLmMc'],RG=RU[Rr];if(RG===RU){let Rw=RT['_$Yp6Ysf'];throw new ReferenceError('Cannot\x20access\x20\x27'+(Rw&&Rw[Rr]||'variable')+'\x27\x20before\x20initialization');}cy[co++]=RG,cH++;break vD;}break;}case 0x116:{let RN=cb[Re],RJ=RN&&RN['_$4EA7Hd'];if(RJ!==undefined){let Rt=RN['_$y8hLUq'];Rt>=RJ['length']?cH=cl[cH]:(RN['_$y8hLUq']=Rt+0x1,cy[co++]=RJ[Rt],cH++);}else{let RX=RN['i'],Ri=K(RN['n'],RX,[]);W2(Ri),Ri['done']?cH=cl[cH]:(cy[co++]=Ri['value'],cH++);}break;}case 0x119:{let RE=Re,Rg=cy[--co];cf['_$1SLmMc'][RE]=Rg,cH++;break;}case 0xd5:{cy[co++]=cf,cH++;break;}case 0x114:{let RI=cj[Re],RZ=!![];RI in vma&&(RZ=delete vma[RI]);RZ&&RI in vmd_85b0dc&&(RZ=delete vmd_85b0dc[RI]);cy[co++]=RZ,cH++;break;}case 0x105:{let RS=cb[Re]-0x1;cb[Re]=RS,cy[co++]=RS,cH++;break;}case 0x107:{let Rn=cj[Re],Rk=cy[--co],RP=cy[--co];if(typeof Rk!=='function')throw new TypeError(Rk+'\x20is\x20not\x20a\x20function');let RA=vmd_85b0dc['_$9U8rIO'],Rp=RA&&o['call'](RA,Rk);!Rp&&RA&&(Rk===q||Rk===a)&&(Rp=o['call'](RA,RP));let RM=vmd_85b0dc['_$CQ1XLk'];Rp&&(vmd_85b0dc['_$2TsDAM']=!![],vmd_85b0dc['_$CQ1XLk']=Rp);let Rx;try{if(Rn===0x0)Rx=K(Rk,RP,G);else{if(Rn===0x1){let Ru=cy[--co];Rx=Ru&&typeof Ru==='object'&&j['call'](w,Ru)?K(Rk,RP,Ru['value']):K(Rk,RP,[Ru]);}else Rx=K(Rk,RP,f(cA,Rn));}cy[co++]=Rx;}finally{Rp&&(vmd_85b0dc['_$2TsDAM']=![],vmd_85b0dc['_$CQ1XLk']=RM);}cH++;break;}case 0x10e:{debugger;cH++;break;}case 0xff:{let Rf=Re&0xffff,Rs=Re>>>0x10,RD=cb[Rf],RB=cj[Rs];cy[co++]=RD[RB],cH++;break;}case 0xc9:{cH++;break;}case 0x102:{let v0=Re&0xffff,v1=Re>>>0x10,v2=cy[--co],v3=f(cA,v2),v4=cb[v0],v5=cj[v1],v6=v4[v5];cy[co++]=v6['apply'](v4,v3),cH++;break;}case 0xd2:{let v7=cy[--co],v8={['_$1SLmMc']:new Array(Re),['_$b6EHlo']:null,['_$ekoAWr']:-0x1,['_$H14eBN']:v7};cf=v8,cH++;break;}case 0x108:{let v9=cy[co-0x1],vW=cj[Re];if(v9===null||v9===undefined)throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+v9+'\x20(reading\x20'+'\x27'+String(vW)+'\x27'+')');cy[co++]=v9[vW],cH++;break;}case 0x112:{let vc=cy[--co],vR=vc&&vc['i']?vc['i']:vc;try{if(vR!=null){let vv=vR['return'];typeof vv==='function'&&vv['call'](vR);}}catch(vF){}cH++;break;}case 0x100:{let vd=Re&0xffff,vC=Re>>>0x10;cy[co++]=cb[vd]<cj[vC],cH++;break;}case 0x113:{let vq=cy[--co],va=cy[co-0x1];(vq===null||s(vq))&&d(va,vq);cH++;break;}case 0x10b:{!cy[co-0x1]?cH=cl[cH]:(cy[--co],cH++);break;}case 0x10c:{cy[co-0x1]?cH=cl[cH]:(cy[--co],cH++);break;}case 0x11d:{cy[co++]=cS,cH++;break;}case 0x106:{let vK=cy[co-0x3],vy=cy[co-0x2],vo=cy[co-0x1];cy[co-0x3]=vo,cy[co-0x2]=vK,cy[co-0x1]=vy,cH++;break;}case 0xfd:{let vb=Re&0xffff,vH=Re>>>0x10;cy[co++]=cb[vb]-cj[vH],cH++;break;}case 0x109:{if(cI&&!cB){let vl=WR(cf);if(vl!==undefined)cK=vl,cB=!![];else throw new ReferenceError('Must\x20call\x20super\x20constructor\x20in\x20derived\x20class\x20before\x20accessing\x20\x27this\x27\x20or\x20returning\x20from\x20derived\x20constructor');}let vj=cK,ve=cj[Re];if(vj===null||vj===undefined)throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+vj+'\x20(reading\x20'+'\x27'+String(ve)+'\x27'+')');cy[co++]=vj[ve],cH++;break;}case 0x11a:{let vY=Re,vV=cy[--co];cf['_$1SLmMc'][vY]=vV;let vQ=cf['_$b6EHlo'];!vQ&&(vQ=c(null),cf['_$b6EHlo']=vQ);vQ[vY]=0x1,cH++;break;}case 0x110:{let vh=S[Re],vL=cy[--co];if(vh){for(let vz=0x0;vz<vL;vz++)cy[--co];for(let vr=0x0;vr<vL;vr++)cy[--co];cy[co++]=vh;}else{let vm=new Array(vL);for(let vU=vL-0x1;vU>=0x0;vU--)vm[vU]=cy[--co];let vT=new Array(vL);for(let vG=vL-0x1;vG>=0x0;vG--)vT[vG]=cy[--co];W(vT,'raw',{'value':Object['freeze'](vm)}),Object['freeze'](vT),S[Re]=vT,cy[co++]=vT;}cH++;break;}case 0x104:{let vO=cb[Re]+0x1;cb[Re]=vO,cy[co++]=vO,cH++;break;}case 0x11c:{let vw=Re;cf['_$1SLmMc'][vw]=cq;let vN=cf['_$b6EHlo'];!vN&&(vN=c(null),cf['_$b6EHlo']=vN);vN[vw]=0x2,cH++;break;}case 0xca:{RW=co>0x0?cy[--co]:undefined;return 0x1;break;}case 0xfc:{let vJ=Re&0xffff,vt=Re>>>0x10;cy[co++]=cb[vJ]+cj[vt],cH++;break;}case 0xfe:{let vX=Re&0xffff,vi=Re>>>0x10;cy[co++]=cb[vX]*cj[vi],cH++;break;}case 0xfb:{cb[Re]=cb[Re]-0x1,cH++;break;}case 0x103:{cb[Re]=cy[--co],cH++;break;}case 0x10f:{if(typeof process!=='undefined'&&process['hrtime']&&process['hrtime']['bigint']){var Rl=process['hrtime']['bigint']();debugger;if(Number(process['hrtime']['bigint']()-Rl)/0xf4240>0.1)try{_setDeceptionDetected();}catch(vE){}}cH++;break;}case 0xfa:{cb[Re]=cb[Re]+0x1,cH++;break;}case 0x101:{let vg=Re&0xffff,vI=Re>>>0x10;cb[vg]<cj[vI]?cH=cl[cH]:cH++;break;}case 0xdc:{let vZ=cy[--co],vS=cj[Re];if(cE&&!(vS in vma)&&!(vS in vmd_85b0dc))throw new ReferenceError(vS+'\x20is\x20not\x20defined');vmd_85b0dc[vS]=vZ,vma[vS]=vZ,cy[co++]=vZ,cH++;break;}case 0x118:{vB:{let vn=Re&0xffff,vk=Re>>>0x10,vP=cy[--co],vA=cf;for(let vu=0x0;vu<vk;vu++){vA=vA['_$H14eBN'];}let vp=vA['_$1SLmMc'];if(vp[vn]===vp){let vf=vA['_$Yp6Ysf'];throw new ReferenceError('Cannot\x20access\x20\x27'+(vf&&vf[vn]||'variable')+'\x27\x20before\x20initialization');}let vM=vA['_$b6EHlo'],vx=vM&&vM[vn];if(vx){if(vx===0x2&&!cE){cH++;break vB;}throw new TypeError('Assignment\x20to\x20constant\x20variable.');}vp[vn]=vP,cH++;break vB;}break;}case 0x11e:{let vs=cf['_$1SLmMc'];vs[Re]=vs,cf['_$ekoAWr']=Re,cH++;break;}}});switch(RK){case 0x7:{cb[Ry]=cy[--co],cH++;continue;}case 0x4:{let Rj=cy[co-0x1];cy[co++]=Rj,cH++;continue;}case 0x1c:{let Re=cy[--co];cy[co++]=typeof Re===U?Re:+Re,cH++;continue;}case 0x34:{!cy[--co]?cH=cl[cH]:cH++;continue;}case 0x48:{let Rl=cy[--co],RY=cy[--co];if(RY===null||RY===undefined){if(Rl===Symbol['iterator'])throw new TypeError((RY===null?'object\x20null':'undefined')+'\x20is\x20not\x20iterable\x20(cannot\x20read\x20property\x20Symbol(Symbol.iterator))');throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+RY+'\x20(reading\x20'+(typeof Rl==='symbol'?'\x27'+Rl['toString']()+'\x27':typeof Rl==='string'?'\x27'+Rl+'\x27':typeof Rl==='object'||typeof Rl==='function'?'\x27<computed\x20key>\x27':'\x27'+String(Rl)+'\x27')+')');}cy[co++]=RY[Rl],cH++;continue;}case 0xa:{let RV=cy[--co],RQ=cy[--co];cy[co++]=RQ+RV,cH++;continue;}case 0x0:{cy[co++]=cj[Ry],cH++;continue;}case 0x32:{cH=cl[cH];continue;}case 0x3:{cy[--co],cH++;continue;}case 0x2e:{let Rh=cy[--co],RL=cy[--co];cy[co++]=RL>Rh,cH++;continue;}case 0x8:{cy[co++]=cd[Ry],cH++;continue;}case 0x49:{let Rz=cy[--co],Rr=cy[--co],Rm=cy[--co];if(Rm===null||Rm===undefined)throw new TypeError('Cannot\x20set\x20properties\x20of\x20'+Rm+'\x20(setting\x20'+(typeof Rr==='symbol'?'\x27'+Rr['toString']()+'\x27':typeof Rr==='string'?'\x27'+Rr+'\x27':typeof Rr==='object'||typeof Rr==='function'?'\x27<computed\x20key>\x27':'\x27'+String(Rr)+'\x27')+')');if(cE){let RT=typeof Rm==='object'||typeof Rm==='function'?Rm:Object(Rm);if(!Reflect['set'](RT,Rr,Rz,Rm))throw new TypeError('Cannot\x20assign\x20to\x20read\x20only\x20property\x20\x27'+String(Rr)+'\x27\x20of\x20object');}else Rm[Rr]=Rz;cy[co++]=Rz,cH++;continue;}case 0x6:{cy[co++]=cb[Ry],cH++;continue;}case 0x46:{let RU=cy[--co],RG=cj[Ry];if(RU===null||RU===undefined)throw new TypeError('Cannot\x20read\x20properties\x20of\x20'+RU+'\x20(reading\x20'+'\x27'+String(RG)+'\x27'+')');cy[co++]=RU[RG],cH++;continue;}case 0x1:{cy[co++]=undefined,cH++;continue;}case 0xb:{let RO=cy[--co],Rw=cy[--co];cy[co++]=Rw-RO,cH++;continue;}case 0x2c:{let RN=cy[--co],RJ=cy[--co];cy[co++]=RJ<RN,cH++;continue;}case 0x10:{let Rt=cy[--co];cy[co++]=typeof Rt===U?Rt+0x1n:+Rt+0x1,cH++;continue;}}if(RK<0x5a){if(Rc(RK,Ry)){if(R2>0x0){for(let RX=R0-0x1;RX>=0x0;RX--){cb[RX]=R1[--R2];}cf=R1[--R2],cs=R1[--R2],cD=R1[--R2],cd=R1[--R2],co=R1[--R2],cH=R1[--R2],cy[co++]=RW,cH++;continue;}return RW;}}else{if(RK<0xc8){if(RR(RK,Ry)){if(R2>0x0){for(let Ri=R0-0x1;Ri>=0x0;Ri--){cb[Ri]=R1[--R2];}cf=R1[--R2],cs=R1[--R2],cD=R1[--R2],cd=R1[--R2],co=R1[--R2],cH=R1[--R2],cy[co++]=RW,cH++;continue;}return RW;}}else{if(Rv(RK,Ry)){if(R2>0x0){for(let RE=R0-0x1;RE>=0x0;RE--){cb[RE]=R1[--R2];}cf=R1[--R2],cs=R1[--R2],cD=R1[--R2],cd=R1[--R2],co=R1[--R2],cH=R1[--R2],cy[co++]=RW,cH++;continue;}return RW;}}}}break;}catch(Rg){if(cr&&cr['length']>0x0){let RI=cr[cr['length']-0x1];co=RI['_$E71ybc'];RI['_es']!==undefined&&(cf=RI['_es']);if(RI['_$ZrKuGu']!==undefined)cm=null,cP(Rg),cH=RI['_$ZrKuGu'],RI['_$ZrKuGu']=undefined,RI['_$LX7nZk']===undefined&&cr['pop']();else RI['_$LX7nZk']!==undefined?(cH=RI['_$LX7nZk'],RI['_$EEipSc']=Rg):(cH=RI['_$l8GTmO'],cr['pop']());continue;}throw Rg;}}if(cI&&!cB){let RZ=WR(cf);RZ!==undefined&&(cK=RZ,cB=!![]);}let RF=co>0x0?cy[--co]:cB?cK:undefined;if(cI&&!cB&&(RF===undefined||RF===null||typeof RF!=='object'&&typeof RF!=='function'))throw new ReferenceError('Must\x20call\x20super\x20constructor\x20in\x20derived\x20class\x20before\x20accessing\x20\x27this\x27\x20or\x20returning\x20from\x20derived\x20constructor');return RF;}return R3(0x0);}function*WH(cF,cd,cC,cq,ca,cK){let cy=Wb(cF,cd,cC,cq,ca,cK);while(!![]){if(cy&&typeof cy==='object'&&cy['_$ivW2U5']!==undefined){let co=cy['_d'],cb;try{cb=yield cy;}catch(cH){cy=co(0x2,cH);continue;}cb&&typeof cb==='object'&&cb['_$ivW2U5']===z?cy=co(0x3,cb['_$8PVFEx']):cy=co(0x1,cb);}else return cy;}}let Wj=function(cF,cd,cC,cq,ca,cK){vmd_85b0dc['_$2TsDAM']?vmd_85b0dc['_$2TsDAM']=![]:vmd_85b0dc['_$CQ1XLk']=undefined;let cy=typeof cF==='object'?cF:c3(cF);return Wo(cy,cd,cC,cq,ca,cK);},We=0x0,Wl=0x1,WY=0x2,WV=0x3,WQ=0x4,Wh=0x5,WL=0x6,Wz=0x7,Wr=0x8,Wm=0x9,WT=0xa,WU=0xb,WG=0x1,WO=0x2,Ww=0x4,WN=0x8,WJ=0x20,Wt=0x40,WX=0x80,Wi=0x100,WE=0x200,Wg=0x400,WI=0x800,WZ=0x1000,WS=0x2000,Wn=0x4000,Wk=0x8000,WP=0x10000,WA=0x20000,Wp=0x40000,WM=0x80000,Wx=0x200000;function Wu(cF){this['_$PO1lFE']=cF,this['_$nIHk5Z']=new DataView(cF['buffer'],cF['byteOffset'],cF['byteLength']),this['_$eYIAEm']=0x0;}Wu['prototype']['_$KbrkAB']=function(){return this['_$PO1lFE'][this['_$eYIAEm']++];},Wu['prototype']['_$B7aPfE']=function(){let cF=this['_$nIHk5Z']['getUint16'](this['_$eYIAEm'],!![]);return this['_$eYIAEm']+=0x2,cF;},Wu['prototype']['_$y0ms8k']=function(){let cF=this['_$nIHk5Z']['getUint32'](this['_$eYIAEm'],!![]);return this['_$eYIAEm']+=0x4,cF;},Wu['prototype']['_$CkfuXj']=function(){let cF=this['_$nIHk5Z']['getInt32'](this['_$eYIAEm'],!![]);return this['_$eYIAEm']+=0x4,cF;},Wu['prototype']['_$smsaR5']=function(){let cF=this['_$nIHk5Z']['getFloat64'](this['_$eYIAEm'],!![]);return this['_$eYIAEm']+=0x8,cF;},Wu['prototype']['_$CCVM38']=function(){let cF=0x0,cd=0x0,cC;do{cC=this['_$KbrkAB'](),cF|=(cC&0x7f)<<cd,cd+=0x7;}while(cC>=0x80);return cF>>>0x1^-(cF&0x1);},Wu['prototype']['_$Vd5nke']=function(){let cF=this['_$CCVM38'](),cd=this['_$PO1lFE'],cC=this['_$eYIAEm'],cq=cC+cF;this['_$eYIAEm']=cq;var ca='';while(cC<cq){var cK=cd[cC++];if(cK<0x80)ca+=String['fromCharCode'](cK);else{if(cK<0xe0)ca+=String['fromCharCode']((cK&0x1f)<<0x6|cd[cC++]&0x3f);else{if(cK<0xf0)ca+=String['fromCharCode']((cK&0xf)<<0xc|(cd[cC++]&0x3f)<<0x6|cd[cC++]&0x3f);else{var cy=(cK&0x7)<<0x12|(cd[cC++]&0x3f)<<0xc|(cd[cC++]&0x3f)<<0x6|cd[cC++]&0x3f;cy-=0x10000,ca+=String['fromCharCode']((cy>>0xa)+0xd800,(cy&0x3ff)+0xdc00);}}}}return ca;};var Wf='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/',Ws=new Uint8Array(0x80);for(var WD=0x0;WD<Wf['length'];WD++){Ws[Wf['charCodeAt'](WD)]=WD;}function WB(cF){var cd=cF['charCodeAt'](cF['length']-0x1)===0x3d?cF['charCodeAt'](cF['length']-0x2)===0x3d?0x2:0x1:0x0,cC=(cF['length']*0x3>>0x2)-cd,cq=new Uint8Array(cC),ca=0x0;for(var cK=0x0;cK<cF['length'];cK+=0x4){var cy=Ws[cF['charCodeAt'](cK)],co=Ws[cF['charCodeAt'](cK+0x1)],cb=Ws[cF['charCodeAt'](cK+0x2)],cH=Ws[cF['charCodeAt'](cK+0x3)];cq[ca++]=cy<<0x2|co>>0x4,ca<cC&&(cq[ca++]=(co&0xf)<<0x4|cb>>0x2),ca<cC&&(cq[ca++]=(cb&0x3)<<0x6|cH);}return cq;}function c0(cF){let cd=cF['_$KbrkAB']();switch(cd){case We:return null;case Wl:return undefined;case WY:return![];case WV:return!![];case WQ:{let cC=cF['_$KbrkAB']();return cC>0x7f?cC-0x100:cC;}case Wh:{let cq=cF['_$B7aPfE']();return cq>0x7fff?cq-0x10000:cq;}case WL:return cF['_$CkfuXj']();case Wz:return cF['_$smsaR5']();case Wr:return cF['_$Vd5nke']();case Wm:return BigInt(cF['_$Vd5nke']());case WT:{let ca=cF['_$Vd5nke'](),cK=cF['_$Vd5nke']();return new RegExp(ca,cK);}case WU:{let cy=cF['_$CCVM38'](),co=new Uint8Array(cy);for(let cb=0x0;cb<cy;cb++){co[cb]=cF['_$KbrkAB']();}return c1(co);}default:return null;}}function c1(cF){let cd;if(cF&&cF['_$eYIAEm']!==undefined)cd=cF;else{let cQ=typeof cF==='string'?WB(cF):cF;cd=new Wu(cQ);}let cC=cd['_$KbrkAB'](),cq=(cd['_$y0ms8k']()^0xcbb11a6f)>>>0x0,ca=cd['_$CCVM38'](),cK=cd['_$CCVM38'](),cy=[];cy[0x10]=ca,cy[0x8]=cK;cq&WN&&(cy[0x9]=cd['_$CCVM38']());if(cq&WJ){let ch=cd['_$CCVM38'](),cL={};for(let cz=0x0;cz<ch;cz++){let cr=cd['_$CCVM38'](),cm=cd['_$CCVM38']();cL[cr]=cm;}cy[0x4]=cL;}cq&Wt&&(cy[0x11]=cd['_$y0ms8k']());cq&WX&&(cy[0x3]=cd['_$y0ms8k']());cq&Wi&&(cy[0x1]=cd['_$y0ms8k']());cq&WE&&(cy[0x12]=cd['_$CCVM38']());cq&Wg&&(cy[0x2]=cd['_$y0ms8k']());cq&WM&&(cy[0xe]=cd['_$CCVM38']());cq&Wx&&(cy[0x0]=cd['_$CCVM38']());cq&WG&&(cy[0xc]=0x1);cq&WO&&(cy[0x16]=0x1);cq&Ww&&(cy[0xb]=0x1);cq&Wn&&(cy[0x15]=0x1);cq&Wk&&(cy[0x7]=0x1);cq&WP&&(cy[0xd]=0x1);cq&WA&&(cy[0xf]=0x1);cq&Wp&&(cy[0x14]=0x1);cq&WS&&(cy[0x6]=0x1);let co=cd['_$CCVM38'](),cb=new Array(co);for(let cT=0x0;cT<co;cT++){cb[cT]=c0(cd);}cy[0x13]=cb;function cH(cU){let cG=cU['_$KbrkAB']();switch(cG){case We:return-0x1;case WQ:{let cO=cU['_$KbrkAB']();return cO>0x7f?cO-0x100:cO;}case Wh:{let cw=cU['_$B7aPfE']();return cw>0x7fff?cw-0x10000:cw;}case WL:return cU['_$CkfuXj']();case Wz:return cU['_$smsaR5']();case Wr:return cU['_$Vd5nke']();default:return-0x1;}}let cj=cd['_$CCVM38'](),ce=cj<<0x1,cl=new Int32Array(ce),cY=0x0,cV=(ca*0x1f^cK*0x11^cj*0xd^co*0x7)>>>0x0&0x3;switch(cV){case 0x1:for(let cU=0x0;cU<cj;cU++){let cG=cH(cd),cO=cd['_$CCVM38']();cl[cY++]=cG,cl[cY++]=cO;}break;case 0x2:{let cw=new Int32Array(cj);for(let cN=0x0;cN<cj;cN++){cw[cN]=cd['_$CCVM38']();}for(let cJ=0x0;cJ<cj;cJ++){cl[cY++]=cw[cJ];}for(let ct=0x0;ct<cj;ct++){cl[cY++]=cH(cd);}break;}case 0x3:{let cX=new Int32Array(cj);for(let ci=0x0;ci<cj;ci++){cX[ci]=cH(cd);}for(let cE=0x0;cE<cj;cE++){cl[cY++]=cX[cE];}for(let cg=0x0;cg<cj;cg++){cl[cY++]=cd['_$CCVM38']();}break;}case 0x0:default:for(let cI=0x0;cI<cj;cI++){cl[cY++]=cd['_$CCVM38'](),cl[cY++]=cH(cd);}break;}cy[0x17]=cl;if(cq&WI){let cZ=cd['_$CCVM38'](),cS={};for(let cn=0x0;cn<cZ;cn++){let ck=cd['_$CCVM38'](),cP=cd['_$CCVM38']();cS[ck]=cP;}cy[0xa]=cS;}if(cq&WZ){let cA=cd['_$CCVM38'](),cp={};for(let cM=0x0;cM<cA;cM++){let cx=cd['_$CCVM38'](),cu=cd['_$CCVM38']()-0x1,cf=cd['_$CCVM38']()-0x1,cs=cd['_$CCVM38']()-0x1;cp[cx]=[cu,cf,cs];}cy[0x5]=cp;}return cy;}let c2=function(cF,cd){let cC={};return function(cq){let ca=cd?cd[cq]:cq;if(cC[ca])return cC[ca];let cK=cF[ca];return typeof cK==='string'?cC[ca]=c1(cK):cC[ca]=cK,cC[ca];};},c3=c2(l,null);l=null;let c4=c2(Y,null);Y=null;let c5=async function(cF,cd,cC,cq,ca,cK,cy){let co=typeof cF==='object'?cF:c3(cF),cb=WH(co,cd,cC,cq,ca,cy),cH=cb['next']();while(!cH['done']){if(cH['value']['_$ivW2U5']!==Q)throw new Error('Unexpected\x20yield\x20in\x20async\x20context');try{let cj=await cH['value']['_$8PVFEx'];vmd_85b0dc['_$CQ1XLk']=cK,cH=cb['next'](cj);}catch(ce){vmd_85b0dc['_$CQ1XLk']=cK,cH=cb['throw'](ce);}}return cH['value'];},c6=function(cF,cd,cC,cq,ca,cK){let cy=typeof cF==='object'?cF:c3(cF),co=WH(cy,cd,cC,cq,undefined,cK),cb=cy&&cy[0xb]&&!cy[0xd],cH=null;cb&&(cH=co['next']());let cj=![],ce=![],cl=null,cY=undefined,cV=![];function cQ(cO,cw){if(cj)return{'value':undefined,'done':!![]};ce=!![],vmd_85b0dc['_$CQ1XLk']=ca;if(cl){let cJ,ct,cX;try{if(cw){if(typeof cl['throw']==='function')cJ=cl['throw'](cO);else{typeof cl['return']==='function'&&cl['return']();cl=null;throw new TypeError('The\x20iterator\x20does\x20not\x20provide\x20a\x20\x27throw\x27\x20method.');}}else cJ=cl['next'](cO);try{W2(cJ);}catch(cE){cl=null;throw cE;}let ci=W3(cJ);ct=ci['done'],cX=ci['value'];}catch(cg){cl=null;try{let cI=co['throw'](cg);return ch(cI);}catch(cZ){cj=!![];throw cZ;}}if(!ct)return cJ;cl=null,cO=cX,cw=![];}let cN;if(cH!==null)cN=cH,cH=null;else try{cN=cw?co['throw'](cO):co['next'](cO);}catch(cS){cj=!![];throw cS;}return ch(cN);}function ch(cO){if(cO['done']){cj=!![];if(cV)return cV=![],{'value':cY,'done':!![]};return{'value':cO['value'],'done':!![]};}let cw=cO['value'];if(cw['_$ivW2U5']===h)return{'value':cw['_$8PVFEx'],'done':![]};if(cw['_$ivW2U5']===L){let cN=cw['_$8PVFEx'],cJ;try{if(cN==null)throw new TypeError(cN+'\x20is\x20not\x20iterable');let cE=cN[Symbol['iterator']];if(typeof cE!=='function')throw new TypeError(cN+'\x20is\x20not\x20iterable');cJ=cE['call'](cN),W2(cJ);if(typeof cJ['next']!=='function')throw new TypeError('Iterator\x20next\x20is\x20not\x20a\x20function');}catch(cg){try{let cI=co['throw'](cg);return ch(cI);}catch(cZ){cj=!![];throw cZ;}}let ct,cX,ci;try{ct=cJ['next'](undefined),W2(ct);let cS=W3(ct);cX=cS['done'],ci=cS['value'];}catch(cn){try{let ck=co['throw'](cn);return ch(ck);}catch(cP){cj=!![];throw cP;}}if(!cX)return cl=cJ,ct;return cQ(ci,![]);}throw new Error('Unexpected\x20signal\x20in\x20generator');}let cL=cy&&cy[0x16],cz=async function(cO){if(cj)return{'value':cO,'done':!![]};if(!ce)return cj=!![],{'value':cO,'done':!![]};if(cl){let cN=cl,cJ;try{cJ=W1(cN['iter'],'return');}catch(ct){cl=null,cj=!![];throw ct;}if(cJ===undefined){cl=null;try{cO=await Promise['resolve'](cO);}catch(cX){cj=!![];throw cX;}}else{let ci;try{ci=K(cJ,cN['iter'],[cO]),!cN['isSync']&&(ci=await ci);}catch(cZ){cl=null,cj=!![];throw cZ;}if(ci===null||typeof ci!=='object'){cl=null,cj=!![];throw new TypeError('Iterator\x20result\x20is\x20not\x20an\x20object');}let cE,cg,cI;try{cE=ci['done'],!cE?cg=ci['value']:cg=ci['value'];}catch(cS){cI=cS;}if(cI!==undefined){cl=null;let cn;try{vmd_85b0dc['_$CQ1XLk']=ca,cn=co['throw'](cI);}catch(ck){cj=!![];throw ck;}while(!cn['done']){let cP=cn['value'];if(cP&&cP['_$ivW2U5']===Q){let cA;try{cA=await cP['_$8PVFEx'],vmd_85b0dc['_$CQ1XLk']=ca,cn=co['next'](cA);}catch(cp){vmd_85b0dc['_$CQ1XLk']=ca,cn=co['throw'](cp);}continue;}if(cP&&cP['_$ivW2U5']===h){let cM;try{cM=await Promise['resolve'](cP['_$8PVFEx']);}catch(cx){cj=!![];throw cx;}return{'value':cM,'done':![]};}break;}return cj=!![],{'value':cn['value'],'done':!![]};}if(!cE){let cu;try{cu=await Promise['resolve'](cg);}catch(cf){cl=null,cj=!![];throw cf;}return{'value':cu,'done':![]};}cl=null;try{cO=await Promise['resolve'](cg);}catch(cs){cj=!![];throw cs;}}}let cw;try{vmd_85b0dc['_$CQ1XLk']=ca,cw=co['next']({['_$ivW2U5']:z,['_$8PVFEx']:cO});}catch(cD){cj=!![];throw cD;}while(!cw['done']){let cB=cw['value'];if(cB['_$ivW2U5']===Q)try{let R0=await cB['_$8PVFEx'];vmd_85b0dc['_$CQ1XLk']=ca,cw=co['next'](R0);}catch(R1){vmd_85b0dc['_$CQ1XLk']=ca,cw=co['throw'](R1);}else{if(cB['_$ivW2U5']===h){let R2;try{R2=await Promise['resolve'](cB['_$8PVFEx']);}catch(R3){cj=!![];throw R3;}return{'value':R2,'done':![]};}else break;}}return cj=!![],{'value':cw['value'],'done':!![]};},cr=function(cO){if(cj)return{'value':cO,'done':!![]};if(!ce)return cj=!![],{'value':cO,'done':!![]};if(cl){let cN,cJ=![];try{let ct=cl['return'];typeof ct==='function'&&(cJ=!![],cN=ct['call'](cl,cO),W2(cN));}catch(cX){cl=null;let ci;try{ci=co['throw'](cX);}catch(cE){cj=!![];throw cE;}return ch(ci);}if(cJ){let cg;try{cg=cN['done'];}catch(cZ){cl=null;let cS;try{cS=co['throw'](cZ);}catch(cn){cj=!![];throw cn;}return ch(cS);}if(!cg)return cN;let cI;try{cI=cN['value'];}catch(ck){cl=null;let cP;try{cP=co['throw'](ck);}catch(cA){cj=!![];throw cA;}return ch(cP);}cl=null,cO=cI;}}cY=cO,cV=!![];let cw;try{vmd_85b0dc['_$CQ1XLk']=ca,cw=co['next']({['_$ivW2U5']:z,['_$8PVFEx']:cO});}catch(cp){cj=!![],cV=![];throw cp;}if(!cw['done']&&cw['value']&&cw['value']['_$ivW2U5']===h)return{'value':cw['value']['_$8PVFEx'],'done':![]};return cj=!![],cV=![],{'value':cw['value'],'done':!![]};};if(cL){async function cO(cX,ci){let cE=cl,cg;try{if(ci){let ck;try{ck=W1(cE['iter'],'throw');}catch(cP){cl=null;try{return vmd_85b0dc['_$CQ1XLk']=ca,cw(co['throw'](cP));}catch(cA){cj=!![];throw cA;}}if(ck===undefined){let cp;try{cp=W1(cE['iter'],'return');}catch(cM){cl=null;try{return vmd_85b0dc['_$CQ1XLk']=ca,cw(co['throw'](cM));}catch(cx){cj=!![];throw cx;}}if(cp!==undefined)try{let cu=K(cp,cE['iter'],[]);!cE['isSync']&&(cu=await cu);if(cu!==null&&typeof cu!=='object')throw new TypeError('Iterator\x20result\x20is\x20not\x20an\x20object');}catch(cf){}cl=null;try{return vmd_85b0dc['_$CQ1XLk']=ca,cw(co['throw'](new TypeError('The\x20iterator\x20does\x20not\x20provide\x20a\x20throw\x20method')));}catch(cs){cj=!![];throw cs;}}cg=K(ck,cE['iter'],[cX]),!cE['isSync']&&(cg=await cg);}else cg=K(cE['nextMethod'],cE['iter'],[cX]),!cE['isSync']&&(cg=await cg);}catch(cD){cl=null;try{return vmd_85b0dc['_$CQ1XLk']=ca,cw(co['throw'](cD));}catch(cB){cj=!![];throw cB;}}if(cg===null||typeof cg!=='object'){cl=null;try{return vmd_85b0dc['_$CQ1XLk']=ca,cw(co['throw'](new TypeError('Iterator\x20result\x20is\x20not\x20an\x20object')));}catch(R0){cj=!![];throw R0;}}let cI,cZ;try{cI=cg['done'],cZ=cg['value'];}catch(R1){cl=null;try{return vmd_85b0dc['_$CQ1XLk']=ca,cw(co['throw'](R1));}catch(R2){cj=!![];throw R2;}}if(!cI){let R3;try{R3=await cZ;}catch(R4){cl=null,cj=!![];throw R4;}return{'value':R3,'done':![]};}cl=null;let cS;try{cS=await cZ;}catch(R5){try{return vmd_85b0dc['_$CQ1XLk']=ca,cw(co['throw'](R5));}catch(R6){cj=!![];throw R6;}}let cn;try{vmd_85b0dc['_$CQ1XLk']=ca,cn=co['next'](cS);}catch(R7){cj=!![];throw R7;}return cw(cn);}function cG(cX,ci){if(cj)return Promise['resolve']({'value':undefined,'done':!![]});ce=!![],vmd_85b0dc['_$CQ1XLk']=ca;if(cl)return cO(cX,ci);let cE;if(cH!==null)cE=cH,cH=null;else try{cE=ci?co['throw'](cX):co['next'](cX);}catch(cg){return cj=!![],Promise['reject'](cg);}if(!cE['done']){let cI=cE['value'];if(cI&&cI['_$ivW2U5']===h)return Promise['resolve'](cI['_$8PVFEx'])['then'](function(cZ){return{'value':cZ,'done':![]};},function(cZ){cj=!![];throw cZ;});}return cw(cE);}async function cw(cX){while(!cX['done']){let ci=cX['value'];if(ci['_$ivW2U5']===Q){let cE;try{cE=await ci['_$8PVFEx'],vmd_85b0dc['_$CQ1XLk']=ca,cX=co['next'](cE);}catch(cg){vmd_85b0dc['_$CQ1XLk']=ca,cX=co['throw'](cg);}continue;}if(ci['_$ivW2U5']===h){let cI;try{cI=await ci['_$8PVFEx'];}catch(cZ){cj=!![];throw cZ;}return{'value':cI,'done':![]};}if(ci['_$ivW2U5']===L){let cS=ci['_$8PVFEx'],cn;try{cn=W4(cS);}catch(cu){vmd_85b0dc['_$CQ1XLk']=ca;try{cX=co['throw'](cu);}catch(cf){cj=!![];throw cf;}continue;}let ck=cn['iter'],cP=cn['nextMethod'],cA=cn['isSync'],cp;try{cp=K(cP,ck,[undefined]),!cA&&(cp=await cp);}catch(cs){vmd_85b0dc['_$CQ1XLk']=ca;try{cX=co['throw'](cs);}catch(cD){cj=!![];throw cD;}continue;}if(cp===null||typeof cp!=='object'){vmd_85b0dc['_$CQ1XLk']=ca;try{cX=co['throw'](new TypeError('Iterator\x20result\x20is\x20not\x20an\x20object'));}catch(cB){cj=!![];throw cB;}continue;}let cM,cx;try{cM=cp['done'],cx=cp['value'];}catch(R0){vmd_85b0dc['_$CQ1XLk']=ca;try{cX=co['throw'](R0);}catch(R1){cj=!![];throw R1;}continue;}if(cM){let R2;try{R2=await Promise['resolve'](cx);}catch(R3){vmd_85b0dc['_$CQ1XLk']=ca;try{cX=co['throw'](R3);}catch(R4){cj=!![];throw R4;}continue;}vmd_85b0dc['_$CQ1XLk']=ca,cX=co['next'](R2);continue;}cl={'iter':ck,'nextMethod':cP,'isSync':cA};if(cA){let R5;try{R5=await Promise['resolve'](cx);}catch(R6){cl=null,cj=!![];throw R6;}return{'value':R5,'done':![]};}return{'value':cx,'done':![]};}throw new Error('Unexpected\x20signal\x20in\x20async\x20generator');}cj=!![];if(cV)return cV=![],{'value':cY,'done':!![]};return{'value':cX['value'],'done':!![]};}let cN=null,cJ=0x0;function cU(){}function cT(){cJ--;if(cJ===0x0)cN=null;}function cm(cX){let ci;if(cJ===0x0)try{ci=cX();}catch(cE){ci=Promise['reject'](cE);}else ci=cN['then'](cX,cX);return cJ++,cN=ci,ci['then'](cT,cT),ci;}let ct=B(cq&&cq['prototype'],M);return ct?c(ct,{'next':D(function(cX){return cm(function(){return cG(cX,![]);});}),'return':D(function(cX){return cm(function(){return cz(cX);});}),'throw':D(function(cX){return cm(function(){if(cj)return Promise['reject'](cX);return cG(cX,!![]);});}),[Symbol['asyncIterator']]:D(function(){return this;})}):{'next':function(cX){return cm(function(){return cG(cX,![]);});},'return':function(cX){return cm(function(){return cz(cX);});},'throw':function(cX){return cm(function(){if(cj)return Promise['reject'](cX);return cG(cX,!![]);});},[Symbol['asyncIterator']]:function(){return this;}};}else{let cX=B(cq&&cq['prototype'],A);return cX?c(cX,{'next':D(function(ci){return cQ(ci,![]);}),'return':D(cr),'throw':D(function(ci){if(cj)throw ci;return cQ(ci,!![]);}),[Symbol['iterator']]:D(function(){return this;})}):{'next':function(ci){return cQ(ci,![]);},'return':cr,'throw':function(ci){if(cj)throw ci;return cQ(ci,!![]);},[Symbol['iterator']]:function(){return this;}};}};var c7=function(cF,cd,cC,cq,ca,cK){let cy=c3(cF),co=cK;if(cy&&cy[0xb]){let cb=vmd_85b0dc['_$CQ1XLk'];return c6(cy,cd,cC,cq,cb,co);}if(cy&&cy[0x16]){let cH=vmd_85b0dc['_$CQ1XLk'];return c5(cy,cd,cC,cq,ca,cH,co);}return Wj(cy,cd,cC,cq,ca,co);};return c7['_$x2IXSd']=function(cF,cd){if(!cF)return;var cC=c3(cd);if(!cC||cC[0x16]||cC[0xb]||cC[0xc])return;!I(cF)&&E(cF,{'b':cC,'e':undefined,'c':cC});},c7;}());try{document,Object['defineProperty'](vmd_85b0dc,'document',{'get':function(){return document;},'set':function(W){document=W;},'configurable':!![]});}catch(vmdb){}try{Date,Object['defineProperty'](vmd_85b0dc,'Date',{'get':function(){return Date;},'set':function(W){Date=W;},'configurable':!![]});}catch(vmdH){}try{Math,Object['defineProperty'](vmd_85b0dc,'Math',{'get':function(){return Math;},'set':function(W){Math=W;},'configurable':!![]});}catch(vmdj){}try{navigator,Object['defineProperty'](vmd_85b0dc,'navigator',{'get':function(){return navigator;},'set':function(W){navigator=W;},'configurable':!![]});}catch(vmde){}try{setTimeout,Object['defineProperty'](vmd_85b0dc,'setTimeout',{'get':function(){return setTimeout;},'set':function(W){setTimeout=W;},'configurable':!![]});}catch(vmdl){}try{location,Object['defineProperty'](vmd_85b0dc,'location',{'get':function(){return location;},'set':function(W){location=W;},'configurable':!![]});}catch(vmdY){}try{setInterval,Object['defineProperty'](vmd_85b0dc,'setInterval',{'get':function(){return setInterval;},'set':function(W){setInterval=W;},'configurable':!![]});}catch(vmdV){}vmd_85b0dc['setLanguage']=setLanguage;globalThis['setLanguage']=vmd_85b0dc['setLanguage'];vmd_85b0dc['newGame']=newGame;globalThis['newGame']=vmd_85b0dc['newGame'];vmd_85b0dc['updateZoom']=updateZoom;globalThis['updateZoom']=vmd_85b0dc['updateZoom'];vmd_85b0dc['shareResult']=shareResult;globalThis['shareResult']=vmd_85b0dc['shareResult'];vmd_85b0dc['finishGame']=finishGame;globalThis['finishGame']=vmd_85b0dc['finishGame'];vmd_85b0dc['showHint']=showHint;globalThis['showHint']=vmd_85b0dc['showHint'];vmd_85b0dc['renderGuessHistory']=renderGuessHistory;globalThis['renderGuessHistory']=vmd_85b0dc['renderGuessHistory'];vmd_85b0dc['addGuessToHistory']=addGuessToHistory;globalThis['addGuessToHistory']=vmd_85b0dc['addGuessToHistory'];vmd_85b0dc['checkGuess']=checkGuess;globalThis['checkGuess']=vmd_85b0dc['checkGuess'];vmd_85b0dc['startGame']=startGame;globalThis['startGame']=vmd_85b0dc['startGame'];vmd_85b0dc['_$LtKzq1']={'champions':!![],'championImage':!![],'guessInput':!![],'result':!![],'attempts':!![],'hint':!![],'shareButton':!![],'suggestions':!![],'selectedChampion':!![],'attemptCount':!![],'gameOver':!![],'maxAttempts':!![],'currentZoom':!![],'guessedChampions':!![],'guessHistoryData':!![],'currentLanguage':!![],'translations':!![]};const champions=[{'name':'Aatrox','id':'Aatrox','title':'darkin\x20kılıcı','titleEn':'the\x20Darkin\x20Blade','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Runeterra','regionEn':'Runeterra','image':'images/Aatrox.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Aatrox.png','focusX':0x48,'focusY':0x96,'zoomStart':0x3},{'name':'Ahri','id':'Ahri','title':'dokuz\x20kuyruklu\x20tilki','titleEn':'the\x20Nine-Tailed\x20Fox','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Ionia','regionEn':'Ionia','image':'images/Ahri.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ahri.png','focusX':0x55,'focusY':0x96,'zoomStart':0x3},{'name':'Akali','id':'Akali','title':'gölgenin\x20yumruğu','titleEn':'the\x20Rogue\x20Assassin','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Kadın','genderEn':'Female','region':'Ionia','regionEn':'Ionia','image':'images/Akali.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Akali.png','focusX':0x2c,'focusY':0x64,'zoomStart':4.5},{'name':'Akshan','id':'Akshan','title':'asi\x20muhafız','titleEn':'the\x20Rogue\x20Sentinel','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Shurima','regionEn':'Shurima','image':'images/Akshan.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Akshan.png','focusX':0x4b,'focusY':0x5a,'zoomStart':0x6},{'name':'Alistar','id':'Alistar','title':'minotor','titleEn':'the\x20Minotaur','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Runeterra','regionEn':'Runeterra','image':'images/Alistar.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Alistar.png','focusX':0x3e,'focusY':0x64,'zoomStart':0x4},{'name':'Ambessa','id':'Ambessa','title':'matriarch\x20of\x20war','titleEn':'the\x20Matriarch\x20of\x20War','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Ambessa.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ambessa.png','focusX':0x1c,'focusY':0x64,'zoomStart':4.1},{'name':'Amumu','id':'Amumu','title':'hüzünlü\x20mumya','titleEn':'the\x20Sad\x20Mummy','lane':'Orman','laneEn':'Jungle','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Shurima','regionEn':'Shurima','image':'images/Amumu.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Amumu.png','focusX':0x29,'focusY':0x64,'zoomStart':5.2},{'name':'Anivia','id':'Anivia','title':'kristal\x20anka','titleEn':'the\x20Cryophoenix','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Freljord','regionEn':'Freljord','image':'images/Anivia.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Anivia.png','focusX':0x38,'focusY':0x52,'zoomStart':4.2},{'name':'Annie','id':'Annie','title':'karanlığın\x20çocuğu','titleEn':'the\x20Dark\x20Child','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Annie.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Annie.png','focusX':0xe,'focusY':0x64,'zoomStart':0x5},{'name':'Aphelios','id':'Aphelios','title':'inancın\x20silahı','titleEn':'the\x20Weapon\x20of\x20the\x20Faithful','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Targon','regionEn':'Targon','image':'images/Aphelios.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Aphelios.png','focusX':0x48,'focusY':0x55,'zoomStart':0x7},{'name':'Ashe','id':'Ashe','title':'buz\x20okçusu','titleEn':'the\x20Frost\x20Archer','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Freljord','regionEn':'Freljord','image':'images/Ashe.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ashe.png','focusX':0x41,'focusY':0x64,'zoomStart':0x4},{'name':'Aurelion\x20Sol','id':'AurelionSol','title':'yıldız\x20yaratıcısı','titleEn':'The\x20Star\x20Forger','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Targon','regionEn':'Targon','image':'images/AurelionSol.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/AurelionSol.png','focusX':0x23,'focusY':0x5f,'zoomStart':0x6},{'name':'Aurora','id':'Aurora','title':'witch\x20between\x20worlds','titleEn':'the\x20Witch\x20Between\x20Worlds','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Freljord','regionEn':'Freljord','image':'images/Aurora.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Aurora.png','focusX':0x5f,'focusY':0x64,'zoomStart':3.6},{'name':'Azir','id':'Azir','title':'kumların\x20imparatoru','titleEn':'the\x20Emperor\x20of\x20the\x20Sands','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Shurima','regionEn':'Shurima','image':'images/Azir.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Azir.png','focusX':0x1f,'focusY':0x64,'zoomStart':5.2},{'name':'Bard','id':'Bard','title':'gezgin\x20koruyucu','titleEn':'the\x20Wandering\x20Caretaker','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Erkek','genderEn':'Male','region':'Runeterra','regionEn':'Runeterra','image':'images/Bard.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Bard.png','focusX':0x5e,'focusY':0x64,'zoomStart':0x3},{'name':'Bel\x27Veth','id':'Belveth','title':'boşluğun\x20imparatoriçesi','titleEn':'the\x20Empress\x20of\x20the\x20Void','lane':'Orman','laneEn':'Jungle','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Void','regionEn':'Void','image':'images/Belveth.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Belveth.png','focusX':0x1e,'focusY':0x59,'zoomStart':3.6},{'name':'Blitzcrank','id':'Blitzcrank','title':'büyük\x20buhar\x20golemi','titleEn':'the\x20Great\x20Steam\x20Golem','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/Blitzcrank.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Blitzcrank.png','focusX':0x3c,'focusY':0x64,'zoomStart':3.5},{'name':'Brand','id':'Brand','title':'yanan\x20intikam','titleEn':'the\x20Burning\x20Vengeance','lane':'Destek','laneEn':'Support','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Brand.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Brand.png','focusX':0x5a,'focusY':0x64,'zoomStart':0x5},{'name':'Braum','id':'Braum','title':'freljord\x27un\x20kalbi','titleEn':'the\x20Heart\x20of\x20the\x20Freljord','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Braum.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Braum.png','focusX':0x55,'focusY':0x64,'zoomStart':4.2},{'name':'Briar','id':'Briar','title':'kısıtlanmış\x20açlık','titleEn':'the\x20Restrained\x20Hunger','lane':'Orman','laneEn':'Jungle','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Briar.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Briar.png','focusX':0x3c,'focusY':0x5f,'zoomStart':4.5},{'name':'Caitlyn','id':'Caitlyn','title':'piltover\x20şerifi','titleEn':'the\x20Sheriff\x20of\x20Piltover','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Piltover','regionEn':'Piltover','image':'images/Caitlyn.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Caitlyn.png','focusX':0xa,'focusY':0x64,'zoomStart':3.5},{'name':'Camille','id':'Camille','title':'çelik\x20gölge','titleEn':'the\x20Steel\x20Shadow','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Piltover','regionEn':'Piltover','image':'images/Camille.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Camille.png','focusX':0x41,'focusY':0x64,'zoomStart':0x4},{'name':'Cassiopeia','id':'Cassiopeia','title':'yılanın\x20kucağı','titleEn':'the\x20Serpent\x27s\x20Embrace','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Cassiopeia.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Cassiopeia.png','focusX':0x3d,'focusY':0x33,'zoomStart':0x4},{'name':'Cho\x27Gath','id':'Chogath','title':'boşluğun\x20dehşeti','titleEn':'the\x20Terror\x20of\x20the\x20Void','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Void','regionEn':'Void','image':'images/Chogath.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Chogath.png','focusX':0x64,'focusY':0x64,'zoomStart':2.7},{'name':'Corki','id':'Corki','title':'cüretkar\x20bombardımancı','titleEn':'the\x20Daring\x20Bombardier','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Bandle\x20City','regionEn':'Bandle\x20City','image':'images/Corki.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Corki.png','focusX':0x52,'focusY':0x11,'zoomStart':7.5},{'name':'Darius','id':'Darius','title':'noxus\x27un\x20eli','titleEn':'the\x20Hand\x20of\x20Noxus','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Noxus','regionEn':'Noxus','image':'images/Darius.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Darius.png','focusX':0x23,'focusY':0x4b,'zoomStart':3.5},{'name':'Diana','id':'Diana','title':'ayın\x20küçümsemesi','titleEn':'Scorn\x20of\x20the\x20Moon','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Kadın','genderEn':'Female','region':'Targon','regionEn':'Targon','image':'images/Diana.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Diana.png','focusX':0x37,'focusY':0x64,'zoomStart':0x3},{'name':'Dr.\x20Mundo','id':'DrMundo','title':'zaun\x27un\x20delisi','titleEn':'the\x20Madman\x20of\x20Zaun','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/DrMundo.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/DrMundo.png','focusX':0x3a,'focusY':0x3b,'zoomStart':0x4},{'name':'Draven','id':'Draven','title':'gösterişli\x20cellat','titleEn':'the\x20Glorious\x20Executioner','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Noxus','regionEn':'Noxus','image':'images/Draven.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Draven.png','focusX':0x41,'focusY':0x64,'zoomStart':4.1},{'name':'Ekko','id':'Ekko','title':'zamanı\x20kıran\x20çocuk','titleEn':'the\x20Boy\x20Who\x20Shattered\x20Time','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/Ekko.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ekko.png','focusX':0xa,'focusY':0x6e,'zoomStart':2.7},{'name':'Elise','id':'Elise','title':'örümcek\x20kraliçe','titleEn':'the\x20Spider\x20Queen','lane':'Orman','laneEn':'Jungle','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Elise.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Elise.png','focusX':0x5f,'focusY':0x64,'zoomStart':3.7},{'name':'Evelynn','id':'Evelynn','title':'acı\x20kucağı','titleEn':'Agony\x27s\x20Embrace','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Kadın','genderEn':'Female','region':'Runeterra','regionEn':'Runeterra','image':'images/Evelynn.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Evelynn.png','focusX':0x41,'focusY':0x64,'zoomStart':3.3},{'name':'Ezreal','id':'Ezreal','title':'maceracı\x20kaşif','titleEn':'the\x20Prodigal\x20Explorer','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Piltover','regionEn':'Piltover','image':'images/Ezreal.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ezreal.png','focusX':0x3c,'focusY':0x64,'zoomStart':0x3},{'name':'Fiddlesticks','id':'Fiddlesticks','title':'antik\x20korku','titleEn':'the\x20Ancient\x20Fear','lane':'Orman','laneEn':'Jungle','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Runeterra','regionEn':'Runeterra','image':'images/Fiddlesticks.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Fiddlesticks.png','focusX':0x4b,'focusY':0x64,'zoomStart':0x3},{'name':'Fiora','id':'Fiora','title':'büyük\x20düellocu','titleEn':'the\x20Grand\x20Duelist','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Demacia','regionEn':'Demacia','image':'images/Fiora.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Fiora.png','focusX':0x32,'focusY':0x55,'zoomStart':0x6},{'name':'Fizz','id':'Fizz','title':'gelgit\x20düzenbazı','titleEn':'the\x20Tidal\x20Trickster','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Bilgewater','regionEn':'Bilgewater','image':'images/Fizz.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Fizz.png','focusX':0x5f,'focusY':0x5f,'zoomStart':0x5},{'name':'Galio','id':'Galio','title':'devasa\x20nöbetçi','titleEn':'the\x20Colossus','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Demacia','regionEn':'Demacia','image':'images/Galio.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Galio.png','focusX':0x23,'focusY':0x64,'zoomStart':5.2},{'name':'Gangplank','id':'Gangplank','title':'tuzlu\x20belanın\x20kralı','titleEn':'the\x20Saltwater\x20Scourge','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Bilgewater','regionEn':'Bilgewater','image':'images/Gangplank.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Gangplank.png','focusX':0x64,'focusY':0x59,'zoomStart':3.7},{'name':'Garen','id':'Garen','title':'demacia\x27nın\x20kudreti','titleEn':'The\x20Might\x20of\x20Demacia','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Demacia','regionEn':'Demacia','image':'images/Garen.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Garen.png','focusX':0x2d,'focusY':0x64,'zoomStart':0x5},{'name':'Gnar','id':'Gnar','title':'eksik\x20halka','titleEn':'the\x20Missing\x20Link','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Gnar.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Gnar.png','focusX':0x28,'focusY':0x64,'zoomStart':3.2},{'name':'Gragas','id':'Gragas','title':'asi\x20bira\x20ustası','titleEn':'the\x20Rabble\x20Rouser','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Gragas.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Gragas.png','focusX':0x4b,'focusY':0x64,'zoomStart':3.5},{'name':'Graves','id':'Graves','title':'kanun\x20kaçağı','titleEn':'the\x20Outlaw','lane':'Orman','laneEn':'Jungle','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Bilgewater','regionEn':'Bilgewater','image':'images/Graves.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Graves.png','focusX':0x28,'focusY':0x62,'zoomStart':2.8},{'name':'Gwen','id':'Gwen','title':'kutsanmış\x20terzi','titleEn':'The\x20Hallowed\x20Seamstress','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Gwen.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Gwen.png','focusX':0x5d,'focusY':0x55,'zoomStart':0x4},{'name':'Hecarim','id':'Hecarim','title':'savaşın\x20gölgesi','titleEn':'the\x20Shadow\x20of\x20War','lane':'Orman','laneEn':'Jungle','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Hecarim.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Hecarim.png','focusX':0x4b,'focusY':0x5f,'zoomStart':3.3},{'name':'Heimerdinger','id':'Heimerdinger','title':'saygın\x20mucit','titleEn':'the\x20Revered\x20Inventor','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Piltover','regionEn':'Piltover','image':'images/Heimerdinger.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Heimerdinger.png','focusX':0x32,'focusY':0x64,'zoomStart':5.5},{'name':'Hwei','id':'Hwei','title':'visionary','titleEn':'the\x20Visionary','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Hwei.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Hwei.png','focusX':0x3c,'focusY':0x64,'zoomStart':4.2},{'name':'Illaoi','id':'Illaoi','title':'kraken\x20rahibesi','titleEn':'the\x20Kraken\x20Priestess','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Bilgewater','regionEn':'Bilgewater','image':'images/Illaoi.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Illaoi.png','focusX':0x5c,'focusY':0x1e,'zoomStart':3.5},{'name':'Irelia','id':'Irelia','title':'bıçak\x20dansçısı','titleEn':'the\x20Blade\x20Dancer','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Ionia','regionEn':'Ionia','image':'images/Irelia.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Irelia.png','focusX':0x5,'focusY':0x64,'zoomStart':0x3},{'name':'Ivern','id':'Ivern','title':'yeşil\x20baba','titleEn':'the\x20Green\x20Father','lane':'Orman','laneEn':'Jungle','type':'Destek','typeEn':'Support','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Ivern.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ivern.png','focusX':0x0,'focusY':0x64,'zoomStart':0x3},{'name':'Janna','id':'Janna','title':'fırtınanın\x20öfkesi','titleEn':'the\x20Storm\x27s\x20Fury','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Kadın','genderEn':'Female','region':'Zaun','regionEn':'Zaun','image':'images/Janna.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Janna.png','focusX':0x1e,'focusY':0x64,'zoomStart':4.2},{'name':'Jarvan\x20IV','id':'JarvanIV','title':'demacia\x20örneği','titleEn':'the\x20Exemplar\x20of\x20Demacia','lane':'Orman','laneEn':'Jungle','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Demacia','regionEn':'Demacia','image':'images/JarvanIV.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/JarvanIV.png','focusX':0x22,'focusY':0x58,'zoomStart':2.8},{'name':'Jax','id':'Jax','title':'silah\x20ustası','titleEn':'Grandmaster\x20at\x20Arms','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Runeterra','regionEn':'Runeterra','image':'images/Jax.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Jax.png','focusX':0x41,'focusY':0x64,'zoomStart':0x4},{'name':'Jayce','id':'Jayce','title':'yarının\x20savunucusu','titleEn':'the\x20Defender\x20of\x20Tomorrow','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Piltover','regionEn':'Piltover','image':'images/Jayce.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Jayce.png','focusX':0x5f,'focusY':0x5f,'zoomStart':0x4},{'name':'Jhin','id':'Jhin','title':'erdemli\x20katil','titleEn':'the\x20Virtuoso','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Jhin.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Jhin.png','focusX':0x0,'focusY':0x64,'zoomStart':2.3},{'name':'Jinx','id':'Jinx','title':'çılgın\x20bomba\x20uzmanı','titleEn':'the\x20Loose\x20Cannon','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Zaun','regionEn':'Zaun','image':'images/Jinx.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Jinx.png','focusX':0x64,'focusY':0x55,'zoomStart':2.7},{'name':'K\x27Sante','id':'KSante','title':'nazumah\x27ın\x20gururu','titleEn':'the\x20Pride\x20of\x20Nazumah','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Shurima','regionEn':'Shurima','image':'images/KSante.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/KSante.png','focusX':0x1e,'focusY':0x64,'zoomStart':3.3},{'name':'Kai\x27Sa','id':'Kaisa','title':'boşluğun\x20kızı','titleEn':'Daughter\x20of\x20the\x20Void','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Void','regionEn':'Void','image':'images/Kaisa.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kaisa.png','focusX':0x28,'focusY':0x5f,'zoomStart':0x4},{'name':'Kalista','id':'Kalista','title':'intikam\x20ruhu','titleEn':'the\x20Spear\x20of\x20Vengeance','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Kalista.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kalista.png','focusX':0x1e,'focusY':0x64,'zoomStart':0x4},{'name':'Karma','id':'Karma','title':'aydınlanmış\x20olan','titleEn':'the\x20Enlightened\x20One','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Kadın','genderEn':'Female','region':'Ionia','regionEn':'Ionia','image':'images/Karma.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Karma.png','focusX':0x32,'focusY':0x55,'zoomStart':3.2},{'name':'Karthus','id':'Karthus','title':'ölüm\x20habercisi','titleEn':'the\x20Deathsinger','lane':'Orman','laneEn':'Jungle','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Karthus.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Karthus.png','focusX':0x31,'focusY':0x64,'zoomStart':3.5},{'name':'Kassadin','id':'Kassadin','title':'boşluk\x20gezgini','titleEn':'the\x20Void\x20Walker','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Void','regionEn':'Void','image':'images/Kassadin.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kassadin.png','focusX':0x4b,'focusY':0x64,'zoomStart':0x3},{'name':'Katarina','id':'Katarina','title':'uğursuz\x20bıçak','titleEn':'the\x20Sinister\x20Blade','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Katarina.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Katarina.png','focusX':0x55,'focusY':0x5f,'zoomStart':0x4},{'name':'Kayle','id':'Kayle','title':'doğruluğun\x20kılıcı','titleEn':'the\x20Righteous','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Demacia','regionEn':'Demacia','image':'images/Kayle.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kayle.png','focusX':0x37,'focusY':0x64,'zoomStart':0x4},{'name':'Kayn','id':'Kayn','title':'gölge\x20biçicisi','titleEn':'the\x20Shadow\x20Reaper','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Kayn.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kayn.png','focusX':0x30,'focusY':0x64,'zoomStart':0x4},{'name':'Kennen','id':'Kennen','title':'fırtınanın\x20kalbi','titleEn':'the\x20Heart\x20of\x20the\x20Tempest','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Kennen.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kennen.png','focusX':0x2d,'focusY':0x37,'zoomStart':4.2},{'name':'Kha\x27Zix','id':'Khazix','title':'boşluk\x20yağmacısı','titleEn':'the\x20Voidreaver','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Void','regionEn':'Void','image':'images/Khazix.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Khazix.png','focusX':0x28,'focusY':0x64,'zoomStart':0x4},{'name':'Kindred','id':'Kindred','title':'sonsuz\x20avcılar','titleEn':'The\x20Eternal\x20Hunters','lane':'Orman','laneEn':'Jungle','type':'Nişancı','typeEn':'Marksman','gender':'Diğer','genderEn':'Other','region':'Runeterra','regionEn':'Runeterra','image':'images/Kindred.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kindred.png','focusX':0x36,'focusY':0x64,'zoomStart':3.7},{'name':'Kled','id':'Kled','title':'inatçı\x20süvari','titleEn':'the\x20Cantankerous\x20Cavalier','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Noxus','regionEn':'Noxus','image':'images/Kled.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kled.png','focusX':0x64,'focusY':0x50,'zoomStart':4.2},{'name':'Kog\x27Maw','id':'KogMaw','title':'boşluğun\x20ağzı','titleEn':'the\x20Mouth\x20of\x20the\x20Abyss','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Void','regionEn':'Void','image':'images/KogMaw.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/KogMaw.png','focusX':0x53,'focusY':0x64,'zoomStart':3.8},{'name':'LeBlanc','id':'Leblanc','title':'aldatıcı','titleEn':'the\x20Deceiver','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Leblanc.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Leblanc.png','focusX':0x2a,'focusY':0x64,'zoomStart':0x3},{'name':'Lee\x20Sin','id':'LeeSin','title':'kör\x20keşiş','titleEn':'the\x20Blind\x20Monk','lane':'Orman','laneEn':'Jungle','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/LeeSin.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/LeeSin.png','focusX':0x3c,'focusY':0x64,'zoomStart':3.8},{'name':'Leona','id':'Leona','title':'şafak\x20ışığı','titleEn':'the\x20Radiant\x20Dawn','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Kadın','genderEn':'Female','region':'Targon','regionEn':'Targon','image':'images/Leona.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Leona.png','focusX':0x3c,'focusY':0x64,'zoomStart':0x3},{'name':'Lillia','id':'Lillia','title':'utangaç\x20çiçek','titleEn':'the\x20Bashful\x20Bloom','lane':'Orman','laneEn':'Jungle','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Ionia','regionEn':'Ionia','image':'images/Lillia.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lillia.png','focusX':0x1e,'focusY':0x5d,'zoomStart':4.5},{'name':'Lissandra','id':'Lissandra','title':'buz\x20cadısı','titleEn':'the\x20Ice\x20Witch','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Freljord','regionEn':'Freljord','image':'images/Lissandra.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lissandra.png','focusX':0x55,'focusY':0x64,'zoomStart':3.8},{'name':'Lucian','id':'Lucian','title':'arınmış\x20silahşör','titleEn':'the\x20Purifier','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Demacia','regionEn':'Demacia','image':'images/Lucian.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lucian.png','focusX':0x64,'focusY':0x46,'zoomStart':2.2},{'name':'Lulu','id':'Lulu','title':'peri\x20büyücüsü','titleEn':'the\x20Fae\x20Sorceress','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Kadın','genderEn':'Female','region':'Bandle\x20City','regionEn':'Bandle\x20City','image':'images/Lulu.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lulu.png','focusX':0x3e,'focusY':0x64,'zoomStart':3.8},{'name':'Lux','id':'Lux','title':'ışığın\x20hanımı','titleEn':'the\x20Lady\x20of\x20Luminosity','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Demacia','regionEn':'Demacia','image':'images/Lux.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lux.png','focusX':0x1e,'focusY':0x64,'zoomStart':3.6},{'name':'Malphite','id':'Malphite','title':'monolit\x20parçası','titleEn':'Shard\x20of\x20the\x20Monolith','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Ixtal','regionEn':'Ixtal','image':'images/Malphite.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Malphite.png','focusX':0x3c,'focusY':0x50,'zoomStart':0x4},{'name':'Malzahar','id':'Malzahar','title':'boşluğun\x20kahini','titleEn':'the\x20Prophet\x20of\x20the\x20Void','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Void','regionEn':'Void','image':'images/Malzahar.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Malzahar.png','focusX':0x27,'focusY':0x64,'zoomStart':3.1},{'name':'Maokai','id':'Maokai','title':'çarpık\x20treant','titleEn':'the\x20Twisted\x20Treant','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Maokai.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Maokai.png','focusX':0x28,'focusY':0x5a,'zoomStart':0x5},{'name':'Master\x20Yi','id':'MasterYi','title':'wuju\x20ustası','titleEn':'the\x20Wuju\x20Bladesman','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/MasterYi.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/MasterYi.png','focusX':0xf,'focusY':0x64,'zoomStart':0x4},{'name':'Mel','id':'Mel','title':'the\x20soul\x27s\x20reflection','titleEn':'the\x20Soul\x27s\x20Reflection','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Mel.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Mel.png','focusX':0x35,'focusY':0x64,'zoomStart':0x4},{'name':'Milio','id':'Milio','title':'nazik\x20alev','titleEn':'The\x20Gentle\x20Flame','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Erkek','genderEn':'Male','region':'Ixtal','regionEn':'Ixtal','image':'images/Milio.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Milio.png','focusX':0x3c,'focusY':0x64,'zoomStart':3.8},{'name':'Miss\x20Fortune','id':'MissFortune','title':'ödül\x20avcısı','titleEn':'the\x20Bounty\x20Hunter','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Bilgewater','regionEn':'Bilgewater','image':'images/MissFortune.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/MissFortune.png','focusX':0x64,'focusY':0x64,'zoomStart':0x3},{'name':'Mordekaiser','id':'Mordekaiser','title':'demir\x20hayalet','titleEn':'the\x20Iron\x20Revenant','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Noxus','regionEn':'Noxus','image':'images/Mordekaiser.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Mordekaiser.png','focusX':0x64,'focusY':0x64,'zoomStart':2.4},{'name':'Morgana','id':'Morgana','title':'düşmüş','titleEn':'the\x20Fallen','lane':'Destek','laneEn':'Support','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Demacia','regionEn':'Demacia','image':'images/Morgana.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Morgana.png','focusX':0x64,'focusY':0x43,'zoomStart':4.3},{'name':'Naafiri','id':'Naafiri','title':'yüz\x20tazı','titleEn':'the\x20Hound\x20of\x20a\x20Hundred\x20Bites','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Dişi','genderEn':'Female','region':'Shurima','regionEn':'Shurima','image':'images/Naafiri.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Naafiri.png','focusX':0x64,'focusY':0x64,'zoomStart':3.2},{'name':'Nami','id':'Nami','title':'dalga\x20çağıran','titleEn':'the\x20Tidecaller','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Kadın','genderEn':'Female','region':'Runeterra','regionEn':'Runeterra','image':'images/Nami.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nami.png','focusX':0x5,'focusY':0x4b,'zoomStart':2.7},{'name':'Nasus','id':'Nasus','title':'kumların\x20küratörü','titleEn':'the\x20Curator\x20of\x20the\x20Sands','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Shurima','regionEn':'Shurima','image':'images/Nasus.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nasus.png','focusX':0x28,'focusY':0x64,'zoomStart':0x3},{'name':'Nautilus','id':'Nautilus','title':'derinliklerin\x20devi','titleEn':'the\x20Titan\x20of\x20the\x20Depths','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Bilgewater','regionEn':'Bilgewater','image':'images/Nautilus.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nautilus.png','focusX':0x64,'focusY':0x64,'zoomStart':3.6},{'name':'Neeko','id':'Neeko','title':'meraklı\x20bukalemun','titleEn':'the\x20Curious\x20Chameleon','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Ixtal','regionEn':'Ixtal','image':'images/Neeko.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Neeko.png','focusX':0x1e,'focusY':0x5f,'zoomStart':4.3},{'name':'Nidalee','id':'Nidalee','title':'vahşi\x20avcı','titleEn':'the\x20Bestial\x20Huntress','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Kadın','genderEn':'Female','region':'Ixtal','regionEn':'Ixtal','image':'images/Nidalee.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nidalee.png','focusX':0x2e,'focusY':0x48,'zoomStart':4.2},{'name':'Nilah','id':'Nilah','title':'sınırsız\x20neşe','titleEn':'the\x20Joy\x20Unbound','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Bilgewater','regionEn':'Bilgewater','image':'images/Nilah.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nilah.png','focusX':0x41,'focusY':0x64,'zoomStart':4.2},{'name':'Nocturne','id':'Nocturne','title':'ebedi\x20kabus','titleEn':'the\x20Eternal\x20Nightmare','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Runeterra','regionEn':'Runeterra','image':'images/Nocturne.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nocturne.png','focusX':0x3c,'focusY':0x4c,'zoomStart':3.5},{'name':'Nunu\x20&\x20Willump','id':'Nunu','title':'çocuk\x20ve\x20yeti','titleEn':'the\x20Boy\x20and\x20His\x20Yeti','lane':'Orman','laneEn':'Jungle','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Nunu.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nunu.png','focusX':0x0,'focusY':0xf,'zoomStart':3.3},{'name':'Olaf','id':'Olaf','title':'çılgın\x20berserker','titleEn':'the\x20Berserker','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Olaf.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Olaf.png','focusX':0x64,'focusY':0x64,'zoomStart':3.5},{'name':'Orianna','id':'Orianna','title':'saatli\x20kız','titleEn':'the\x20Lady\x20of\x20Clockwork','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Piltover','regionEn':'Piltover','image':'images/Orianna.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Orianna.png','focusX':0x2d,'focusY':0x64,'zoomStart':3.1},{'name':'Ornn','id':'Ornn','title':'dağın\x20altında\x20ateş','titleEn':'The\x20Fire\x20below\x20the\x20Mountain','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Ornn.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ornn.png','focusX':0x3c,'focusY':0x64,'zoomStart':2.9},{'name':'Pantheon','id':'Pantheon','title':'yenilmez\x20mızrak','titleEn':'the\x20Unbreakable\x20Spear','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Targon','regionEn':'Targon','image':'images/Pantheon.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Pantheon.png','focusX':0x46,'focusY':0x64,'zoomStart':2.6},{'name':'Poppy','id':'Poppy','title':'çekicin\x20bekçisi','titleEn':'Keeper\x20of\x20the\x20Hammer','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Kadın','genderEn':'Female','region':'Demacia','regionEn':'Demacia','image':'images/Poppy.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Poppy.png','focusX':0x49,'focusY':0x64,'zoomStart':3.2},{'name':'Pyke','id':'Pyke','title':'kanlı\x20liman\x20celladı','titleEn':'the\x20Bloodharbor\x20Ripper','lane':'Destek','laneEn':'Support','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Bilgewater','regionEn':'Bilgewater','image':'images/Pyke.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Pyke.png','focusX':0x23,'focusY':0x64,'zoomStart':3.3},{'name':'Qiyana','id':'Qiyana','title':'elementlerin\x20imparatoriçesi','titleEn':'Empress\x20of\x20the\x20Elements','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Kadın','genderEn':'Female','region':'Ixtal','regionEn':'Ixtal','image':'images/Qiyana.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Qiyana.png','focusX':0x0,'focusY':0x64,'zoomStart':2.1},{'name':'Quinn','id':'Quinn','title':'demacia\x27nın\x20kanatları','titleEn':'Demacia\x27s\x20Wings','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Demacia','regionEn':'Demacia','image':'images/Quinn.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Quinn.png','focusX':0x0,'focusY':0x54,'zoomStart':2.5},{'name':'Rakan','id':'Rakan','title':'baştan\x20çıkarıcı','titleEn':'The\x20Charmer','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Rakan.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rakan.png','focusX':0x24,'focusY':0x55,'zoomStart':0x4},{'name':'Rammus','id':'Rammus','title':'zırhlı\x20armadillo','titleEn':'the\x20Armordillo','lane':'Orman','laneEn':'Jungle','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Shurima','regionEn':'Shurima','image':'images/Rammus.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rammus.png','focusX':0x64,'focusY':0x64,'zoomStart':3.5},{'name':'Rek\x27Sai','id':'RekSai','title':'boşluğun\x20kazıcısı','titleEn':'the\x20Void\x20Burrower','lane':'Orman','laneEn':'Jungle','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Void','regionEn':'Void','image':'images/RekSai.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/RekSai.png','focusX':0x19,'focusY':0x5c,'zoomStart':3.5},{'name':'Rell','id':'Rell','title':'demir\x20bakire','titleEn':'the\x20Iron\x20Maiden','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Rell.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rell.png','focusX':0x23,'focusY':0x64,'zoomStart':3.7},{'name':'Renata\x20Glasc','id':'Renata','title':'kimyasal\x20barones','titleEn':'the\x20Chem-Baroness','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Kadın','genderEn':'Female','region':'Zaun','regionEn':'Zaun','image':'images/Renata.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Renata.png','focusX':0x28,'focusY':0x62,'zoomStart':4.4},{'name':'Renekton','id':'Renekton','title':'kumların\x20kasabı','titleEn':'the\x20Butcher\x20of\x20the\x20Sands','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Shurima','regionEn':'Shurima','image':'images/Renekton.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Renekton.png','focusX':0x64,'focusY':0x64,'zoomStart':3.5},{'name':'Rengar','id':'Rengar','title':'gururlu\x20avcı','titleEn':'the\x20Pridestalker','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Ixtal','regionEn':'Ixtal','image':'images/Rengar.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rengar.png','focusX':0x5f,'focusY':0x64,'zoomStart':3.6},{'name':'Riven','id':'Riven','title':'sürgün','titleEn':'the\x20Exile','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Riven.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Riven.png','focusX':0x64,'focusY':0x64,'zoomStart':3.4},{'name':'Rumble','id':'Rumble','title':'mekanik\x20bela','titleEn':'the\x20Mechanized\x20Menace','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Bandle\x20City','regionEn':'Bandle\x20City','image':'images/Rumble.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rumble.png','focusX':0x5a,'focusY':0x64,'zoomStart':4.2},{'name':'Ryze','id':'Ryze','title':'rune\x20büyücüsü','titleEn':'the\x20Rune\x20Mage','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Runeterra','regionEn':'Runeterra','image':'images/Ryze.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ryze.png','focusX':0x21,'focusY':0x5a,'zoomStart':4.6},{'name':'Samira','id':'Samira','title':'çöl\x20gülü','titleEn':'the\x20Desert\x20Rose','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Noxus','regionEn':'Noxus','image':'images/Samira.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Samira.png','focusX':0x64,'focusY':0x64,'zoomStart':2.7},{'name':'Sejuani','id':'Sejuani','title':'kuzeyin\x20gazabı','titleEn':'Fury\x20of\x20the\x20North','lane':'Orman','laneEn':'Jungle','type':'Tank','typeEn':'Tank','gender':'Kadın','genderEn':'Female','region':'Freljord','regionEn':'Freljord','image':'images/Sejuani.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sejuani.png','focusX':0x2c,'focusY':0x64,'zoomStart':0x3},{'name':'Senna','id':'Senna','title':'kurtarıcı','titleEn':'the\x20Redeemer','lane':'Destek','laneEn':'Support','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Senna.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Senna.png','focusX':0x14,'focusY':0x37,'zoomStart':2.7},{'name':'Seraphine','id':'Seraphine','title':'yıldız\x20gözlü\x20şarkıcı','titleEn':'the\x20Starry-Eyed\x20Songstress','lane':'Destek','laneEn':'Support','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Piltover','regionEn':'Piltover','image':'images/Seraphine.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Seraphine.png','focusX':0x32,'focusY':0x64,'zoomStart':4.5},{'name':'Sett','id':'Sett','title':'yarı\x20canavar','titleEn':'the\x20Boss','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Sett.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sett.png','focusX':0x14,'focusY':0x1c,'zoomStart':0x4},{'name':'Shaco','id':'Shaco','title':'iblis\x20soytarı','titleEn':'the\x20Demon\x20Jester','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Runeterra','regionEn':'Runeterra','image':'images/Shaco.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Shaco.png','focusX':0x32,'focusY':0x3b,'zoomStart':3.7},{'name':'Shen','id':'Shen','title':'alacakaranlığın\x20gözü','titleEn':'the\x20Eye\x20of\x20Twilight','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Shen.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Shen.png','focusX':0x23,'focusY':0x64,'zoomStart':3.6},{'name':'Shyvana','id':'Shyvana','title':'yarı\x20ejder','titleEn':'the\x20Half-Dragon','lane':'Orman','laneEn':'Jungle','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Demacia','regionEn':'Demacia','image':'images/Shyvana.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Shyvana.png','focusX':0x64,'focusY':0x55,'zoomStart':2.7},{'name':'Singed','id':'Singed','title':'çılgın\x20kimyager','titleEn':'the\x20Mad\x20Chemist','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/Singed.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Singed.png','focusX':0x46,'focusY':0x5a,'zoomStart':4.6},{'name':'Sion','id':'Sion','title':'ölümsüz\x20savaş\x20makinesi','titleEn':'The\x20Undead\x20Juggernaut','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Noxus','regionEn':'Noxus','image':'images/Sion.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sion.png','focusX':0x2d,'focusY':0x64,'zoomStart':3.5},{'name':'Sivir','id':'Sivir','title':'savaş\x20metresi','titleEn':'the\x20Battle\x20Mistress','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Shurima','regionEn':'Shurima','image':'images/Sivir.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sivir.png','focusX':0x28,'focusY':0x64,'zoomStart':3.7},{'name':'Skarner','id':'Skarner','title':'kadim\x20egemen','titleEn':'the\x20Primordial\x20Sovereign','lane':'Orman','laneEn':'Jungle','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Ixtal','regionEn':'Ixtal','image':'images/Skarner.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Skarner.png','focusX':0x50,'focusY':0x64,'zoomStart':4.2},{'name':'Smolder','id':'Smolder','title':'ejder\x20yavrusu','titleEn':'the\x20Fiery\x20Fledgling','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Noxus','regionEn':'Noxus','image':'images/Smolder.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Smolder.png','focusX':0x32,'focusY':0x55,'zoomStart':0x5},{'name':'Sona','id':'Sona','title':'tellerin\x20virtüözü','titleEn':'Maven\x20of\x20the\x20Strings','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Kadın','genderEn':'Female','region':'Demacia','regionEn':'Demacia','image':'images/Sona.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sona.png','focusX':0x5f,'focusY':0x64,'zoomStart':0x2},{'name':'Soraka','id':'Soraka','title':'yıldız\x20çocuğu','titleEn':'the\x20Starchild','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Kadın','genderEn':'Female','region':'Targon','regionEn':'Targon','image':'images/Soraka.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Soraka.png','focusX':0x64,'focusY':0x64,'zoomStart':2.8},{'name':'Swain','id':'Swain','title':'noxus\x20başkomutanı','titleEn':'the\x20Noxian\x20Grand\x20General','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Noxus','regionEn':'Noxus','image':'images/Swain.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Swain.png','focusX':0x19,'focusY':0x64,'zoomStart':0x4},{'name':'Sylas','id':'Sylas','title':'zincirsiz','titleEn':'the\x20Unshackled','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Demacia','regionEn':'Demacia','image':'images/Sylas.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sylas.png','focusX':0x5f,'focusY':0x54,'zoomStart':3.6},{'name':'Syndra','id':'Syndra','title':'karanlık\x20egemen','titleEn':'the\x20Dark\x20Sovereign','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Ionia','regionEn':'Ionia','image':'images/Syndra.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Syndra.png','focusX':0xa,'focusY':0x64,'zoomStart':0x3},{'name':'Tahm\x20Kench','id':'TahmKench','title':'nehir\x20kralı','titleEn':'the\x20River\x20King','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Bilgewater','regionEn':'Bilgewater','image':'images/TahmKench.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/TahmKench.png','focusX':0x9,'focusY':0x5e,'zoomStart':3.4},{'name':'Taliyah','id':'Taliyah','title':'taş\x20dokuyucu','titleEn':'the\x20Stoneweaver','lane':'Orman','laneEn':'Jungle','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Shurima','regionEn':'Shurima','image':'images/Taliyah.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Taliyah.png','focusX':0x0,'focusY':0x4b,'zoomStart':2.5},{'name':'Talon','id':'Talon','title':'bıçağın\x20gölgesi','titleEn':'the\x20Blade\x27s\x20Shadow','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Noxus','regionEn':'Noxus','image':'images/Talon.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Talon.png','focusX':0x4b,'focusY':0x64,'zoomStart':2.9},{'name':'Taric','id':'Taric','title':'mücevherlerin\x20koruyucusu','titleEn':'the\x20Shield\x20of\x20Valoran','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Targon','regionEn':'Targon','image':'images/Taric.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Taric.png','focusX':0x55,'focusY':0x6e,'zoomStart':2.7},{'name':'Teemo','id':'Teemo','title':'çevik\x20izci','titleEn':'the\x20Swift\x20Scout','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Bandle\x20City','regionEn':'Bandle\x20City','image':'images/Teemo.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Teemo.png','focusX':0x55,'focusY':0x39,'zoomStart':4.5},{'name':'Thresh','id':'Thresh','title':'zincir\x20gardiyanı','titleEn':'the\x20Chain\x20Warden','lane':'Destek','laneEn':'Support','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Thresh.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Thresh.png','focusX':0x33,'focusY':0x64,'zoomStart':3.3},{'name':'Tristana','id':'Tristana','title':'yordle\x20topçusu','titleEn':'the\x20Yordle\x20Gunner','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Bandle\x20City','regionEn':'Bandle\x20City','image':'images/Tristana.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Tristana.png','focusX':0x64,'focusY':0x56,'zoomStart':3.4},{'name':'Trundle','id':'Trundle','title':'trol\x20kralı','titleEn':'the\x20Troll\x20King','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Trundle.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Trundle.png','focusX':0x55,'focusY':0x64,'zoomStart':3.6},{'name':'Tryndamere','id':'Tryndamere','title':'barbar\x20kral','titleEn':'the\x20Barbarian\x20King','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Tryndamere.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Tryndamere.png','focusX':0x55,'focusY':0x64,'zoomStart':2.6},{'name':'Twisted\x20Fate','id':'TwistedFate','title':'kart\x20ustası','titleEn':'the\x20Card\x20Master','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Bilgewater','regionEn':'Bilgewater','image':'images/TwistedFate.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/TwistedFate.png','focusX':0x3c,'focusY':0x64,'zoomStart':3.3},{'name':'Twitch','id':'Twitch','title':'veba\x20sıçanı','titleEn':'the\x20Plague\x20Rat','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/Twitch.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Twitch.png','focusX':0x3c,'focusY':0x4b,'zoomStart':0x4},{'name':'Udyr','id':'Udyr','title':'ruh\x20gezgini','titleEn':'the\x20Spirit\x20Walker','lane':'Orman','laneEn':'Jungle','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Udyr.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Udyr.png','focusX':0x55,'focusY':0x64,'zoomStart':3.2},{'name':'Urgot','id':'Urgot','title':'dehşetli\x20gurur','titleEn':'the\x20Dreadnought','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/Urgot.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Urgot.png','focusX':0x0,'focusY':0x6e,'zoomStart':2.4},{'name':'Varus','id':'Varus','title':'intikam\x20oku','titleEn':'the\x20Arrow\x20of\x20Retribution','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Varus.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Varus.png','focusX':0x64,'focusY':0x64,'zoomStart':2.7},{'name':'Vayne','id':'Vayne','title':'gece\x20avcısı','titleEn':'the\x20Night\x20Hunter','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Demacia','regionEn':'Demacia','image':'images/Vayne.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Vayne.png','focusX':0x35,'focusY':0x64,'zoomStart':3.2},{'name':'Veigar','id':'Veigar','title':'küçük\x20kötülüğün\x20efendisi','titleEn':'the\x20Tiny\x20Master\x20of\x20Evil','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Bandle\x20City','regionEn':'Bandle\x20City','image':'images/Veigar.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Veigar.png','focusX':0x64,'focusY':0x51,'zoomStart':3.3},{'name':'Vel\x27Koz','id':'Velkoz','title':'boşluğun\x20gözü','titleEn':'the\x20Eye\x20of\x20the\x20Void','lane':'Destek','laneEn':'Support','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Void','regionEn':'Void','image':'images/Velkoz.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Velkoz.png','focusX':0xa,'focusY':0x0,'zoomStart':0x3},{'name':'Vex','id':'Vex','title':'kasvetli\x20yordle','titleEn':'the\x20Gloomist','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Vex.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Vex.png','focusX':0x0,'focusY':0x3e,'zoomStart':2.6},{'name':'Vi','id':'Vi','title':'piltover\x27ın\x20kanun\x20koruyucusu','titleEn':'the\x20Piltover\x20Enforcer','lane':'Orman','laneEn':'Jungle','type':'Savaşçı','typeEn':'Fighter','gender':'Kadın','genderEn':'Female','region':'Piltover','regionEn':'Piltover','image':'images/Vi.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Vi.png','focusX':0x1e,'focusY':0x64,'zoomStart':3.1},{'name':'Viego','id':'Viego','title':'mahvolmuş\x20kral','titleEn':'the\x20Ruined\x20King','lane':'Orman','laneEn':'Jungle','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Viego.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Viego.png','focusX':0x19,'focusY':0x64,'zoomStart':3.2},{'name':'Viktor','id':'Viktor','title':'makinelerin\x20habercisi','titleEn':'the\x20Herald\x20of\x20the\x20Arcane','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/Viktor.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Viktor.png','focusX':0x41,'focusY':0x64,'zoomStart':0x4},{'name':'Vladimir','id':'Vladimir','title':'kızıl\x20orak','titleEn':'the\x20Crimson\x20Reaper','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Noxus','regionEn':'Noxus','image':'images/Vladimir.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Vladimir.png','focusX':0x64,'focusY':0x64,'zoomStart':2.5},{'name':'Volibear','id':'Volibear','title':'amansız\x20fırtına','titleEn':'the\x20Relentless\x20Storm','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Freljord','regionEn':'Freljord','image':'images/Volibear.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Volibear.png','focusX':0x28,'focusY':0x64,'zoomStart':3.2},{'name':'Warwick','id':'Warwick','title':'zaun\x27un\x20öfkesi','titleEn':'the\x20Uncaged\x20Wrath\x20of\x20Zaun','lane':'Orman','laneEn':'Jungle','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/Warwick.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Warwick.png','focusX':0x64,'focusY':0x64,'zoomStart':2.2},{'name':'Wukong','id':'MonkeyKing','title':'maymun\x20kral','titleEn':'the\x20Monkey\x20King','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/MonkeyKing.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/MonkeyKing.png','focusX':0x4b,'focusY':0x64,'zoomStart':3.1},{'name':'Xayah','id':'Xayah','title':'asi','titleEn':'the\x20Rebel','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Ionia','regionEn':'Ionia','image':'images/Xayah.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Xayah.png','focusX':0x2d,'focusY':0x64,'zoomStart':3.4},{'name':'Xerath','id':'Xerath','title':'yükselmiş\x20büyücü','titleEn':'the\x20Magus\x20Ascendant','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Shurima','regionEn':'Shurima','image':'images/Xerath.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Xerath.png','focusX':0x55,'focusY':0x64,'zoomStart':3.6},{'name':'Xin\x20Zhao','id':'XinZhao','title':'demacia\x27nın\x20mızrağı','titleEn':'the\x20Seneschal\x20of\x20Demacia','lane':'Orman','laneEn':'Jungle','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Demacia','regionEn':'Demacia','image':'images/XinZhao.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/XinZhao.png','focusX':0xf,'focusY':0x64,'zoomStart':2.5},{'name':'Yasuo','id':'Yasuo','title':'bağışlanmayan','titleEn':'the\x20Unforgiven','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Yasuo.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Yasuo.png','focusX':0x64,'focusY':0x64,'zoomStart':3.3},{'name':'Yone','id':'Yone','title':'geri\x20dönen','titleEn':'the\x20Unforgotten','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Yone.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Yone.png','focusX':0x0,'focusY':0x1e,'zoomStart':2.5},{'name':'Yorick','id':'Yorick','title':'ruhların\x20çobanı','titleEn':'Shepherd\x20of\x20Souls','lane':'Üst\x20Koridor','laneEn':'Top\x20Lane','type':'Savaşçı','typeEn':'Fighter','gender':'Erkek','genderEn':'Male','region':'Gölge\x20Adalar','regionEn':'Shadow\x20Isles','image':'images/Yorick.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Yorick.png','focusX':0x5a,'focusY':0x64,'zoomStart':2.5},{'name':'Yuumi','id':'Yuumi','title':'sihirli\x20kedi','titleEn':'the\x20Magical\x20Cat','lane':'Destek','laneEn':'Support','type':'Destek','typeEn':'Support','gender':'Kadın','genderEn':'Female','region':'Bandle\x20City','regionEn':'Bandle\x20City','image':'images/Yuumi.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Yuumi.png','focusX':0x2b,'focusY':0x64,'zoomStart':0x4},{'name':'Zac','id':'Zac','title':'gizli\x20silah','titleEn':'the\x20Secret\x20Weapon','lane':'Orman','laneEn':'Jungle','type':'Tank','typeEn':'Tank','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/Zac.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zac.png','focusX':0x4e,'focusY':0x60,'zoomStart':2.8},{'name':'Zed','id':'Zed','title':'gölgelerin\x20efendisi','titleEn':'the\x20Master\x20of\x20Shadows','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Suikastçı','typeEn':'Assassin','gender':'Erkek','genderEn':'Male','region':'Ionia','regionEn':'Ionia','image':'images/Zed.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zed.png','focusX':0xa,'focusY':0x64,'zoomStart':0x3},{'name':'Zeri','id':'Zeri','title':'zaun\x27un\x20kıvılcımı','titleEn':'The\x20Spark\x20of\x20Zaun','lane':'Alt\x20Koridor','laneEn':'Bot\x20Lane','type':'Nişancı','typeEn':'Marksman','gender':'Kadın','genderEn':'Female','region':'Zaun','regionEn':'Zaun','image':'images/Zeri.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zeri.png','focusX':0xf,'focusY':0x55,'zoomStart':3.1},{'name':'Ziggs','id':'Ziggs','title':'hexplosives\x20uzmanı','titleEn':'the\x20Hexplosives\x20Expert','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Zaun','regionEn':'Zaun','image':'images/Ziggs.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ziggs.png','focusX':0x64,'focusY':0x50,'zoomStart':4.4},{'name':'Zilean','id':'Zilean','title':'zamanın\x20koruyucusu','titleEn':'the\x20Chronokeeper','lane':'Destek','laneEn':'Support','type':'Büyücü','typeEn':'Mage','gender':'Erkek','genderEn':'Male','region':'Runeterra','regionEn':'Runeterra','image':'images/Zilean.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zilean.png','focusX':0x32,'focusY':0x64,'zoomStart':2.9},{'name':'Zoe','id':'Zoe','title':'alacakaranlığın\x20özü','titleEn':'the\x20Aspect\x20of\x20Twilight','lane':'Orta\x20Koridor','laneEn':'Mid\x20Lane','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Targon','regionEn':'Targon','image':'images/Zoe.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zoe.png','focusX':0x1e,'focusY':0x50,'zoomStart':0x5},{'name':'Zyra','id':'Zyra','title':'dikenlerin\x20yükselişi','titleEn':'Rise\x20of\x20the\x20Thorns','lane':'Destek','laneEn':'Support','type':'Büyücü','typeEn':'Mage','gender':'Kadın','genderEn':'Female','region':'Runeterra','regionEn':'Runeterra','image':'images/Zyra.png','icon':'https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zyra.png','focusX':0x64,'focusY':0x64,'zoomStart':0x4}];vmd_85b0dc['champions']=champions;globalThis['champions']=vmd_85b0dc['champions'];vmd_85b0dc['champions']=champions;globalThis['champions']=champions;delete vmd_85b0dc['_$LtKzq1']['champions'];let championImage,guessInput,result,attempts,hint,shareButton,suggestions;globalThis['suggestions']=vmd_85b0dc['suggestions'];globalThis['shareButton']=vmd_85b0dc['shareButton'];globalThis['hint']=vmd_85b0dc['hint'];globalThis['attempts']=vmd_85b0dc['attempts'];globalThis['result']=vmd_85b0dc['result'];globalThis['guessInput']=vmd_85b0dc['guessInput'];globalThis['championImage']=vmd_85b0dc['championImage'];delete vmd_85b0dc['_$LtKzq1']['championImage'];delete vmd_85b0dc['_$LtKzq1']['guessInput'];delete vmd_85b0dc['_$LtKzq1']['result'];delete vmd_85b0dc['_$LtKzq1']['attempts'];delete vmd_85b0dc['_$LtKzq1']['hint'];delete vmd_85b0dc['_$LtKzq1']['shareButton'];delete vmd_85b0dc['_$LtKzq1']['suggestions'];let selectedChampion;globalThis['selectedChampion']=vmd_85b0dc['selectedChampion'];delete vmd_85b0dc['_$LtKzq1']['selectedChampion'];let attemptCount=0x0;vmd_85b0dc['attemptCount']=attemptCount;globalThis['attemptCount']=vmd_85b0dc['attemptCount'];vmd_85b0dc['attemptCount']=attemptCount;globalThis['attemptCount']=attemptCount;delete vmd_85b0dc['_$LtKzq1']['attemptCount'];let gameOver=![];vmd_85b0dc['gameOver']=gameOver;globalThis['gameOver']=vmd_85b0dc['gameOver'];vmd_85b0dc['gameOver']=gameOver;globalThis['gameOver']=gameOver;delete vmd_85b0dc['_$LtKzq1']['gameOver'];let maxAttempts=0x6;vmd_85b0dc['maxAttempts']=maxAttempts;globalThis['maxAttempts']=vmd_85b0dc['maxAttempts'];vmd_85b0dc['maxAttempts']=maxAttempts;globalThis['maxAttempts']=maxAttempts;delete vmd_85b0dc['_$LtKzq1']['maxAttempts'];let currentZoom=0x3;vmd_85b0dc['currentZoom']=currentZoom;globalThis['currentZoom']=vmd_85b0dc['currentZoom'];vmd_85b0dc['currentZoom']=currentZoom;globalThis['currentZoom']=currentZoom;delete vmd_85b0dc['_$LtKzq1']['currentZoom'];let guessedChampions=[];vmd_85b0dc['guessedChampions']=guessedChampions;globalThis['guessedChampions']=vmd_85b0dc['guessedChampions'];vmd_85b0dc['guessedChampions']=guessedChampions;globalThis['guessedChampions']=guessedChampions;delete vmd_85b0dc['_$LtKzq1']['guessedChampions'];let guessHistoryData=[];vmd_85b0dc['guessHistoryData']=guessHistoryData;globalThis['guessHistoryData']=vmd_85b0dc['guessHistoryData'];vmd_85b0dc['guessHistoryData']=guessHistoryData;globalThis['guessHistoryData']=guessHistoryData;delete vmd_85b0dc['_$LtKzq1']['guessHistoryData'];let currentLanguage='tr';vmd_85b0dc['currentLanguage']=currentLanguage;globalThis['currentLanguage']=vmd_85b0dc['currentLanguage'];vmd_85b0dc['currentLanguage']=currentLanguage;globalThis['currentLanguage']=currentLanguage;delete vmd_85b0dc['_$LtKzq1']['currentLanguage'];const translations={'tr':{'subtitle':'Şampiyonunu\x20ayağından\x20tahmin\x20et!','inputTitle':'Tahminini\x20Yaz','placeholder':'Şampiyon\x20adı\x20yaz...','guessButton':'Tahmin\x20Et','hintButton':'İpucu\x20Al','newButton':'Yeni\x20Karakter','historyTitle':'Tahmin\x20Geçmişi','attempts':'Deneme','wrong':'Yanlış\x20tahmin!','correct':'DOĞRU!\x20Şampiyon:\x20','empty':'Bir\x20şampiyon\x20adı\x20yaz.','chooseList':'Lütfen\x20listeden\x20bir\x20şampiyon\x20seç.','already':'Bu\x20şampiyonu\x20zaten\x20denedin.','lost':'Kaybettin!\x20Doğru\x20cevap:\x20','hintLocked':'İpucu\x20için\x20en\x20az\x202\x20tahmin\x20yapmalısın.','title':'Unvan','lane':'Koridor','type':'Tür','gender':'Cinsiyet','region':'Bölge','copied':'Sonuç\x20panoya\x20kopyalandı!','nextChamp':'YENİ\x20ŞAMPİYON'},'en':{'subtitle':'Guess\x20the\x20champion\x20from\x20their\x20feet!','inputTitle':'Write\x20Your\x20Guess','placeholder':'Type\x20champion\x20name...','guessButton':'Guess','hintButton':'Hint','newButton':'New\x20Champion','historyTitle':'Guess\x20History','attempts':'Attempts','wrong':'Wrong\x20guess!','correct':'CORRECT!\x20Champion:\x20','empty':'Type\x20a\x20champion\x20name.','chooseList':'Choose\x20a\x20champion\x20from\x20the\x20list.','already':'You\x20already\x20guessed\x20this\x20champion.','lost':'You\x20lost!\x20Correct\x20answer:\x20','hintLocked':'You\x20need\x20at\x20least\x202\x20guesses.','title':'Title','lane':'Lane','type':'Type','gender':'Gender','region':'Region','copied':'Result\x20copied\x20to\x20clipboard!','nextChamp':'NEXT\x20CHAMPION'}};vmd_85b0dc['translations']=translations;globalThis['translations']=vmd_85b0dc['translations'];vmd_85b0dc['translations']=translations;globalThis['translations']=translations;delete vmd_85b0dc['_$LtKzq1']['translations'];function startGame(){return vmF_46cdf2(0x0,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'get':function(){return attemptCount;},'enumerable':!![],'set':function(W){attemptCount=W;}},['1']:{'get':function(){return attempts;},'enumerable':!![],'set':function(W){attempts=W;}},['2']:{'get':function(){return championImage;},'enumerable':!![],'set':function(W){championImage=W;}},['3']:{'value':champions,'writable':!![],'enumerable':!![]},['4']:{'get':function(){return currentLanguage;},'enumerable':!![],'set':function(W){currentLanguage=W;}},['5']:{'get':function(){return currentZoom;},'enumerable':!![],'set':function(W){currentZoom=W;}},['6']:{'get':function(){return gameOver;},'enumerable':!![],'set':function(W){gameOver=W;}},['7']:{'get':function(){return guessHistoryData;},'enumerable':!![],'set':function(W){guessHistoryData=W;}},['8']:{'get':function(){return guessInput;},'enumerable':!![],'set':function(W){guessInput=W;}},['9']:{'get':function(){return guessedChampions;},'enumerable':!![],'set':function(W){guessedChampions=W;}},['10']:{'get':function(){return hint;},'enumerable':!![],'set':function(W){hint=W;}},['11']:{'value':maxAttempts,'writable':!![],'enumerable':!![]},['12']:{'get':function(){return result;},'enumerable':!![],'set':function(W){result=W;}},['13']:{'get':function(){return selectedChampion;},'enumerable':!![],'set':function(W){selectedChampion=W;}},['14']:{'get':function(){return shareButton;},'enumerable':!![],'set':function(W){shareButton=W;}},['15']:{'get':function(){return suggestions;},'enumerable':!![],'set':function(W){suggestions=W;}},['16']:{'value':translations,'writable':!![],'enumerable':!![]},['17']:{'value':updateZoom,'writable':!![],'enumerable':!![]}}),['_$H14eBN']:undefined,['_$b6EHlo']:[0x0,0x0,0x0,0x1,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x1,0x0]},undefined,new.target,this);}function checkGuess(){return vmF_46cdf2(0x1,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'value':addGuessToHistory,'writable':!![],'enumerable':!![]},['1']:{'get':function(){return attemptCount;},'enumerable':!![],'set':function(W){attemptCount=W;}},['2']:{'get':function(){return attempts;},'enumerable':!![],'set':function(W){attempts=W;}},['3']:{'get':function(){return championImage;},'enumerable':!![],'set':function(W){championImage=W;}},['4']:{'value':champions,'writable':!![],'enumerable':!![]},['5']:{'get':function(){return currentLanguage;},'enumerable':!![],'set':function(W){currentLanguage=W;}},['6']:{'get':function(){return currentZoom;},'enumerable':!![],'set':function(W){currentZoom=W;}},['7']:{'value':finishGame,'writable':!![],'enumerable':!![]},['8']:{'get':function(){return gameOver;},'enumerable':!![],'set':function(W){gameOver=W;}},['9']:{'get':function(){return guessInput;},'enumerable':!![],'set':function(W){guessInput=W;}},['10']:{'get':function(){return guessedChampions;},'enumerable':!![],'set':function(W){guessedChampions=W;}},['11']:{'value':maxAttempts,'writable':!![],'enumerable':!![]},['12']:{'get':function(){return result;},'enumerable':!![],'set':function(W){result=W;}},['13']:{'get':function(){return selectedChampion;},'enumerable':!![],'set':function(W){selectedChampion=W;}},['14']:{'get':function(){return suggestions;},'enumerable':!![],'set':function(W){suggestions=W;}},['15']:{'value':translations,'writable':!![],'enumerable':!![]},['16']:{'value':updateZoom,'writable':!![],'enumerable':!![]}}),['_$H14eBN']:undefined,['_$b6EHlo']:[0x0,0x0,0x0,0x0,0x1,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x1,0x0]},undefined,new.target,this);}function addGuessToHistory(W,c){return vmF_46cdf2(0x2,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'get':function(){return guessHistoryData;},'enumerable':!![],'set':function(R){guessHistoryData=R;}},['1']:{'value':renderGuessHistory,'writable':!![],'enumerable':!![]}}),['_$H14eBN']:undefined},undefined,new.target,this);}function renderGuessHistory(){return vmF_46cdf2(0x3,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'get':function(){return currentLanguage;},'enumerable':!![],'set':function(W){currentLanguage=W;}},['1']:{'get':function(){return guessHistoryData;},'enumerable':!![],'set':function(W){guessHistoryData=W;}},['2']:{'get':function(){return selectedChampion;},'enumerable':!![],'set':function(W){selectedChampion=W;}},['3']:{'value':translations,'writable':!![],'enumerable':!![]}}),['_$H14eBN']:undefined,['_$b6EHlo']:[0x0,0x0,0x0,0x1]},undefined,new.target,this);}function showHint(){return vmF_46cdf2(0x4,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'get':function(){return attemptCount;},'enumerable':!![],'set':function(W){attemptCount=W;}},['1']:{'get':function(){return currentLanguage;},'enumerable':!![],'set':function(W){currentLanguage=W;}},['2']:{'get':function(){return hint;},'enumerable':!![],'set':function(W){hint=W;}},['3']:{'get':function(){return selectedChampion;},'enumerable':!![],'set':function(W){selectedChampion=W;}},['4']:{'value':translations,'writable':!![],'enumerable':!![]}}),['_$H14eBN']:undefined,['_$b6EHlo']:[0x0,0x0,0x0,0x0,0x1]},undefined,new.target,this);}function finishGame(){return vmF_46cdf2(0x5,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'get':function(){return gameOver;},'enumerable':!![],'set':function(W){gameOver=W;}},['1']:{'get':function(){return guessInput;},'enumerable':!![],'set':function(W){guessInput=W;}},['2']:{'get':function(){return shareButton;},'enumerable':!![],'set':function(W){shareButton=W;}},['3']:{'get':function(){return suggestions;},'enumerable':!![],'set':function(W){suggestions=W;}}}),['_$H14eBN']:undefined},undefined,new.target,this);}function shareResult(){return vmF_46cdf2(0x6,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'get':function(){return attemptCount;},'enumerable':!![],'set':function(W){attemptCount=W;}},['1']:{'get':function(){return currentLanguage;},'enumerable':!![],'set':function(W){currentLanguage=W;}},['2']:{'value':maxAttempts,'writable':!![],'enumerable':!![]},['3']:{'get':function(){return result;},'enumerable':!![],'set':function(W){result=W;}},['4']:{'get':function(){return selectedChampion;},'enumerable':!![],'set':function(W){selectedChampion=W;}},['5']:{'value':translations,'writable':!![],'enumerable':!![]}}),['_$H14eBN']:undefined,['_$b6EHlo']:[0x0,0x0,0x0,0x0,0x0,0x1]},undefined,new.target,this);}function updateZoom(){return vmF_46cdf2(0x7,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'get':function(){return championImage;},'enumerable':!![],'set':function(W){championImage=W;}},['1']:{'get':function(){return currentZoom;},'enumerable':!![],'set':function(W){currentZoom=W;}},['2']:{'get':function(){return selectedChampion;},'enumerable':!![],'set':function(W){selectedChampion=W;}}}),['_$H14eBN']:undefined},undefined,new.target,this);}function newGame(){return vmF_46cdf2(0x8,arguments,{['_$1SLmMc']:[startGame],['_$H14eBN']:undefined},undefined,new.target,this);}function setLanguage(W){return vmF_46cdf2(0x9,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'get':function(){return attemptCount;},'enumerable':!![],'set':function(c){attemptCount=c;}},['1']:{'get':function(){return attempts;},'enumerable':!![],'set':function(c){attempts=c;}},['2']:{'get':function(){return currentLanguage;},'enumerable':!![],'set':function(c){currentLanguage=c;}},['3']:{'get':function(){return guessInput;},'enumerable':!![],'set':function(c){guessInput=c;}},['4']:{'value':maxAttempts,'writable':!![],'enumerable':!![]},['5']:{'value':renderGuessHistory,'writable':!![],'enumerable':!![]},['6']:{'value':translations,'writable':!![],'enumerable':!![]}}),['_$H14eBN']:undefined,['_$b6EHlo']:[0x0,0x0,0x0,0x0,0x0,0x0,0x1]},undefined,new.target,this);}document['addEventListener']('DOMContentLoaded',function(){return vmF_46cdf2(0xa,arguments,{['_$1SLmMc']:Object['defineProperties']({},{['0']:{'get':function(){return attempts;},'enumerable':!![],'set':function(W){attempts=W;}},['1']:{'get':function(){return championImage;},'enumerable':!![],'set':function(W){championImage=W;}},['2']:{'value':champions,'writable':!![],'enumerable':!![]},['3']:{'value':checkGuess,'writable':!![],'enumerable':!![]},['4']:{'get':function(){return currentLanguage;},'enumerable':!![],'set':function(W){currentLanguage=W;}},['5']:{'get':function(){return gameOver;},'enumerable':!![],'set':function(W){gameOver=W;}},['6']:{'get':function(){return guessInput;},'enumerable':!![],'set':function(W){guessInput=W;}},['7']:{'get':function(){return guessedChampions;},'enumerable':!![],'set':function(W){guessedChampions=W;}},['8']:{'get':function(){return hint;},'enumerable':!![],'set':function(W){hint=W;}},['9']:{'get':function(){return result;},'enumerable':!![],'set':function(W){result=W;}},['10']:{'value':setLanguage,'writable':!![],'enumerable':!![]},['11']:{'get':function(){return shareButton;},'enumerable':!![],'set':function(W){shareButton=W;}},['12']:{'value':startGame,'writable':!![],'enumerable':!![]},['13']:{'get':function(){return suggestions;},'enumerable':!![],'set':function(W){suggestions=W;}},['14']:{'value':translations,'writable':!![],'enumerable':!![]}}),['_$H14eBN']:undefined,['_$b6EHlo']:[0x0,0x0,0x1,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x1]},undefined,new.target,this);});
+const champions = [
+{
+  "name": "Aatrox",
+  "id": "Aatrox",
+  "title": "darkin kılıcı",
+  "titleEn": "the Darkin Blade",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Aatrox.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Aatrox.png",
+  "focusX": 72,
+  "focusY": 150,
+  "zoomStart": 3
+},
+{
+  "name": "Ahri",
+  "id": "Ahri",
+  "title": "dokuz kuyruklu tilki",
+  "titleEn": "the Nine-Tailed Fox",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Ahri.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ahri.png",
+  "focusX": 85,
+  "focusY": 150,
+  "zoomStart": 3
+},
+{
+  "name": "Akali",
+  "id": "Akali",
+  "title": "gölgenin yumruğu",
+  "titleEn": "the Rogue Assassin",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Akali.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Akali.png",
+  "focusX": 44,
+  "focusY": 100,
+  "zoomStart": 4.5
+},
+{
+  "name": "Akshan",
+  "id": "Akshan",
+  "title": "asi muhafız",
+  "titleEn": "the Rogue Sentinel",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Akshan.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Akshan.png",
+  "focusX": 75,
+  "focusY": 90,
+  "zoomStart": 6
+},
+{
+  "name": "Alistar",
+  "id": "Alistar",
+  "title": "minotor",
+  "titleEn": "the Minotaur",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Alistar.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Alistar.png",
+  "focusX": 62,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Ambessa",
+  "id": "Ambessa",
+  "title": "matriarch of war",
+  "titleEn": "the Matriarch of War",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Ambessa.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ambessa.png",
+  "focusX": 28,
+  "focusY": 100,
+  "zoomStart": 4.1
+},
+{
+  "name": "Amumu",
+  "id": "Amumu",
+  "title": "hüzünlü mumya",
+  "titleEn": "the Sad Mummy",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Amumu.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Amumu.png",
+  "focusX": 41,
+  "focusY": 100,
+  "zoomStart": 5.2
+},
+{
+  "name": "Anivia",
+  "id": "Anivia",
+  "title": "kristal anka",
+  "titleEn": "the Cryophoenix",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Anivia.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Anivia.png",
+  "focusX": 56,
+  "focusY": 82,
+  "zoomStart": 4.2
+},
+{
+  "name": "Annie",
+  "id": "Annie",
+  "title": "karanlığın çocuğu",
+  "titleEn": "the Dark Child",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Annie.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Annie.png",
+  "focusX": 14,
+  "focusY": 100,
+  "zoomStart": 5
+},
+{
+  "name": "Aphelios",
+  "id": "Aphelios",
+  "title": "inancın silahı",
+  "titleEn": "the Weapon of the Faithful",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Targon",
+  "regionEn": "Targon",
+  "image": "images/Aphelios.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Aphelios.png",
+  "focusX": 72,
+  "focusY": 85,
+  "zoomStart": 7
+},
+{
+  "name": "Ashe",
+  "id": "Ashe",
+  "title": "buz okçusu",
+  "titleEn": "the Frost Archer",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Ashe.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ashe.png",
+  "focusX": 65,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Aurelion Sol",
+  "id": "AurelionSol",
+  "title": "yıldız yaratıcısı",
+  "titleEn": "The Star Forger",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Targon",
+  "regionEn": "Targon",
+  "image": "images/AurelionSol.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/AurelionSol.png",
+  "focusX": 35,
+  "focusY": 95,
+  "zoomStart": 6
+},
+{
+  "name": "Aurora",
+  "id": "Aurora",
+  "title": "witch between worlds",
+  "titleEn": "the Witch Between Worlds",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Aurora.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Aurora.png",
+  "focusX": 95,
+  "focusY": 100,
+  "zoomStart": 3.6
+},
+{
+  "name": "Azir",
+  "id": "Azir",
+  "title": "kumların imparatoru",
+  "titleEn": "the Emperor of the Sands",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Azir.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Azir.png",
+  "focusX": 31,
+  "focusY": 100,
+  "zoomStart": 5.2
+},
+{
+  "name": "Bard",
+  "id": "Bard",
+  "title": "gezgin koruyucu",
+  "titleEn": "the Wandering Caretaker",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Bard.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Bard.png",
+  "focusX": 94,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Bel'Veth",
+  "id": "Belveth",
+  "title": "boşluğun imparatoriçesi",
+  "titleEn": "the Empress of the Void",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Void",
+  "regionEn": "Void",
+  "image": "images/Belveth.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Belveth.png",
+  "focusX": 30,
+  "focusY": 89,
+  "zoomStart": 3.6
+},
+{
+  "name": "Blitzcrank",
+  "id": "Blitzcrank",
+  "title": "büyük buhar golemi",
+  "titleEn": "the Great Steam Golem",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Blitzcrank.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Blitzcrank.png",
+  "focusX": 60,
+  "focusY": 100,
+  "zoomStart": 3.5
+},
+{
+  "name": "Brand",
+  "id": "Brand",
+  "title": "yanan intikam",
+  "titleEn": "the Burning Vengeance",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Brand.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Brand.png",
+  "focusX": 90,
+  "focusY": 100,
+  "zoomStart": 5
+},
+{
+  "name": "Braum",
+  "id": "Braum",
+  "title": "freljord'un kalbi",
+  "titleEn": "the Heart of the Freljord",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Braum.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Braum.png",
+  "focusX": 85,
+  "focusY": 100,
+  "zoomStart": 4.2
+},
+{
+  "name": "Briar",
+  "id": "Briar",
+  "title": "kısıtlanmış açlık",
+  "titleEn": "the Restrained Hunger",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Briar.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Briar.png",
+  "focusX": 60,
+  "focusY": 95,
+  "zoomStart": 4.5
+},
+{
+  "name": "Caitlyn",
+  "id": "Caitlyn",
+  "title": "piltover şerifi",
+  "titleEn": "the Sheriff of Piltover",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Piltover",
+  "regionEn": "Piltover",
+  "image": "images/Caitlyn.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Caitlyn.png",
+  "focusX": 10,
+  "focusY": 100,
+  "zoomStart": 3.5
+},
+{
+  "name": "Camille",
+  "id": "Camille",
+  "title": "çelik gölge",
+  "titleEn": "the Steel Shadow",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Piltover",
+  "regionEn": "Piltover",
+  "image": "images/Camille.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Camille.png",
+  "focusX": 65,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Cassiopeia",
+  "id": "Cassiopeia",
+  "title": "yılanın kucağı",
+  "titleEn": "the Serpent's Embrace",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Cassiopeia.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Cassiopeia.png",
+  "focusX": 61,
+  "focusY": 51,
+  "zoomStart": 4
+},
+{
+  "name": "Cho'Gath",
+  "id": "Chogath",
+  "title": "boşluğun dehşeti",
+  "titleEn": "the Terror of the Void",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Void",
+  "regionEn": "Void",
+  "image": "images/Chogath.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Chogath.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 2.7
+},
+{
+  "name": "Corki",
+  "id": "Corki",
+  "title": "cüretkar bombardımancı",
+  "titleEn": "the Daring Bombardier",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bandle City",
+  "regionEn": "Bandle City",
+  "image": "images/Corki.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Corki.png",
+  "focusX": 82,
+  "focusY": 17,
+  "zoomStart": 7.5
+},
+{
+  "name": "Darius",
+  "id": "Darius",
+  "title": "noxus'un eli",
+  "titleEn": "the Hand of Noxus",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Darius.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Darius.png",
+  "focusX": 35,
+  "focusY": 75,
+  "zoomStart": 3.5
+},
+{
+  "name": "Diana",
+  "id": "Diana",
+  "title": "ayın küçümsemesi",
+  "titleEn": "Scorn of the Moon",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Targon",
+  "regionEn": "Targon",
+  "image": "images/Diana.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Diana.png",
+  "focusX": 55,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Dr. Mundo",
+  "id": "DrMundo",
+  "title": "zaun'un delisi",
+  "titleEn": "the Madman of Zaun",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/DrMundo.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/DrMundo.png",
+  "focusX": 58,
+  "focusY": 59,
+  "zoomStart": 4
+},
+{
+  "name": "Draven",
+  "id": "Draven",
+  "title": "gösterişli cellat",
+  "titleEn": "the Glorious Executioner",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Draven.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Draven.png",
+  "focusX": 65,
+  "focusY": 100,
+  "zoomStart": 4.1
+},
+{
+  "name": "Ekko",
+  "id": "Ekko",
+  "title": "zamanı kıran çocuk",
+  "titleEn": "the Boy Who Shattered Time",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Ekko.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ekko.png",
+  "focusX": 10,
+  "focusY": 110,
+  "zoomStart": 2.7
+},
+{
+  "name": "Elise",
+  "id": "Elise",
+  "title": "örümcek kraliçe",
+  "titleEn": "the Spider Queen",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Elise.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Elise.png",
+  "focusX": 95,
+  "focusY": 100,
+  "zoomStart": 3.7
+},
+{
+  "name": "Evelynn",
+  "id": "Evelynn",
+  "title": "acı kucağı",
+  "titleEn": "Agony's Embrace",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Evelynn.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Evelynn.png",
+  "focusX": 65,
+  "focusY": 100,
+  "zoomStart": 3.3
+},
+{
+  "name": "Ezreal",
+  "id": "Ezreal",
+  "title": "maceracı kaşif",
+  "titleEn": "the Prodigal Explorer",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Piltover",
+  "regionEn": "Piltover",
+  "image": "images/Ezreal.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ezreal.png",
+  "focusX": 60,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Fiddlesticks",
+  "id": "Fiddlesticks",
+  "title": "antik korku",
+  "titleEn": "the Ancient Fear",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Fiddlesticks.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Fiddlesticks.png",
+  "focusX": 75,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Fiora",
+  "id": "Fiora",
+  "title": "büyük düellocu",
+  "titleEn": "the Grand Duelist",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Fiora.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Fiora.png",
+  "focusX": 50,
+  "focusY": 85,
+  "zoomStart": 6
+},
+{
+  "name": "Fizz",
+  "id": "Fizz",
+  "title": "gelgit düzenbazı",
+  "titleEn": "the Tidal Trickster",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/Fizz.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Fizz.png",
+  "focusX": 95,
+  "focusY": 95,
+  "zoomStart": 5
+},
+{
+  "name": "Galio",
+  "id": "Galio",
+  "title": "devasa nöbetçi",
+  "titleEn": "the Colossus",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Galio.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Galio.png",
+  "focusX": 35,
+  "focusY": 100,
+  "zoomStart": 5.2
+},
+{
+  "name": "Gangplank",
+  "id": "Gangplank",
+  "title": "tuzlu belanın kralı",
+  "titleEn": "the Saltwater Scourge",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/Gangplank.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Gangplank.png",
+  "focusX": 100,
+  "focusY": 89,
+  "zoomStart": 3.7
+},
+{
+  "name": "Garen",
+  "id": "Garen",
+  "title": "demacia'nın kudreti",
+  "titleEn": "The Might of Demacia",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Garen.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Garen.png",
+  "focusX": 45,
+  "focusY": 100,
+  "zoomStart": 5
+},
+{
+  "name": "Gnar",
+  "id": "Gnar",
+  "title": "eksik halka",
+  "titleEn": "the Missing Link",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Gnar.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Gnar.png",
+  "focusX": 40,
+  "focusY": 100,
+  "zoomStart": 3.2
+},
+{
+  "name": "Gragas",
+  "id": "Gragas",
+  "title": "asi bira ustası",
+  "titleEn": "the Rabble Rouser",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Gragas.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Gragas.png",
+  "focusX": 75,
+  "focusY": 100,
+  "zoomStart": 3.5
+},
+{
+  "name": "Graves",
+  "id": "Graves",
+  "title": "kanun kaçağı",
+  "titleEn": "the Outlaw",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/Graves.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Graves.png",
+  "focusX": 40,
+  "focusY": 98,
+  "zoomStart": 2.8
+},
+{
+  "name": "Gwen",
+  "id": "Gwen",
+  "title": "kutsanmış terzi",
+  "titleEn": "The Hallowed Seamstress",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Gwen.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Gwen.png",
+  "focusX": 93,
+  "focusY": 85,
+  "zoomStart": 4
+},
+{
+  "name": "Hecarim",
+  "id": "Hecarim",
+  "title": "savaşın gölgesi",
+  "titleEn": "the Shadow of War",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Hecarim.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Hecarim.png",
+  "focusX": 75,
+  "focusY": 95,
+  "zoomStart": 3.3
+},
+{
+  "name": "Heimerdinger",
+  "id": "Heimerdinger",
+  "title": "saygın mucit",
+  "titleEn": "the Revered Inventor",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Piltover",
+  "regionEn": "Piltover",
+  "image": "images/Heimerdinger.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Heimerdinger.png",
+  "focusX": 50,
+  "focusY": 100,
+  "zoomStart": 5.5
+},
+{
+  "name": "Hwei",
+  "id": "Hwei",
+  "title": "visionary",
+  "titleEn": "the Visionary",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Hwei.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Hwei.png",
+  "focusX": 60,
+  "focusY": 100,
+  "zoomStart": 4.2
+},
+{
+  "name": "Illaoi",
+  "id": "Illaoi",
+  "title": "kraken rahibesi",
+  "titleEn": "the Kraken Priestess",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/Illaoi.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Illaoi.png",
+  "focusX": 92,
+  "focusY": 30,
+  "zoomStart": 3.5
+},
+{
+  "name": "Irelia",
+  "id": "Irelia",
+  "title": "bıçak dansçısı",
+  "titleEn": "the Blade Dancer",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Irelia.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Irelia.png",
+  "focusX": 5,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Ivern",
+  "id": "Ivern",
+  "title": "yeşil baba",
+  "titleEn": "the Green Father",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Ivern.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ivern.png",
+  "focusX": 0,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Janna",
+  "id": "Janna",
+  "title": "fırtınanın öfkesi",
+  "titleEn": "the Storm's Fury",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Janna.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Janna.png",
+  "focusX": 30,
+  "focusY": 100,
+  "zoomStart": 4.2
+},
+{
+  "name": "Jarvan IV",
+  "id": "JarvanIV",
+  "title": "demacia örneği",
+  "titleEn": "the Exemplar of Demacia",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/JarvanIV.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/JarvanIV.png",
+  "focusX": 34,
+  "focusY": 88,
+  "zoomStart": 2.8
+},
+{
+  "name": "Jax",
+  "id": "Jax",
+  "title": "silah ustası",
+  "titleEn": "Grandmaster at Arms",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Jax.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Jax.png",
+  "focusX": 65,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Jayce",
+  "id": "Jayce",
+  "title": "yarının savunucusu",
+  "titleEn": "the Defender of Tomorrow",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Piltover",
+  "regionEn": "Piltover",
+  "image": "images/Jayce.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Jayce.png",
+  "focusX": 95,
+  "focusY": 95,
+  "zoomStart": 4
+},
+{
+  "name": "Jhin",
+  "id": "Jhin",
+  "title": "erdemli katil",
+  "titleEn": "the Virtuoso",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Jhin.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Jhin.png",
+  "focusX": 0,
+  "focusY": 100,
+  "zoomStart": 2.3
+},
+{
+  "name": "Jinx",
+  "id": "Jinx",
+  "title": "çılgın bomba uzmanı",
+  "titleEn": "the Loose Cannon",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Jinx.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Jinx.png",
+  "focusX": 100,
+  "focusY": 85,
+  "zoomStart": 2.7
+},
+{
+  "name": "K'Sante",
+  "id": "KSante",
+  "title": "nazumah'ın gururu",
+  "titleEn": "the Pride of Nazumah",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/KSante.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/KSante.png",
+  "focusX": 30,
+  "focusY": 100,
+  "zoomStart": 3.3
+},
+{
+  "name": "Kai'Sa",
+  "id": "Kaisa",
+  "title": "boşluğun kızı",
+  "titleEn": "Daughter of the Void",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Void",
+  "regionEn": "Void",
+  "image": "images/Kaisa.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kaisa.png",
+  "focusX": 40,
+  "focusY": 95,
+  "zoomStart": 4
+},
+{
+  "name": "Kalista",
+  "id": "Kalista",
+  "title": "intikam ruhu",
+  "titleEn": "the Spear of Vengeance",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Kalista.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kalista.png",
+  "focusX": 30,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Karma",
+  "id": "Karma",
+  "title": "aydınlanmış olan",
+  "titleEn": "the Enlightened One",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Karma.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Karma.png",
+  "focusX": 50,
+  "focusY": 85,
+  "zoomStart": 3.2
+},
+{
+  "name": "Karthus",
+  "id": "Karthus",
+  "title": "ölüm habercisi",
+  "titleEn": "the Deathsinger",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Karthus.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Karthus.png",
+  "focusX": 49,
+  "focusY": 100,
+  "zoomStart": 3.5
+},
+{
+  "name": "Kassadin",
+  "id": "Kassadin",
+  "title": "boşluk gezgini",
+  "titleEn": "the Void Walker",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Void",
+  "regionEn": "Void",
+  "image": "images/Kassadin.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kassadin.png",
+  "focusX": 75,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Katarina",
+  "id": "Katarina",
+  "title": "uğursuz bıçak",
+  "titleEn": "the Sinister Blade",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Katarina.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Katarina.png",
+  "focusX": 85,
+  "focusY": 95,
+  "zoomStart": 4
+},
+{
+  "name": "Kayle",
+  "id": "Kayle",
+  "title": "doğruluğun kılıcı",
+  "titleEn": "the Righteous",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Kayle.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kayle.png",
+  "focusX": 55,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Kayn",
+  "id": "Kayn",
+  "title": "gölge biçicisi",
+  "titleEn": "the Shadow Reaper",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Kayn.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kayn.png",
+  "focusX": 48,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Kennen",
+  "id": "Kennen",
+  "title": "fırtınanın kalbi",
+  "titleEn": "the Heart of the Tempest",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Kennen.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kennen.png",
+  "focusX": 45,
+  "focusY": 55,
+  "zoomStart": 4.2
+},
+{
+  "name": "Kha'Zix",
+  "id": "Khazix",
+  "title": "boşluk yağmacısı",
+  "titleEn": "the Voidreaver",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Void",
+  "regionEn": "Void",
+  "image": "images/Khazix.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Khazix.png",
+  "focusX": 40,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Kindred",
+  "id": "Kindred",
+  "title": "sonsuz avcılar",
+  "titleEn": "The Eternal Hunters",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Diğer",
+  "genderEn": "Other",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Kindred.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kindred.png",
+  "focusX": 54,
+  "focusY": 100,
+  "zoomStart": 3.7
+},
+{
+  "name": "Kled",
+  "id": "Kled",
+  "title": "inatçı süvari",
+  "titleEn": "the Cantankerous Cavalier",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Kled.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Kled.png",
+  "focusX": 100,
+  "focusY": 80,
+  "zoomStart": 4.2
+},
+{
+  "name": "Kog'Maw",
+  "id": "KogMaw",
+  "title": "boşluğun ağzı",
+  "titleEn": "the Mouth of the Abyss",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Void",
+  "regionEn": "Void",
+  "image": "images/KogMaw.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/KogMaw.png",
+  "focusX": 83,
+  "focusY": 100,
+  "zoomStart": 3.8
+},
+{
+  "name": "LeBlanc",
+  "id": "Leblanc",
+  "title": "aldatıcı",
+  "titleEn": "the Deceiver",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Leblanc.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Leblanc.png",
+  "focusX": 42,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Lee Sin",
+  "id": "LeeSin",
+  "title": "kör keşiş",
+  "titleEn": "the Blind Monk",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/LeeSin.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/LeeSin.png",
+  "focusX": 60,
+  "focusY": 100,
+  "zoomStart": 3.8
+},
+{
+  "name": "Leona",
+  "id": "Leona",
+  "title": "şafak ışığı",
+  "titleEn": "the Radiant Dawn",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Targon",
+  "regionEn": "Targon",
+  "image": "images/Leona.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Leona.png",
+  "focusX": 60,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Lillia",
+  "id": "Lillia",
+  "title": "utangaç çiçek",
+  "titleEn": "the Bashful Bloom",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Lillia.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lillia.png",
+  "focusX": 30,
+  "focusY": 93,
+  "zoomStart": 4.5
+},
+{
+  "name": "Lissandra",
+  "id": "Lissandra",
+  "title": "buz cadısı",
+  "titleEn": "the Ice Witch",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Lissandra.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lissandra.png",
+  "focusX": 85,
+  "focusY": 100,
+  "zoomStart": 3.8
+},
+{
+  "name": "Lucian",
+  "id": "Lucian",
+  "title": "arınmış silahşör",
+  "titleEn": "the Purifier",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Lucian.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lucian.png",
+  "focusX": 100,
+  "focusY": 70,
+  "zoomStart": 2.2
+},
+{
+  "name": "Lulu",
+  "id": "Lulu",
+  "title": "peri büyücüsü",
+  "titleEn": "the Fae Sorceress",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Bandle City",
+  "regionEn": "Bandle City",
+  "image": "images/Lulu.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lulu.png",
+  "focusX": 62,
+  "focusY": 100,
+  "zoomStart": 3.8
+},
+{
+  "name": "Lux",
+  "id": "Lux",
+  "title": "ışığın hanımı",
+  "titleEn": "the Lady of Luminosity",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Lux.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Lux.png",
+  "focusX": 30,
+  "focusY": 100,
+  "zoomStart": 3.6
+},
+{
+  "name": "Malphite",
+  "id": "Malphite",
+  "title": "monolit parçası",
+  "titleEn": "Shard of the Monolith",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ixtal",
+  "regionEn": "Ixtal",
+  "image": "images/Malphite.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Malphite.png",
+  "focusX": 60,
+  "focusY": 80,
+  "zoomStart": 4
+},
+{
+  "name": "Malzahar",
+  "id": "Malzahar",
+  "title": "boşluğun kahini",
+  "titleEn": "the Prophet of the Void",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Void",
+  "regionEn": "Void",
+  "image": "images/Malzahar.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Malzahar.png",
+  "focusX": 39,
+  "focusY": 100,
+  "zoomStart": 3.1
+},
+{
+  "name": "Maokai",
+  "id": "Maokai",
+  "title": "çarpık treant",
+  "titleEn": "the Twisted Treant",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Maokai.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Maokai.png",
+  "focusX": 40,
+  "focusY": 90,
+  "zoomStart": 5
+},
+{
+  "name": "Master Yi",
+  "id": "MasterYi",
+  "title": "wuju ustası",
+  "titleEn": "the Wuju Bladesman",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/MasterYi.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/MasterYi.png",
+  "focusX": 15,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Mel",
+  "id": "Mel",
+  "title": "the soul's reflection",
+  "titleEn": "the Soul's Reflection",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Mel.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Mel.png",
+  "focusX": 53,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Milio",
+  "id": "Milio",
+  "title": "nazik alev",
+  "titleEn": "The Gentle Flame",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ixtal",
+  "regionEn": "Ixtal",
+  "image": "images/Milio.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Milio.png",
+  "focusX": 60,
+  "focusY": 100,
+  "zoomStart": 3.8
+},
+{
+  "name": "Miss Fortune",
+  "id": "MissFortune",
+  "title": "ödül avcısı",
+  "titleEn": "the Bounty Hunter",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/MissFortune.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/MissFortune.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Mordekaiser",
+  "id": "Mordekaiser",
+  "title": "demir hayalet",
+  "titleEn": "the Iron Revenant",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Mordekaiser.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Mordekaiser.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 2.4
+},
+{
+  "name": "Morgana",
+  "id": "Morgana",
+  "title": "düşmüş",
+  "titleEn": "the Fallen",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Morgana.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Morgana.png",
+  "focusX": 100,
+  "focusY": 67,
+  "zoomStart": 4.3
+},
+{
+  "name": "Naafiri",
+  "id": "Naafiri",
+  "title": "yüz tazı",
+  "titleEn": "the Hound of a Hundred Bites",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Dişi",
+  "genderEn": "Female",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Naafiri.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Naafiri.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 3.2
+},
+{
+  "name": "Nami",
+  "id": "Nami",
+  "title": "dalga çağıran",
+  "titleEn": "the Tidecaller",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Nami.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nami.png",
+  "focusX": 5,
+  "focusY": 75,
+  "zoomStart": 2.7
+},
+{
+  "name": "Nasus",
+  "id": "Nasus",
+  "title": "kumların küratörü",
+  "titleEn": "the Curator of the Sands",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Nasus.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nasus.png",
+  "focusX": 40,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Nautilus",
+  "id": "Nautilus",
+  "title": "derinliklerin devi",
+  "titleEn": "the Titan of the Depths",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/Nautilus.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nautilus.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 3.6
+},
+{
+  "name": "Neeko",
+  "id": "Neeko",
+  "title": "meraklı bukalemun",
+  "titleEn": "the Curious Chameleon",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ixtal",
+  "regionEn": "Ixtal",
+  "image": "images/Neeko.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Neeko.png",
+  "focusX": 30,
+  "focusY": 95,
+  "zoomStart": 4.3
+},
+{
+  "name": "Nidalee",
+  "id": "Nidalee",
+  "title": "vahşi avcı",
+  "titleEn": "the Bestial Huntress",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ixtal",
+  "regionEn": "Ixtal",
+  "image": "images/Nidalee.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nidalee.png",
+  "focusX": 46,
+  "focusY": 72,
+  "zoomStart": 4.2
+},
+{
+  "name": "Nilah",
+  "id": "Nilah",
+  "title": "sınırsız neşe",
+  "titleEn": "the Joy Unbound",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/Nilah.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nilah.png",
+  "focusX": 65,
+  "focusY": 100,
+  "zoomStart": 4.2
+},
+{
+  "name": "Nocturne",
+  "id": "Nocturne",
+  "title": "ebedi kabus",
+  "titleEn": "the Eternal Nightmare",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Nocturne.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nocturne.png",
+  "focusX": 60,
+  "focusY": 76,
+  "zoomStart": 3.5
+},
+{
+  "name": "Nunu & Willump",
+  "id": "Nunu",
+  "title": "çocuk ve yeti",
+  "titleEn": "the Boy and His Yeti",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Nunu.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Nunu.png",
+  "focusX": 0,
+  "focusY": 15,
+  "zoomStart": 3.3
+},
+{
+  "name": "Olaf",
+  "id": "Olaf",
+  "title": "çılgın berserker",
+  "titleEn": "the Berserker",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Olaf.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Olaf.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 3.5
+},
+{
+  "name": "Orianna",
+  "id": "Orianna",
+  "title": "saatli kız",
+  "titleEn": "the Lady of Clockwork",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Piltover",
+  "regionEn": "Piltover",
+  "image": "images/Orianna.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Orianna.png",
+  "focusX": 45,
+  "focusY": 100,
+  "zoomStart": 3.1
+},
+{
+  "name": "Ornn",
+  "id": "Ornn",
+  "title": "dağın altında ateş",
+  "titleEn": "The Fire below the Mountain",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Ornn.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ornn.png",
+  "focusX": 60,
+  "focusY": 100,
+  "zoomStart": 2.9
+},
+{
+  "name": "Pantheon",
+  "id": "Pantheon",
+  "title": "yenilmez mızrak",
+  "titleEn": "the Unbreakable Spear",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Targon",
+  "regionEn": "Targon",
+  "image": "images/Pantheon.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Pantheon.png",
+  "focusX": 70,
+  "focusY": 100,
+  "zoomStart": 2.6
+},
+{
+  "name": "Poppy",
+  "id": "Poppy",
+  "title": "çekicin bekçisi",
+  "titleEn": "Keeper of the Hammer",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Poppy.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Poppy.png",
+  "focusX": 73,
+  "focusY": 100,
+  "zoomStart": 3.2
+},
+{
+  "name": "Pyke",
+  "id": "Pyke",
+  "title": "kanlı liman celladı",
+  "titleEn": "the Bloodharbor Ripper",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/Pyke.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Pyke.png",
+  "focusX": 35,
+  "focusY": 100,
+  "zoomStart": 3.3
+},
+{
+  "name": "Qiyana",
+  "id": "Qiyana",
+  "title": "elementlerin imparatoriçesi",
+  "titleEn": "Empress of the Elements",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ixtal",
+  "regionEn": "Ixtal",
+  "image": "images/Qiyana.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Qiyana.png",
+  "focusX": 0,
+  "focusY": 100,
+  "zoomStart": 2.1
+},
+{
+  "name": "Quinn",
+  "id": "Quinn",
+  "title": "demacia'nın kanatları",
+  "titleEn": "Demacia's Wings",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Quinn.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Quinn.png",
+  "focusX": 0,
+  "focusY": 84,
+  "zoomStart": 2.5
+},
+{
+  "name": "Rakan",
+  "id": "Rakan",
+  "title": "baştan çıkarıcı",
+  "titleEn": "The Charmer",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Rakan.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rakan.png",
+  "focusX": 36,
+  "focusY": 85,
+  "zoomStart": 4
+},
+{
+  "name": "Rammus",
+  "id": "Rammus",
+  "title": "zırhlı armadillo",
+  "titleEn": "the Armordillo",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Rammus.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rammus.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 3.5
+},
+{
+  "name": "Rek'Sai",
+  "id": "RekSai",
+  "title": "boşluğun kazıcısı",
+  "titleEn": "the Void Burrower",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Void",
+  "regionEn": "Void",
+  "image": "images/RekSai.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/RekSai.png",
+  "focusX": 25,
+  "focusY": 92,
+  "zoomStart": 3.5
+},
+{
+  "name": "Rell",
+  "id": "Rell",
+  "title": "demir bakire",
+  "titleEn": "the Iron Maiden",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Rell.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rell.png",
+  "focusX": 35,
+  "focusY": 100,
+  "zoomStart": 3.7
+},
+{
+  "name": "Renata Glasc",
+  "id": "Renata",
+  "title": "kimyasal barones",
+  "titleEn": "the Chem-Baroness",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Renata.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Renata.png",
+  "focusX": 40,
+  "focusY": 98,
+  "zoomStart": 4.4
+},
+{
+  "name": "Renekton",
+  "id": "Renekton",
+  "title": "kumların kasabı",
+  "titleEn": "the Butcher of the Sands",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Renekton.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Renekton.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 3.5
+},
+{
+  "name": "Rengar",
+  "id": "Rengar",
+  "title": "gururlu avcı",
+  "titleEn": "the Pridestalker",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ixtal",
+  "regionEn": "Ixtal",
+  "image": "images/Rengar.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rengar.png",
+  "focusX": 95,
+  "focusY": 100,
+  "zoomStart": 3.6
+},
+{
+  "name": "Riven",
+  "id": "Riven",
+  "title": "sürgün",
+  "titleEn": "the Exile",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Riven.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Riven.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 3.4
+},
+{
+  "name": "Rumble",
+  "id": "Rumble",
+  "title": "mekanik bela",
+  "titleEn": "the Mechanized Menace",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bandle City",
+  "regionEn": "Bandle City",
+  "image": "images/Rumble.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Rumble.png",
+  "focusX": 90,
+  "focusY": 100,
+  "zoomStart": 4.2
+},
+{
+  "name": "Ryze",
+  "id": "Ryze",
+  "title": "rune büyücüsü",
+  "titleEn": "the Rune Mage",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Ryze.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ryze.png",
+  "focusX": 33,
+  "focusY": 90,
+  "zoomStart": 4.6
+},
+{
+  "name": "Samira",
+  "id": "Samira",
+  "title": "çöl gülü",
+  "titleEn": "the Desert Rose",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Samira.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Samira.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 2.7
+},
+{
+  "name": "Sejuani",
+  "id": "Sejuani",
+  "title": "kuzeyin gazabı",
+  "titleEn": "Fury of the North",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Sejuani.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sejuani.png",
+  "focusX": 44,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Senna",
+  "id": "Senna",
+  "title": "kurtarıcı",
+  "titleEn": "the Redeemer",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Senna.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Senna.png",
+  "focusX": 20,
+  "focusY": 55,
+  "zoomStart": 2.7
+},
+{
+  "name": "Seraphine",
+  "id": "Seraphine",
+  "title": "yıldız gözlü şarkıcı",
+  "titleEn": "the Starry-Eyed Songstress",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Piltover",
+  "regionEn": "Piltover",
+  "image": "images/Seraphine.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Seraphine.png",
+  "focusX": 50,
+  "focusY": 100,
+  "zoomStart": 4.5
+},
+{
+  "name": "Sett",
+  "id": "Sett",
+  "title": "yarı canavar",
+  "titleEn": "the Boss",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Sett.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sett.png",
+  "focusX": 20,
+  "focusY": 28,
+  "zoomStart": 4
+},
+{
+  "name": "Shaco",
+  "id": "Shaco",
+  "title": "iblis soytarı",
+  "titleEn": "the Demon Jester",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Shaco.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Shaco.png",
+  "focusX": 50,
+  "focusY": 59,
+  "zoomStart": 3.7
+},
+{
+  "name": "Shen",
+  "id": "Shen",
+  "title": "alacakaranlığın gözü",
+  "titleEn": "the Eye of Twilight",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Shen.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Shen.png",
+  "focusX": 35,
+  "focusY": 100,
+  "zoomStart": 3.6
+},
+{
+  "name": "Shyvana",
+  "id": "Shyvana",
+  "title": "yarı ejder",
+  "titleEn": "the Half-Dragon",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Shyvana.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Shyvana.png",
+  "focusX": 100,
+  "focusY": 85,
+  "zoomStart": 2.7
+},
+{
+  "name": "Singed",
+  "id": "Singed",
+  "title": "çılgın kimyager",
+  "titleEn": "the Mad Chemist",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Singed.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Singed.png",
+  "focusX": 70,
+  "focusY": 90,
+  "zoomStart": 4.6
+},
+{
+  "name": "Sion",
+  "id": "Sion",
+  "title": "ölümsüz savaş makinesi",
+  "titleEn": "The Undead Juggernaut",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Sion.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sion.png",
+  "focusX": 45,
+  "focusY": 100,
+  "zoomStart": 3.5
+},
+{
+  "name": "Sivir",
+  "id": "Sivir",
+  "title": "savaş metresi",
+  "titleEn": "the Battle Mistress",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Sivir.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sivir.png",
+  "focusX": 40,
+  "focusY": 100,
+  "zoomStart": 3.7
+},
+{
+  "name": "Skarner",
+  "id": "Skarner",
+  "title": "kadim egemen",
+  "titleEn": "the Primordial Sovereign",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ixtal",
+  "regionEn": "Ixtal",
+  "image": "images/Skarner.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Skarner.png",
+  "focusX": 80,
+  "focusY": 100,
+  "zoomStart": 4.2
+},
+{
+  "name": "Smolder",
+  "id": "Smolder",
+  "title": "ejder yavrusu",
+  "titleEn": "the Fiery Fledgling",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Smolder.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Smolder.png",
+  "focusX": 50,
+  "focusY":  85,
+  "zoomStart": 5
+},
+{
+  "name": "Sona",
+  "id": "Sona",
+  "title": "tellerin virtüözü",
+  "titleEn": "Maven of the Strings",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Sona.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sona.png",
+  "focusX": 95,
+  "focusY": 100,
+  "zoomStart": 2
+},
+{
+  "name": "Soraka",
+  "id": "Soraka",
+  "title": "yıldız çocuğu",
+  "titleEn": "the Starchild",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Targon",
+  "regionEn": "Targon",
+  "image": "images/Soraka.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Soraka.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 2.8
+},
+{
+  "name": "Swain",
+  "id": "Swain",
+  "title": "noxus başkomutanı",
+  "titleEn": "the Noxian Grand General",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Swain.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Swain.png",
+  "focusX": 25,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Sylas",
+  "id": "Sylas",
+  "title": "zincirsiz",
+  "titleEn": "the Unshackled",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Sylas.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Sylas.png",
+  "focusX": 95,
+  "focusY": 84,
+  "zoomStart": 3.6
+},
+{
+  "name": "Syndra",
+  "id": "Syndra",
+  "title": "karanlık egemen",
+  "titleEn": "the Dark Sovereign",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Syndra.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Syndra.png",
+  "focusX": 10,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Tahm Kench",
+  "id": "TahmKench",
+  "title": "nehir kralı",
+  "titleEn": "the River King",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/TahmKench.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/TahmKench.png",
+  "focusX": 9,
+  "focusY": 94,
+  "zoomStart": 3.4
+},
+{
+  "name": "Taliyah",
+  "id": "Taliyah",
+  "title": "taş dokuyucu",
+  "titleEn": "the Stoneweaver",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Taliyah.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Taliyah.png",
+  "focusX": 0,
+  "focusY": 75,
+  "zoomStart": 2.5
+},
+{
+  "name": "Talon",
+  "id": "Talon",
+  "title": "bıçağın gölgesi",
+  "titleEn": "the Blade's Shadow",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Talon.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Talon.png",
+  "focusX": 75,
+  "focusY": 100,
+  "zoomStart": 2.9
+},
+{
+  "name": "Taric",
+  "id": "Taric",
+  "title": "mücevherlerin koruyucusu",
+  "titleEn": "the Shield of Valoran",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Targon",
+  "regionEn": "Targon",
+  "image": "images/Taric.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Taric.png",
+  "focusX": 85,
+  "focusY": 110,
+  "zoomStart": 2.7
+},
+{
+  "name": "Teemo",
+  "id": "Teemo",
+  "title": "çevik izci",
+  "titleEn": "the Swift Scout",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bandle City",
+  "regionEn": "Bandle City",
+  "image": "images/Teemo.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Teemo.png",
+  "focusX": 85,
+  "focusY": 57,
+  "zoomStart": 4.5
+},
+{
+  "name": "Thresh",
+  "id": "Thresh",
+  "title": "zincir gardiyanı",
+  "titleEn": "the Chain Warden",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Thresh.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Thresh.png",
+  "focusX": 51,
+  "focusY": 100,
+  "zoomStart": 3.3
+},
+{
+  "name": "Tristana",
+  "id": "Tristana",
+  "title": "yordle topçusu",
+  "titleEn": "the Yordle Gunner",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Bandle City",
+  "regionEn": "Bandle City",
+  "image": "images/Tristana.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Tristana.png",
+  "focusX": 100,
+  "focusY": 86,
+  "zoomStart": 3.4
+},
+{
+  "name": "Trundle",
+  "id": "Trundle",
+  "title": "trol kralı",
+  "titleEn": "the Troll King",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Trundle.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Trundle.png",
+  "focusX": 85,
+  "focusY": 100,
+  "zoomStart": 3.6
+},
+{
+  "name": "Tryndamere",
+  "id": "Tryndamere",
+  "title": "barbar kral",
+  "titleEn": "the Barbarian King",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Tryndamere.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Tryndamere.png",
+  "focusX": 85,
+  "focusY": 100,
+  "zoomStart": 2.6
+},
+{
+  "name": "Twisted Fate",
+  "id": "TwistedFate",
+  "title": "kart ustası",
+  "titleEn": "the Card Master",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bilgewater",
+  "regionEn": "Bilgewater",
+  "image": "images/TwistedFate.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/TwistedFate.png",
+  "focusX": 60,
+  "focusY": 100,
+  "zoomStart": 3.3
+},
+{
+  "name": "Twitch",
+  "id": "Twitch",
+  "title": "veba sıçanı",
+  "titleEn": "the Plague Rat",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Twitch.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Twitch.png",
+  "focusX": 60,
+  "focusY": 75,
+  "zoomStart": 4
+},
+{
+  "name": "Udyr",
+  "id": "Udyr",
+  "title": "ruh gezgini",
+  "titleEn": "the Spirit Walker",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Udyr.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Udyr.png",
+  "focusX": 85,
+  "focusY": 100,
+  "zoomStart": 3.2
+},
+{
+  "name": "Urgot",
+  "id": "Urgot",
+  "title": "dehşetli gurur",
+  "titleEn": "the Dreadnought",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Urgot.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Urgot.png",
+  "focusX": 0,
+  "focusY": 110,
+  "zoomStart": 2.4
+},
+{
+  "name": "Varus",
+  "id": "Varus",
+  "title": "intikam oku",
+  "titleEn": "the Arrow of Retribution",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Varus.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Varus.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 2.7
+},
+{
+  "name": "Vayne",
+  "id": "Vayne",
+  "title": "gece avcısı",
+  "titleEn": "the Night Hunter",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/Vayne.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Vayne.png",
+  "focusX": 53,
+  "focusY": 100,
+  "zoomStart": 3.2
+},
+{
+  "name": "Veigar",
+  "id": "Veigar",
+  "title": "küçük kötülüğün efendisi",
+  "titleEn": "the Tiny Master of Evil",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Bandle City",
+  "regionEn": "Bandle City",
+  "image": "images/Veigar.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Veigar.png",
+  "focusX": 100,
+  "focusY": 81, 
+  "zoomStart": 3.3
+},
+{
+  "name": "Vel'Koz",
+  "id": "Velkoz",
+  "title": "boşluğun gözü",
+  "titleEn": "the Eye of the Void",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Void",
+  "regionEn": "Void",
+  "image": "images/Velkoz.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Velkoz.png",
+  "focusX": 10,
+  "focusY": 0,
+  "zoomStart": 3
+},
+{
+  "name": "Vex",
+  "id": "Vex",
+  "title": "kasvetli yordle",
+  "titleEn": "the Gloomist",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Vex.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Vex.png",
+  "focusX": 0,
+  "focusY": 62,
+  "zoomStart": 2.6
+},
+{
+  "name": "Vi",
+  "id": "Vi",
+  "title": "piltover'ın kanun koruyucusu",
+  "titleEn": "the Piltover Enforcer",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Piltover",
+  "regionEn": "Piltover",
+  "image": "images/Vi.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Vi.png",
+  "focusX": 30,
+  "focusY": 100,
+  "zoomStart": 3.1
+},
+{
+  "name": "Viego",
+  "id": "Viego",
+  "title": "mahvolmuş kral",
+  "titleEn": "the Ruined King",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Viego.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Viego.png",
+  "focusX": 25,
+  "focusY": 100,
+  "zoomStart": 3.2
+},
+{
+  "name": "Viktor",
+  "id": "Viktor",
+  "title": "makinelerin habercisi",
+  "titleEn": "the Herald of the Arcane",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Viktor.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Viktor.png",
+  "focusX": 65,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Vladimir",
+  "id": "Vladimir",
+  "title": "kızıl orak",
+  "titleEn": "the Crimson Reaper",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Noxus",
+  "regionEn": "Noxus",
+  "image": "images/Vladimir.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Vladimir.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 2.5
+},
+{
+  "name": "Volibear",
+  "id": "Volibear",
+  "title": "amansız fırtına",
+  "titleEn": "the Relentless Storm",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Freljord",
+  "regionEn": "Freljord",
+  "image": "images/Volibear.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Volibear.png",
+  "focusX": 40,
+  "focusY": 100,
+  "zoomStart": 3.2
+},
+{
+  "name": "Warwick",
+  "id": "Warwick",
+  "title": "zaun'un öfkesi",
+  "titleEn": "the Uncaged Wrath of Zaun",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Warwick.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Warwick.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 2.2
+},
+{
+  "name": "Wukong",
+  "id": "MonkeyKing",
+  "title": "maymun kral",
+  "titleEn": "the Monkey King",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/MonkeyKing.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/MonkeyKing.png",
+  "focusX": 75,
+  "focusY": 100,
+  "zoomStart": 3.1
+},
+{
+  "name": "Xayah",
+  "id": "Xayah",
+  "title": "asi",
+  "titleEn": "the Rebel",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Xayah.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Xayah.png",
+  "focusX": 45,
+  "focusY": 100,
+  "zoomStart": 3.4
+},
+{
+  "name": "Xerath",
+  "id": "Xerath",
+  "title": "yükselmiş büyücü",
+  "titleEn": "the Magus Ascendant",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Shurima",
+  "regionEn": "Shurima",
+  "image": "images/Xerath.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Xerath.png",
+  "focusX": 85,
+  "focusY": 100,
+  "zoomStart": 3.6
+},
+{
+  "name": "Xin Zhao",
+  "id": "XinZhao",
+  "title": "demacia'nın mızrağı",
+  "titleEn": "the Seneschal of Demacia",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Demacia",
+  "regionEn": "Demacia",
+  "image": "images/XinZhao.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/XinZhao.png",
+  "focusX": 15,
+  "focusY": 100,
+  "zoomStart": 2.5
+},
+{
+  "name": "Yasuo",
+  "id": "Yasuo",
+  "title": "bağışlanmayan",
+  "titleEn": "the Unforgiven",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Yasuo.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Yasuo.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 3.3
+},
+{
+  "name": "Yone",
+  "id": "Yone",
+  "title": "geri dönen",
+  "titleEn": "the Unforgotten",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Yone.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Yone.png",
+  "focusX": 0,
+  "focusY": 30,
+  "zoomStart": 2.5
+},
+{
+  "name": "Yorick",
+  "id": "Yorick",
+  "title": "ruhların çobanı",
+  "titleEn": "Shepherd of Souls",
+  "lane": "Üst Koridor",
+  "laneEn": "Top Lane",
+  "type": "Savaşçı",
+  "typeEn": "Fighter",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Gölge Adalar",
+  "regionEn": "Shadow Isles",
+  "image": "images/Yorick.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Yorick.png",
+  "focusX": 90,
+  "focusY": 100,
+  "zoomStart": 2.5
+},
+{
+  "name": "Yuumi",
+  "id": "Yuumi",
+  "title": "sihirli kedi",
+  "titleEn": "the Magical Cat",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Destek",
+  "typeEn": "Support",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Bandle City",
+  "regionEn": "Bandle City",
+  "image": "images/Yuumi.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Yuumi.png",
+  "focusX" : 43,
+  "focusY": 100,
+  "zoomStart": 4
+},
+{
+  "name": "Zac",
+  "id": "Zac",
+  "title": "gizli silah",
+  "titleEn": "the Secret Weapon",
+  "lane": "Orman",
+  "laneEn": "Jungle",
+  "type": "Tank",
+  "typeEn": "Tank",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Zac.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zac.png",
+  "focusX": 78,
+  "focusY": 96,
+  "zoomStart": 2.8
+},
+{
+  "name": "Zed",
+  "id": "Zed",
+  "title": "gölgelerin efendisi",
+  "titleEn": "the Master of Shadows",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Suikastçı",
+  "typeEn": "Assassin",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Ionia",
+  "regionEn": "Ionia",
+  "image": "images/Zed.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zed.png",
+  "focusX": 10,
+  "focusY": 100,
+  "zoomStart": 3
+},
+{
+  "name": "Zeri",
+  "id": "Zeri",
+  "title": "zaun'un kıvılcımı",
+  "titleEn": "The Spark of Zaun",
+  "lane": "Alt Koridor",
+  "laneEn": "Bot Lane",
+  "type": "Nişancı",
+  "typeEn": "Marksman",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Zeri.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zeri.png",
+  "focusX": 15,
+  "focusY": 85,
+  "zoomStart": 3.1
+},
+{
+  "name": "Ziggs",
+  "id": "Ziggs",
+  "title": "hexplosives uzmanı",
+  "titleEn": "the Hexplosives Expert",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Zaun",
+  "regionEn": "Zaun",
+  "image": "images/Ziggs.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Ziggs.png",
+  "focusX": 100,
+  "focusY": 80,
+  "zoomStart": 4.4
+},
+{
+  "name": "Zilean",
+  "id": "Zilean",
+  "title": "zamanın koruyucusu",
+  "titleEn": "the Chronokeeper",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Erkek",
+  "genderEn": "Male",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Zilean.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zilean.png",
+  "focusX": 50,
+  "focusY": 100,
+  "zoomStart": 2.9
+},
+{
+  "name": "Zoe",
+  "id": "Zoe",
+  "title": "alacakaranlığın özü",
+  "titleEn": "the Aspect of Twilight",
+  "lane": "Orta Koridor",
+  "laneEn": "Mid Lane",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Targon",
+  "regionEn": "Targon",
+  "image": "images/Zoe.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zoe.png",
+  "focusX": 30,
+  "focusY": 80,
+  "zoomStart": 5
+},
+{
+  "name": "Zyra",
+  "id": "Zyra",
+  "title": "dikenlerin yükselişi",
+  "titleEn": "Rise of the Thorns",
+  "lane": "Destek",
+  "laneEn": "Support",
+  "type": "Büyücü",
+  "typeEn": "Mage",
+  "gender": "Kadın",
+  "genderEn": "Female",
+  "region": "Runeterra",
+  "regionEn": "Runeterra",
+  "image": "images/Zyra.png",
+  "icon": "https://ddragon.leagueoflegends.com/cdn/15.10.1/img/champion/Zyra.png",
+  "focusX": 100,
+  "focusY": 100,
+  "zoomStart": 4
+},
+];  
+
+// Küresel element değişkenlerini tanımlıyoruz (Sayfa yüklenince atanacaklar)
+let championImage, guessInput, result, attempts, hint, shareButton, suggestions;
+let selectedChampion;
+let attemptCount = 0;
+let gameOver = false;
+let maxAttempts = 6;
+let currentZoom = 3;
+let guessedChampions = [];
+let guessHistoryData = [];
+let currentLanguage = "tr";
+
+const translations = {
+  tr: {
+    subtitle: "Şampiyonunu ayağından tahmin et!",
+    inputTitle: "Tahminini Yaz",
+    placeholder: "Şampiyon adı yaz...",
+    guessButton: "Tahmin Et",
+    hintButton: "İpucu Al",
+    newButton: "Yeni Karakter",
+    historyTitle: "Tahmin Geçmişi",
+    attempts: "Deneme",
+    wrong: "Yanlış tahmin!",
+    correct: "DOĞRU! Şampiyon: ",
+    empty: "Bir şampiyon adı yaz.",
+    chooseList: "Lütfen listeden bir şampiyon seç.",
+    already: "Bu şampiyonu zaten denedin.",
+    lost: "Kaybettin! Doğru cevap: ",
+    hintLocked: "İpucu için en az 2 tahmin yapmalısın.",
+    title: "Unvan",
+    lane: "Koridor",
+    type: "Tür",
+    gender: "Cinsiyet",
+    region: "Bölge",
+    copied: "Sonuç panoya kopyalandı!",
+    nextChamp: "YENİ ŞAMPİYON"
+    
+  },
+  en: {
+    subtitle: "Guess the champion from their feet!",
+    inputTitle: "Write Your Guess",
+    placeholder: "Type champion name...",
+    guessButton: "Guess",
+    hintButton: "Hint",
+    newButton: "New Champion",
+    historyTitle: "Guess History",
+    attempts: "Attempts",
+    wrong: "Wrong guess!",
+    correct: "CORRECT! Champion: ",
+    empty: "Type a champion name.",
+    chooseList: "Choose a champion from the list.",
+    already: "You already guessed this champion.",
+    lost: "You lost! Correct answer: ",
+    hintLocked: "You need at least 2 guesses.",
+    title: "Title",
+    lane: "Lane",
+    type: "Type",
+    gender: "Gender",
+    region: "Region",
+    copied: "Result copied to clipboard!",
+    nextChamp: "NEXT CHAMPION"
+  }
+};
+
+function startGame() {
+  gameOver = false;
+  attemptCount = 0;
+  guessedChampions = [];
+  guessHistoryData = [];
+
+  if(result) result.textContent = "";
+  if(hint) hint.textContent = "";
+  if(attempts) attempts.textContent = `${translations[currentLanguage].attempts}: 0 / ${maxAttempts}`;
+  
+  const historyDiv = document.getElementById("guessHistory");
+  if(historyDiv) historyDiv.innerHTML = "";
+
+  if(guessInput) {
+    guessInput.value = "";
+    guessInput.disabled = false;
+  }
+  
+  const guessBtn = document.getElementById("guessButton");
+  if(guessBtn) guessBtn.disabled = false;
+
+  if(shareButton) shareButton.style.display = "none";
+  if(suggestions) {
+    suggestions.innerHTML = "";
+    suggestions.style.display = "none";
+  }
+
+  // GÜNLÜK ŞAMPİYON SEÇİM ALGORİTMASI
+  const now = new Date();
+  const dateSeed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+  const pseudoRandom = Math.abs(Math.sin(dateSeed));
+  const dailyIndex = Math.floor(pseudoRandom * champions.length);
+  
+  selectedChampion = champions[dailyIndex];
+  currentZoom = selectedChampion.zoomStart || 4;
+
+  if (championImage) {
+    // Resim yüklenirken gizleniyor (Siyah ekran ve kırık resim alt metni engellendi)
+    championImage.style.opacity = "0"; 
+    championImage.style.transition = "none"; 
+    
+    championImage.src = selectedChampion.image;
+
+    championImage.onload = function () {
+      updateZoom();
+      championImage.style.opacity = "1"; 
+    };
+  }
+}
+
+function checkGuess() {
+  if (gameOver) return;
+
+  const t = translations[currentLanguage];
+  const userGuessOriginal = guessInput.value.trim();
+
+  if(suggestions) suggestions.style.display = "none";
+
+  if (userGuessOriginal === "") {
+    result.textContent = t.empty;
+    result.style.color = "orange";
+    return;
+  }
+
+  const guessedChampion = champions.find(champion =>
+    champion.name.toLowerCase() === userGuessOriginal.toLowerCase()
+  );
+
+  if (!guessedChampion) {
+    result.textContent = t.chooseList;
+    result.style.color = "orange";
+    guessInput.value = "";
+    return;
+  }
+
+  const alreadyGuessed = guessedChampions.includes(guessedChampion.name);
+
+  if (alreadyGuessed) {
+    result.textContent = t.already;
+    result.style.color = "orange";
+    guessInput.value = "";
+    if(suggestions) {
+      suggestions.innerHTML = "";
+      suggestions.style.display = "none";
+    }
+    return;
+  }
+
+  attemptCount++;
+  guessedChampions.push(guessedChampion.name);
+  attempts.textContent = `${t.attempts}: ${attemptCount} / ${maxAttempts}`;
+
+  if (guessedChampion.name === selectedChampion.name) {
+    addGuessToHistory(guessedChampion, true);
+    result.textContent = t.correct + selectedChampion.name;
+    result.style.color = "lightgreen";
+    
+    // Doğru tahminde resmin yavaşça (0.4 saniyede) tam boyuta açılmasını sağlar:
+    championImage.style.transition = "transform 0.4s ease-in-out";
+    currentZoom = 1;
+    updateZoom();
+    finishGame();
+  } else {
+    addGuessToHistory(guessedChampion, false);
+    result.textContent = t.wrong;
+    result.style.color = "red";
+
+    if (currentZoom > 1.6) {
+      currentZoom -= 0.22;
+      
+      // Yanlış tahminde resmin yavaşça (0.3 saniyede) uzaklaşmasını sağlar:
+      championImage.style.transition = "transform 0.3s ease-in-out";
+      updateZoom();
+    }
+
+    if (attemptCount >= maxAttempts) {
+      result.textContent = t.lost + selectedChampion.name;
+      result.style.color = "orange";
+      
+      // Kaybedildiğinde resmin yavaşça tam boyuta açılmasını sağlar:
+      championImage.style.transition = "transform 0.4s ease-in-out";
+      currentZoom = 1;
+      updateZoom();
+      finishGame();
+    }
+  }
+
+  guessInput.value = "";
+}
+
+function addGuessToHistory(guessedChampion, isCorrect) {
+  guessHistoryData.unshift({
+    champion: guessedChampion,
+    correct: isCorrect
+  });
+  renderGuessHistory();
+}
+
+function renderGuessHistory() {
+  const history = document.getElementById("guessHistory");
+  if(!history) return;
+  history.innerHTML = "";
+
+  const t = translations[currentLanguage];
+
+  guessHistoryData.forEach(item => {
+    const guessedChampion = item.champion;
+    const isCorrect = item.correct;
+
+    const laneCorrect = guessedChampion.lane === selectedChampion.lane;
+    const typeCorrect = guessedChampion.type === selectedChampion.type;
+    const genderCorrect = guessedChampion.gender === selectedChampion.gender;
+    const regionCorrect = guessedChampion.region === selectedChampion.region;
+
+    const laneText = currentLanguage === "tr" ? guessedChampion.lane : guessedChampion.laneEn;
+    const typeText = currentLanguage === "tr" ? guessedChampion.type : guessedChampion.typeEn;
+    const genderText = currentLanguage === "tr" ? guessedChampion.gender : guessedChampion.genderEn;
+    const regionText = currentLanguage === "tr" ? guessedChampion.region : guessedChampion.regionEn;
+
+    const div = document.createElement("div");
+    div.className = "guess-item";
+
+    div.innerHTML = `
+      <img src="${guessedChampion.icon}" alt="${guessedChampion.name}">
+      <div class="guess-info">
+        <strong class="guess-name ${isCorrect ? "name-correct" : "name-wrong"}">
+          ${guessedChampion.name}
+        </strong>
+        <div class="clue-row">
+          <span class="${laneCorrect ? "clue-correct" : "clue-wrong"}">
+            ${t.lane}: ${laneText}
+          </span>
+          <span class="${typeCorrect ? "clue-correct" : "clue-wrong"}">
+            ${t.type}: ${typeText}
+          </span>
+          <span class="${genderCorrect ? "clue-correct" : "clue-wrong"}">
+            ${t.gender}: ${genderText}
+          </span>
+          <span class="${regionCorrect ? "clue-correct" : "clue-wrong"}">
+            ${t.region}: ${regionText}
+          </span>
+        </div>
+      </div>
+    `;
+    history.appendChild(div);
+  });
+}
+
+function showHint() {
+  const t = translations[currentLanguage];
+  if (!selectedChampion) return;
+
+  if (attemptCount < 2) {
+    hint.textContent = t.hintLocked;
+    hint.style.color = "orange";
+    return;
+  }
+
+  const titleText = currentLanguage === "tr" ? selectedChampion.title : selectedChampion.titleEn;
+  const laneText = currentLanguage === "tr" ? selectedChampion.lane : selectedChampion.laneEn;
+  const regionText = currentLanguage === "tr" ? selectedChampion.region : selectedChampion.regionEn;
+
+  hint.textContent = `${t.title}: ${titleText} | ${t.lane}: ${laneText} | ${t.region}: ${regionText}`;
+  hint.style.color = "#c89b3c";
+}
+
+function finishGame() {
+  gameOver = true;
+  guessInput.value = "";
+  guessInput.disabled = true;
+
+  const guessBtn = document.getElementById("guessButton");
+  if(guessBtn) guessBtn.disabled = true;
+
+  if(suggestions) {
+    suggestions.innerHTML = "";
+    suggestions.style.display = "none";
+  }
+  if(shareButton) shareButton.style.display = "inline-block";
+
+  const newBtn = document.getElementById("newButton");
+  if(newBtn) newBtn.style.display = "none";
+}
+
+function shareResult() {
+  const t = translations[currentLanguage];
+  const text = `LoL Foot Guess\n${t.attempts}: ${attemptCount}/${maxAttempts}\nChampion: ${selectedChampion.name}`;
+  navigator.clipboard.writeText(text);
+  result.textContent = t.copied;
+  result.style.color = "lightgreen";
+}
+
+function updateZoom() {
+  if (!selectedChampion || !championImage) return;
+  // transition = "none" satırını buradan sildik!
+  championImage.style.transformOrigin = `${selectedChampion.focusX}% ${selectedChampion.focusY}%`;
+  championImage.style.transform = `scale(${currentZoom})`;
+}
+
+
+function newGame() {
+  startGame();
+}
+
+function setLanguage(lang) {
+  currentLanguage = lang;
+  const t = translations[currentLanguage];
+
+  const subtitleEl = document.getElementById("subtitle");
+  const inputTitleEl = document.getElementById("inputTitle");
+  const guessBtn = document.getElementById("guessButton");
+  const hintBtn = document.getElementById("hintButton");
+  const newBtn = document.getElementById("newButton");
+  const historyTitleEl = document.getElementById("historyTitle");
+
+  if(subtitleEl) subtitleEl.textContent = t.subtitle;
+  if(inputTitleEl) inputTitleEl.textContent = t.inputTitle;
+  if(guessInput) guessInput.placeholder = t.placeholder;
+  if(guessBtn) guessBtn.textContent = t.guessButton;
+  if(hintBtn) hintBtn.textContent = t.hintButton;
+  if(newBtn) newBtn.textContent = t.newButton;
+  if(historyTitleEl) historyTitleEl.textContent = t.historyTitle;
+
+  if(attempts) attempts.textContent = `${t.attempts}: ${attemptCount} / ${maxAttempts}`;
+  renderGuessHistory();
+  if(attempts) attempts.textContent = `${t.attempts}: ${attemptCount} / ${maxAttempts}`;
+  renderGuessHistory();
+
+  // İŞTE BU SATIRI EN ALTA EKLEYİN: Dil değiştiği an sayacı anlık güncellemeye zorlar
+  const badge = document.getElementById("dailyCountdownBadge");
+  if (badge) {
+    const prefix = translations[currentLanguage].nextChamp;
+    // Mevcut süreyi koruyarak sadece ön eki değiştirir
+    const currentTimer = badge.textContent.split(": ").pop();
+    badge.textContent = `${prefix}: ${currentTimer}`;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  championImage = document.getElementById("championImage");
+  guessInput = document.getElementById("guessInput");
+  result = document.getElementById("result");
+  attempts = document.getElementById("attempts");
+  hint = document.getElementById("hint");
+  shareButton = document.getElementById("shareButton");
+  suggestions = document.getElementById("suggestions");
+  // Tarayıcı dilini kontrol et, eğer 'tr' içeriyorsa Türkçe, yoksa varsayılan olarak İngilizce yap
+const userLang = navigator.language || navigator.userLanguage;
+if (userLang.toLowerCase().includes("tr")) {
+  setLanguage("tr");
+} else {
+  setLanguage("en");
+}
+
+  if (guessInput) {
+    guessInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        const firstSuggestion = document.querySelector(".suggestion-item");
+        if (firstSuggestion) {
+          const suggestionName = firstSuggestion.querySelector("span").textContent;
+          guessInput.value = suggestionName;
+        }
+        checkGuess();
+      }
+    });
+
+    guessInput.addEventListener("input", function () {
+      if (gameOver) return;
+      const value = guessInput.value.toLowerCase();
+      if(!suggestions) return;
+      suggestions.innerHTML = "";
+
+      if (value === "") {
+        suggestions.style.display = "none";
+        return;
+      }
+
+      const guessedNames = guessedChampions.map(name => name.toLowerCase());
+      const filtered = champions.filter(champion =>
+        champion.name.toLowerCase().includes(value) &&
+        !guessedNames.includes(champion.name.toLowerCase())
+      );
+
+      if (filtered.length === 0) {
+        suggestions.style.display = "none";
+        return;
+      }
+
+      suggestions.style.display = "block";
+      filtered.forEach(champion => {
+        const div = document.createElement("div");
+        div.className = "suggestion-item";
+        div.innerHTML = `<img src="${champion.icon}" alt="${champion.name}"><span>${champion.name}</span>`;
+        div.addEventListener("click", function () {
+          guessInput.value = champion.name;
+          suggestions.style.display = "none";
+        });
+        suggestions.appendChild(div);
+      });
+    });
+  }
+
+  startGame();
+
+  function checkMidnightRefresh() {
+    const now = new Date();
+    const midnight = new Date();
+    midnight.setHours(24, 0, 0, 0); 
+    const timeUntilMidnight = midnight.getTime() - now.getTime();
+    
+    setTimeout(function() {
+      location.reload(); 
+    }, timeUntilMidnight);
+  }
+  
+  checkMidnightRefresh();
+
+ // Her saniye güncellenen canlı gece yarısı geri sayım sayacı (Dil Destekli)
+  function startDailyCountdown() {
+    const badge = document.getElementById("dailyCountdownBadge");
+    if (!badge) return;
+
+    function updateBadgeTimer() {
+      const now = new Date();
+      const midnight = new Date();
+      midnight.setHours(24, 0, 0, 0); 
+
+      const diff = midnight.getTime() - now.getTime();
+
+      if (diff <= 0) {
+        location.reload();
+        return;
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60)).toString().padStart(2, '0');
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+
+      // Sabit yazı yerine, translations içindeki güncel dili okuyoruz:
+      const prefix = translations[currentLanguage].nextChamp;
+      // startDailyCountdown içindeki badge.textContent satırını bulun ve bununla değiştirin:
+badge.textContent = `${prefix}: ${hours}:${minutes}:${seconds}`;
+    }
+
+    updateBadgeTimer(); 
+    setInterval(updateBadgeTimer, 1000); 
+  }
+
+  startDailyCountdown();
+});
