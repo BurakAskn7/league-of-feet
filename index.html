@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoL Foot Guess</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="game-box">
+ <div class="language-box">
+  <button class="lang-btn" onclick="setLanguage('tr')">
+    <img src="flags/tr.png" alt="TR">
+  </button>
+
+  <button class="lang-btn" onclick="setLanguage('en')">
+    <img src="flags/en.png" alt="EN">
+  </button>
+</div>
+    <div class="logo-container">
+    <h1 class="logo-title">
+    <span>LEAGUE</span>
+    <span>OF FEET</span>
+</h1>
+
+
+</div>
+
+    <!-- Günlük geri sayım rozeti -->
+<div class="daily-badge-container" style="text-align: center; margin: 10px 0;">
+  <span id="dailyCountdownBadge" style="background: rgba(200, 155, 60, 0.15); color: #cca43b; border: 1px solid #cca43b; padding: 6px 18px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; font-family: monospace;">
+    YENİ ŞAMPİYON: 00:00:00
+  </span>
+</div>
+
+    <p id="subtitle" class="subtitle">Şampiyonunu ayağından tahmin et!</p>
+  
+
+    <div class="image-area">
+      <img id="championImage" class="zoom-image" src="" draggable="false" oncontextmenu="return false;" ondragstart="return false;" alt="Şampiyon Görseli">
+    </div>
+
+    <p id="inputTitle" class="input-title">Tahminini Yaz</p>
+
+  <input 
+  type="text" 
+  id="guessInput" 
+  placeholder="Şampiyon adı yaz..."
+  autocomplete="off"
+>
+
+<div id="suggestions" class="suggestions"></div>
+
+    <div class="buttons" style="display: flex; gap: 15px; width: 100%;">
+<button id="guessButton" style="flex: 1; padding: 12px; font-weight: bold;" onclick="checkGuess()">Tahmin Et</button>
+<button id="hintButton" style="flex: 1; padding: 12px; font-weight: bold;" onclick="showHint()">İpucu Al</button>
+
+</div>
+
+
+    <p id="hint"></p>
+    <p id="result"></p>
+    <p id="attempts">Deneme: 0 / 6</p>
+
+    <p id="historyTitle" class="history-title">Tahmin Geçmişi</p>
+
+    <div id="guessHistory"></div>
+
+    <button id="shareButton" onclick="shareResult()" style="display:none;">
+      Sonucu Paylaş
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+ 
+</body>
+</html>
+</body>
+</html>
